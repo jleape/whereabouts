@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loc3 — find your neighborhood</title>
+  </head>
+  <body>
+    <div id="map"></div>
+    <aside id="panel">
+      <header>
+        <h1>loc3</h1>
+        <p class="tagline">Find a neighborhood that minimizes your weekly travel.</p>
+      </header>
+      <section id="city-section">
+        <label for="city-search">City</label>
+        <div class="row">
+          <input id="city-search" type="text" placeholder="e.g. Lisbon, Portugal" autocomplete="off" />
+          <button id="city-search-btn" type="button">Go</button>
+        </div>
+        <div id="city-status" class="status"></div>
+      </section>
+      <section id="destinations-section" hidden>
+        <div class="row between">
+          <h2>Destinations</h2>
+          <button id="add-dest-btn" type="button" class="toggle">+ Add</button>
+        </div>
+        <div id="destinations-list"></div>
+        <button id="done-btn" type="button" class="primary" disabled>Compute travel times</button>
+        <div id="framing-box" class="framing-box" hidden>
+          <div class="framing-msg">Pan and zoom the map to the area you want analyzed.</div>
+          <div id="framing-info" class="status"></div>
+          <button id="confirm-compute-btn" type="button" class="primary">Compute for this view</button>
+          <button id="cancel-framing-btn" type="button" class="secondary">Cancel</button>
+        </div>
+      </section>
+      <section id="results-section" hidden>
+        <h2>Results</h2>
+        <div id="legend"></div>
+        <button id="hood-btn" type="button" class="toggle">Choose a hood</button>
+        <button id="reset-btn" type="button" class="secondary">Edit destinations</button>
+      </section>
+    </aside>
+    <div id="popup-root"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
