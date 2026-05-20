@@ -40,9 +40,9 @@ map.on('load', async () => {
   attachOverlay(map, {
     onDestinationClick: (id) => onMarkerClick(id),
   });
-  void loadNeighborhoods('/data/sf');
+  void loadNeighborhoods();
   try {
-    const matrix = await loadManifest('/data/sf');
+    const matrix = await loadManifest();
     const [w, s, e, n] = matrix.manifest.bbox;
     map.fitBounds(
       [

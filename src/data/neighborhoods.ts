@@ -4,7 +4,9 @@ import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson'
 // SF "Analysis Neighborhoods" — used to label destinations with a neighborhood.
 let features: Feature<Polygon | MultiPolygon>[] = [];
 
-export async function loadNeighborhoods(baseUrl = '/data/sf'): Promise<void> {
+export async function loadNeighborhoods(
+  baseUrl = `${import.meta.env.BASE_URL}data/sf`,
+): Promise<void> {
   try {
     const res = await fetch(`${baseUrl}/neighborhoods.geojson`);
     if (!res.ok) return;

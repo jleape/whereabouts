@@ -57,7 +57,9 @@ export function getLoadedMatrix(): LoadedMatrix | null {
   return loaded;
 }
 
-export async function loadManifest(baseUrl = '/data/sf'): Promise<LoadedMatrix> {
+export async function loadManifest(
+  baseUrl = `${import.meta.env.BASE_URL}data/sf`,
+): Promise<LoadedMatrix> {
   if (loaded) return loaded;
   if (loadingPromise) return loadingPromise;
   loadingPromise = (async () => {

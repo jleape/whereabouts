@@ -27,7 +27,7 @@ export interface PresetData {
   polygon?: number[][][];
 }
 
-const PRESETS_BASE = '/data/sf/presets';
+const PRESETS_BASE = `${import.meta.env.BASE_URL}data/sf/presets`;
 
 let presetsPromise: Promise<PresetMeta[]> | null = null;
 const dataCache = new Map<string, Promise<PresetData>>();
