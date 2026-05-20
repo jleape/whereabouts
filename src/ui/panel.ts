@@ -11,19 +11,20 @@ export function initPanel(handlers: {
   onEditDestination: (id: string) => void;
   onRemoveDestination: (id: string) => void;
   onCompute: () => void;
-  onToggleHood: () => void;
+  onToggleAbode: () => void;
   onResetResults: () => void;
-  onAddPresetChain: (preset: PresetMeta) => void;
-  onOpenChain: (chainId: string) => void;
-  onConfirmBatchDelete: () => void;
-  onCancelBatchDelete: () => void;
+  onAddPresetGroup: (preset: PresetMeta) => void;
+  onOpenGroup: (groupId: string) => void;
+  onRemoveGroup: (groupId: string) => void;
+  onSave: () => void;
+  onLoad: () => void;
 }) {
   $<HTMLButtonElement>('#add-dest-btn').addEventListener('click', handlers.onToggleAddMode);
   $<HTMLButtonElement>('#done-btn').addEventListener('click', handlers.onCompute);
-  $<HTMLButtonElement>('#hood-btn').addEventListener('click', handlers.onToggleHood);
+  $<HTMLButtonElement>('#abode-btn').addEventListener('click', handlers.onToggleAbode);
   $<HTMLButtonElement>('#reset-btn').addEventListener('click', handlers.onResetResults);
-  $<HTMLButtonElement>('#batch-confirm-btn').addEventListener('click', handlers.onConfirmBatchDelete);
-  $<HTMLButtonElement>('#batch-cancel-btn').addEventListener('click', handlers.onCancelBatchDelete);
+  $<HTMLButtonElement>('#save-btn').addEventListener('click', handlers.onSave);
+  $<HTMLButtonElement>('#load-btn').addEventListener('click', handlers.onLoad);
 
   const capSlider = $<HTMLInputElement>('#cap-slider');
   capSlider.addEventListener('input', () => {
@@ -36,7 +37,7 @@ export function initPanel(handlers: {
   presetSelect.addEventListener('change', () => {
     const preset = presets.find((p) => p.id === presetSelect.value);
     presetSelect.value = ''; // reset to placeholder
-    if (preset) handlers.onAddPresetChain(preset);
+    if (preset) handlers.onAddPresetGroup(preset);
   });
   loadPresets()
     .then((p) => {
@@ -51,22 +52,19 @@ export function initPanel(handlers: {
   function render() {
     const s = store.getState();
 
-    // Batch-delete banner
-    const batchBanner = $<HTMLElement>('#batch-banner');
-    const confirmBtn = $<HTMLButtonElement>('#batch-confirm-btn');
-    if (s.mode === 'batch-deleting' && s.batchDelete) {
-      const count = s.batchDelete.selectedIds.length;
-      const chain = s.chains.find((c) => c.id === s.batchDelete!.chainId);
-      $('#batch-banner-text').textContent =
-        count === 0
-          ? `Drag a rectangle to select ${chain?.name ?? 'destinations'} to delete`
-          : `${count} selected · click a marker to toggle`;
-      confirmBtn.disabled = count === 0;
-      confirmBtn.textContent = count > 0 ? `Delete ${count}` : 'Delete';
-      batchBanner.hidden = false;
-    } else {
-      batchBanner.hidden = true;
-    }
+    // Progressive "next step" highlight — the most relevant control glows.
+    //  1 add destinations · 2 do the sums · 3 choose an abode ·
+    //  4 confirm the abode · 5 hunt for an apartment
+    const hasDest = s.destinations.length > 0 || s.groups.length > 0;
+    const step = s.mode === 'choosing-abode'
+      ? 4
+      : s.abode
+        ? 5
+        : s.hexScores.length > 0
+          ? 3
+          : hasDest
+            ? 2
+            : 1;
 
     // Matrix status banner
     const matrixStatus = $('#matrix-status');
@@ -87,53 +85,84 @@ export function initPanel(handlers: {
     addBtn.classList.toggle('active', s.mode === 'adding-destination');
     addBtn.textContent = s.mode === 'adding-destination' ? '× Cancel' : '+ Add';
     addBtn.disabled = !s.matrixReady;
+    addBtn.classList.toggle('nudge', step === 1);
 
-    const hoodBtn = $<HTMLButtonElement>('#hood-btn');
-    hoodBtn.classList.toggle('active', s.mode === 'choosing-hood');
-    hoodBtn.textContent =
-      s.mode === 'choosing-hood' ? 'Stop choosing neighborhood' : 'Choose a neighborhood';
+    const abodeBtn = $<HTMLButtonElement>('#abode-btn');
+    abodeBtn.classList.toggle('active', s.mode === 'choosing-abode');
+    abodeBtn.textContent =
+      s.mode === 'choosing-abode' ? "That'll do" : 'Whereabouts will you live?';
+    abodeBtn.classList.toggle('nudge', step === 3 || step === 4);
+
+    // Apartment-hunting links — shown once an abode is placed, pre-centered on it.
+    const aptLinks = $<HTMLElement>('#apartment-links');
+    if (s.abode) {
+      aptLinks.querySelector('.apt-links')!.innerHTML = apartmentLinks(
+        s.abode.lng,
+        s.abode.lat,
+      )
+        .map(
+          (l) =>
+            `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="${step === 5 ? 'nudge' : ''}">${l.name}</a>`,
+        )
+        .join('');
+      aptLinks.hidden = false;
+    } else {
+      aptLinks.hidden = true;
+    }
 
     const computeBtn = $<HTMLButtonElement>('#done-btn');
     computeBtn.disabled = !s.matrixReady || s.destinations.length === 0 || s.computing;
-    computeBtn.textContent = s.computing ? 'Computing…' : 'Compute travel times';
+    computeBtn.textContent = s.computing ? 'Computing…' : 'Do the sums';
+    computeBtn.classList.toggle('nudge', step === 2);
+
+    $<HTMLButtonElement>('#save-btn').disabled =
+      s.destinations.length === 0 && s.groups.length === 0;
+    $<HTMLButtonElement>('#load-btn').disabled = !s.matrixReady;
 
     // Preset dropdown — list only presets not yet added.
     presetSelect.disabled = !s.matrixReady || presets.length === 0;
-    const addedNames = new Set(s.chains.map((c) => c.name.toLowerCase()));
+    presetSelect.classList.toggle('nudge-outline', step === 1);
+    const addedNames = new Set(s.groups.map((c) => c.name.toLowerCase()));
     const available = presets.filter((p) => !addedNames.has(p.name.toLowerCase()));
     presetSelect.innerHTML =
-      `<option value="">${available.length ? '+ Add a preset chain…' : 'All preset chains added'}</option>` +
+      `<option value="">${available.length ? '+ Add a preset group…' : 'All preset groups added'}</option>` +
       available
         .map((p) => `<option value="${p.id}">${p.emoji}  ${escapeHtml(p.name)}</option>`)
         .join('');
 
-    // Destinations list: one card per chain + one card per standalone destination.
+    // Destinations list: one card per group + one card per standalone destination.
     const list = $('#destinations-list');
     list.innerHTML = '';
-    for (const chain of s.chains) {
-      const count = s.destinations.filter((d) => d.chainId === chain.id).length;
+    for (const group of s.groups) {
+      const count = s.destinations.filter((d) => d.groupId === group.id).length;
       const card = document.createElement('div');
-      card.className = 'dest-item chain-card';
+      card.className = 'dest-item group-card';
       card.innerHTML = `
         <div>
-          <div>${chain.emoji} ${escapeHtml(chain.name)}</div>
-          <div class="meta">${count} location${count === 1 ? '' : 's'} · ${chain.visitsPerWeek}/wk · ${chain.modes.map((m) => MODE_EMOJI[m]).join(' ')}</div>
+          <div>${group.emoji} ${escapeHtml(group.name)}</div>
+          <div class="meta">${count} location${count === 1 ? '' : 's'} · ${group.visitsPerWeek}/wk · ${group.modes.map((m) => MODE_EMOJI[m]).join(' ')}</div>
         </div>
-        <div class="actions"><button data-open>Settings</button></div>
+        <div class="actions">
+          <button data-edit>Edit</button>
+          <button data-remove>×</button>
+        </div>
       `;
-      card.querySelector('[data-open]')!.addEventListener('click', () =>
-        handlers.onOpenChain(chain.id),
+      card.querySelector('[data-edit]')!.addEventListener('click', () =>
+        handlers.onOpenGroup(group.id),
+      );
+      card.querySelector('[data-remove]')!.addEventListener('click', () =>
+        handlers.onRemoveGroup(group.id),
       );
       list.appendChild(card);
     }
-    const singles = s.destinations.filter((d) => !d.chainId);
+    const singles = s.destinations.filter((d) => !d.groupId);
     for (const d of singles) list.appendChild(destItem(d));
 
-    if (s.destinations.length === 0 && s.chains.length === 0) {
+    if (s.destinations.length === 0 && s.groups.length === 0) {
       const empty = document.createElement('div');
       empty.className = 'status';
       empty.textContent =
-        'Add a preset chain above, or click + Add then click the map.';
+        'Add a preset group above, or click + Add then click the map.';
       list.appendChild(empty);
     }
 
@@ -158,7 +187,6 @@ export function initPanel(handlers: {
       const legend = $('#legend');
       const palette = paletteSwatches();
       legend.innerHTML = `
-        <div class="legend-row"><span>Weekly travel</span></div>
         <div class="legend-row" style="gap:2px">
           ${palette.map(([r, g, b]) => `<div class="legend-swatch" style="background:rgba(${r},${g},${b},0.7); flex:1"></div>`).join('')}
         </div>
@@ -175,7 +203,7 @@ export function initPanel(handlers: {
     el.className = 'dest-item';
     el.innerHTML = `
       <div>
-        <div>📍 ${escapeHtml(d.name)}</div>
+        <div>${d.emoji || '📍'} ${escapeHtml(d.name)}</div>
         <div class="meta">${d.visitsPerWeek}/wk · ${modesStr} · ${d.peak}</div>
       </div>
       <div class="actions">
@@ -199,6 +227,26 @@ function escapeHtml(s: string): string {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+// Apartment-hunting link pre-centered on the abode. Zillow exposes a reliable
+// lat/lng URL scheme (searchQueryState + mapBounds).
+function apartmentLinks(lng: number, lat: number): { name: string; url: string }[] {
+  const d = 0.004; // ~±400 m box around the abode
+  const zillowState = encodeURIComponent(
+    JSON.stringify({
+      mapBounds: { west: lng - d, east: lng + d, south: lat - d, north: lat + d },
+      usersSearchTerm: 'San Francisco, CA',
+      isMapVisible: true,
+      isListVisible: true,
+    }),
+  );
+  return [
+    {
+      name: 'Zillow (centered here)',
+      url: `https://www.zillow.com/san-francisco-ca/rentals/?searchQueryState=${zillowState}`,
+    },
+  ];
 }
 
 function fmtMin(min: number): string {

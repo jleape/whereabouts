@@ -18,10 +18,13 @@ export interface PresetLocation {
   name: string;
   lng: number;
   lat: number;
+  brand?: string; // OSM brand — drives the brand multiselect when adding
 }
 
 export interface PresetData {
   locations: PresetLocation[];
+  // Present for polygon presets (large parks/beaches): outer rings [lng,lat][].
+  polygon?: number[][][];
 }
 
 const PRESETS_BASE = '/data/sf/presets';

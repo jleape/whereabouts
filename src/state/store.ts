@@ -1,32 +1,23 @@
 import { createStore } from 'zustand/vanilla';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import type { ArcInfo, Chain, Destination, HexScore } from './types';
+import type { ArcInfo, Group, Destination, HexScore } from './types';
 
-export type Mode =
-  | 'idle'
-  | 'adding-destination'
-  | 'choosing-hood'
-  | 'batch-deleting';
+export type Mode = 'idle' | 'adding-destination' | 'choosing-abode';
 
-export interface Hood {
+export interface Abode {
   lng: number;
   lat: number;
   h3: string;
   index: number;
 }
 
-export interface BatchDeleteState {
-  chainId: string;
-  selectedIds: string[];
-}
-
 export interface AppState {
   destinations: Destination[];
-  chains: Chain[];
+  groups: Group[];
   mode: Mode;
   hexScores: HexScore[];
   computing: boolean;
-  hood: Hood | null;
+  abode: Abode | null;
   arcs: ArcInfo[];
   matrixReady: boolean;
   matrixError: string | null;
@@ -34,26 +25,22 @@ export interface AppState {
   // above this value are clamped to the worst color. Reset to the data max
   // whenever new scores arrive.
   weeklyCap: number | null;
-  batchDelete: BatchDeleteState | null;
 
   setMode: (mode: Mode) => void;
-  startBatchDelete: (chainId: string) => void;
-  addToBatchSelection: (ids: string[]) => void;
-  toggleBatchSelection: (id: string) => void;
-  endBatchDelete: () => void;
   addDestination: (d: Destination) => void;
   updateDestination: (id: string, patch: Partial<Destination>) => void;
   removeDestination: (id: string) => void;
-  addChain: (chain: Omit<Chain, 'id'>) => Chain;
-  updateChain: (id: string, patch: Partial<Omit<Chain, 'id'>>) => void;
-  removeChain: (id: string) => void;
+  addGroup: (group: Omit<Group, 'id'>) => Group;
+  updateGroup: (id: string, patch: Partial<Omit<Group, 'id'>>) => void;
+  removeGroup: (id: string) => void;
   setHexScores: (scores: HexScore[]) => void;
   setComputing: (b: boolean) => void;
-  setHood: (h: Hood | null) => void;
+  setAbode: (h: Abode | null) => void;
   setArcs: (a: ArcInfo[]) => void;
   setMatrixReady: (b: boolean) => void;
   setMatrixError: (e: string | null) => void;
   setWeeklyCap: (cap: number) => void;
+  importData: (destinations: Destination[], groups: Group[]) => void;
   resetResults: () => void;
 }
 
@@ -61,21 +48,20 @@ export const store = createStore<AppState>()(
   persist(
     (set, get) => ({
       destinations: [],
-      chains: [],
+      groups: [],
       mode: 'idle',
       hexScores: [],
       computing: false,
-      hood: null,
+      abode: null,
       arcs: [],
       matrixReady: false,
       matrixError: null,
       weeklyCap: null,
-      batchDelete: null,
 
       setMode: (mode) => set({ mode }),
-      // Each destination owns its settings independently. Chain membership
-      // affects scoring only (nearest-of-the-chain semantics); edits to one
-      // chain destination do NOT propagate to siblings.
+      // Each destination owns its settings independently. Group membership
+      // affects scoring only (nearest-of-the-group semantics); edits to one
+      // group destination do NOT propagate to siblings.
       addDestination: (d) => set({ destinations: [...get().destinations, d] }),
       updateDestination: (id, patch) =>
         set({
@@ -85,69 +71,67 @@ export const store = createStore<AppState>()(
         }),
       removeDestination: (id) =>
         set({ destinations: get().destinations.filter((d) => d.id !== id) }),
-      addChain: (chain) => {
-        const existing = get().chains.find(
-          (c) => c.name.toLowerCase() === chain.name.toLowerCase(),
+      addGroup: (group) => {
+        const existing = get().groups.find(
+          (c) => c.name.toLowerCase() === group.name.toLowerCase(),
         );
         if (existing) return existing;
-        const created: Chain = { id: crypto.randomUUID(), ...chain };
-        set({ chains: [...get().chains, created] });
+        const created: Group = { id: crypto.randomUUID(), ...group };
+        set({ groups: [...get().groups, created] });
         return created;
       },
-      updateChain: (id, patch) =>
+      updateGroup: (id, patch) =>
         set({
-          chains: get().chains.map((c) =>
+          groups: get().groups.map((c) =>
             c.id === id ? { ...c, ...patch } : c,
           ),
         }),
-      removeChain: (id) =>
+      removeGroup: (id) =>
         set({
-          chains: get().chains.filter((c) => c.id !== id),
-          destinations: get().destinations.filter((d) => d.chainId !== id),
+          groups: get().groups.filter((c) => c.id !== id),
+          destinations: get().destinations.filter((d) => d.groupId !== id),
         }),
       setHexScores: (hexScores) => {
         set({ hexScores, weeklyCap: defaultCap(hexScores) });
       },
       setComputing: (computing) => set({ computing }),
-      setHood: (hood) => set({ hood }),
+      setAbode: (abode) => set({ abode }),
       setArcs: (arcs) => set({ arcs }),
       setMatrixReady: (matrixReady) => set({ matrixReady }),
       setMatrixError: (matrixError) => set({ matrixError }),
       setWeeklyCap: (weeklyCap) => set({ weeklyCap }),
-      startBatchDelete: (chainId) =>
-        set({ mode: 'batch-deleting', batchDelete: { chainId, selectedIds: [] } }),
-      addToBatchSelection: (ids) => {
-        const cur = get().batchDelete;
-        if (!cur) return;
-        const merged = Array.from(new Set([...cur.selectedIds, ...ids]));
-        set({ batchDelete: { ...cur, selectedIds: merged } });
-      },
-      toggleBatchSelection: (id) => {
-        const cur = get().batchDelete;
-        if (!cur) return;
-        const next = cur.selectedIds.includes(id)
-          ? cur.selectedIds.filter((x) => x !== id)
-          : [...cur.selectedIds, id];
-        set({ batchDelete: { ...cur, selectedIds: next } });
-      },
-      endBatchDelete: () => set({ mode: 'idle', batchDelete: null }),
+      // Replace destinations + groups wholesale (load-from-file). Clears any
+      // stale results.
+      importData: (destinations, groups) =>
+        set({
+          destinations,
+          groups,
+          hexScores: [],
+          abode: null,
+          arcs: [],
+          weeklyCap: null,
+          mode: 'idle',
+        }),
       resetResults: () =>
-        set({ hexScores: [], hood: null, arcs: [], mode: 'idle', weeklyCap: null, batchDelete: null }),
+        set({ hexScores: [], abode: null, arcs: [], mode: 'idle', weeklyCap: null }),
     }),
     {
       name: 'whereabouts-state',
       storage: createJSONStorage(() => localStorage),
       partialize: (s) => ({
         destinations: s.destinations,
-        chains: s.chains,
+        groups: s.groups,
       }),
       // v2: legacy "transit" mode + allowBus → explicit "rail" / "bus".
       // v3: chains gained emoji + modes/peak/visitsPerWeek settings.
-      version: 3,
+      // v4: "chain" → "group" rename (chains→groups, chainId→groupId).
+      // Migration reads the OLD persisted shape, so it references the old
+      // `chains` / `chainId` keys explicitly.
+      version: 4,
       migrate: (persisted, fromVersion) => {
-        const s = persisted as { destinations?: any[]; chains?: any[] };
+        const s = persisted as Record<string, any>;
         if (fromVersion < 2 && Array.isArray(s.destinations)) {
-          s.destinations = s.destinations.map((d) => {
+          s.destinations = s.destinations.map((d: any) => {
             if (!Array.isArray(d.modes)) return d;
             if (!d.modes.includes('transit')) {
               delete d.allowBus;
@@ -160,9 +144,8 @@ export const store = createStore<AppState>()(
           });
         }
         if (fromVersion < 3 && Array.isArray(s.chains)) {
-          s.chains = s.chains.map((c) => {
+          s.chains = s.chains.map((c: any) => {
             if (c.modes && c.peak && c.visitsPerWeek != null) return c;
-            // Inherit settings from the chain's first destination.
             const head = (s.destinations ?? []).find(
               (d: any) => d.chainId === c.id,
             );
@@ -174,6 +157,22 @@ export const store = createStore<AppState>()(
               visitsPerWeek: c.visitsPerWeek ?? head?.visitsPerWeek ?? 1,
             };
           });
+        }
+        if (fromVersion < 4) {
+          if (Array.isArray(s.chains)) {
+            s.groups = s.chains;
+            delete s.chains;
+          }
+          if (Array.isArray(s.destinations)) {
+            s.destinations = s.destinations.map((d: any) => {
+              if ('chainId' in d) {
+                d.groupId = d.chainId;
+                delete d.chainId;
+              }
+              if (d.emoji == null) d.emoji = '📍';
+              return d;
+            });
+          }
         }
         return s;
       },

@@ -28,7 +28,10 @@ export interface Destination {
   visitsPerWeek: number;
   modes: TravelMode[];
   peak: PeakPeriod;
-  chainId: string | null;
+  groupId: string | null;
+  // Marker emoji. For grouped destinations the group's emoji is used instead;
+  // for standalone destinations this is set from the chosen destination type.
+  emoji: string;
   // Filled in when the destination is saved — h3 cell + centroid coords
   // of the precomputed grid this destination snapped to.
   snappedH3?: string;
@@ -36,16 +39,37 @@ export interface Destination {
   snappedLat?: number;
 }
 
-// A chain groups multiple locations the user treats as interchangeable
-// (they go to whichever is nearest). Travel settings live on the chain and
+// Common destination types offered as radio options for standalone
+// destinations. The chosen type sets the destination's marker emoji.
+export interface DestinationType {
+  id: string;
+  label: string;
+  emoji: string;
+}
+
+export const DESTINATION_TYPES: DestinationType[] = [
+  { id: 'office', label: 'Office', emoji: '🏢' },
+  { id: 'school', label: 'School', emoji: '🏫' },
+  { id: 'so', label: 'SO', emoji: '❤️' },
+  { id: 'bff', label: "BFF's", emoji: '👯' },
+  { id: 'family', label: 'Family', emoji: '🧬' },
+  { id: 'other', label: 'Other', emoji: '📍' },
+];
+
+// A group groups multiple locations the user treats as interchangeable
+// (they go to whichever is nearest). Travel settings live on the group and
 // apply uniformly to every member — there is no per-destination override.
-export interface Chain {
+export interface Group {
   id: string;
   name: string;
   emoji: string;
   modes: TravelMode[];
   peak: PeakPeriod;
   visitsPerWeek: number;
+  // Polygon destinations (large parks, beaches): outer rings as [lng,lat][].
+  // When set, the group is drawn as a filled shape and its member locations
+  // are the grid cells ringing the polygon (travel time = time to the edge).
+  polygon?: number[][][];
 }
 
 export interface City {
@@ -66,6 +90,7 @@ export interface ArcInfo {
   fromLat: number;
   toLng: number;
   toLat: number;
+  toId: string; // id of the winning (nearest) destination this arc points to
   destName: string;
   minutes: number;
   mode: TravelMode;

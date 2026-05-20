@@ -223,5 +223,62 @@
       "peak": "peak",
       "visitsPerWeek": 5
     }
+  },
+  {
+    "id": "golden-gate-park",
+    "name": "Golden Gate Park",
+    "emoji": "🌳",
+    "dataFile": "golden-gate-park.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 2
+    }
+  },
+  {
+    "id": "presidio",
+    "name": "Presidio",
+    "emoji": "🌲",
+    "dataFile": "presidio.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 1
+    }
+  },
+  {
+    "id": "panhandle",
+    "name": "The Panhandle",
+    "emoji": "🌿",
+    "dataFile": "panhandle.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 2
+    }
+  },
+  {
+    "id": "ocean-beach",
+    "name": "Ocean Beach",
+    "emoji": "🏖️",
+    "dataFile": "ocean-beach.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "car"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 1
+    }
   }
 ]

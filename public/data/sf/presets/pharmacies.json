@@ -3,27 +3,32 @@
     {
       "name": "Walgreens",
       "lng": -122.4085921,
-      "lat": 37.7982247
+      "lat": 37.7982247,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4087553,
-      "lat": 37.7890902
+      "lat": 37.7890902,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4384918,
-      "lat": 37.8004059
+      "lat": 37.8004059,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4336005,
-      "lat": 37.7868949
+      "lat": 37.7868949,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.429778,
-      "lat": 37.766593
+      "lat": 37.766593,
+      "brand": "Walgreens"
     },
     {
       "name": "Clay Medical Pharmacy",
@@ -33,57 +38,68 @@
     {
       "name": "Walgreens",
       "lng": -122.420621,
-      "lat": 37.7910072
+      "lat": 37.7910072,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4596347,
-      "lat": 37.7247573
+      "lat": 37.7247573,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4187888,
-      "lat": 37.7539579
+      "lat": 37.7539579,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.402456,
-      "lat": 37.7920548
+      "lat": 37.7920548,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4336088,
-      "lat": 37.7508864
+      "lat": 37.7508864,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4580044,
-      "lat": 37.7074525
+      "lat": 37.7074525,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.397589,
-      "lat": 37.7900429
+      "lat": 37.7900429,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4126955,
-      "lat": 37.8058649
+      "lat": 37.8058649,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4394791,
-      "lat": 37.7822825
+      "lat": 37.7822825,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4397759,
-      "lat": 37.7160179
+      "lat": 37.7160179,
+      "brand": "Walgreens"
     },
     {
       "name": "CVS Pharmacy",
       "lng": -122.4178769,
-      "lat": 37.790528
+      "lat": 37.790528,
+      "brand": "CVS Pharmacy"
     },
     {
       "name": "CarePlus / CVS",
@@ -93,7 +109,8 @@
     {
       "name": "Walgreens",
       "lng": -122.4356957,
-      "lat": 37.7607613
+      "lat": 37.7607613,
+      "brand": "Walgreens"
     },
     {
       "name": "Greenlite Medicine",
@@ -103,12 +120,14 @@
     {
       "name": "CVS Pharmacy",
       "lng": -122.430285,
-      "lat": 37.7720316
+      "lat": 37.7720316,
+      "brand": "CVS Pharmacy"
     },
     {
       "name": "CVS Pharmacy",
       "lng": -122.4126998,
-      "lat": 37.8084558
+      "lat": 37.8084558,
+      "brand": "CVS Pharmacy"
     },
     {
       "name": "Four-Fifty Sutter Pharmacy",
@@ -118,7 +137,8 @@
     {
       "name": "Walgreens",
       "lng": -122.4395199,
-      "lat": 37.7438227
+      "lat": 37.7438227,
+      "brand": "Walgreens"
     },
     {
       "name": "Moon Fung Chinese Herbs Ginseng & Tea",
@@ -133,7 +153,8 @@
     {
       "name": "Walgreens",
       "lng": -122.4169631,
-      "lat": 37.8047809
+      "lat": 37.8047809,
+      "brand": "Walgreens"
     },
     {
       "name": "Round Medical Supply and Uniforms",
@@ -143,7 +164,8 @@
     {
       "name": "Walgreens",
       "lng": -122.3907088,
-      "lat": 37.7671909
+      "lat": 37.7671909,
+      "brand": "Walgreens"
     },
     {
       "name": "Kaiser Mission Bay Pharmacy",
@@ -158,7 +180,8 @@
     {
       "name": "CVS Pharmacy",
       "lng": -122.476799,
-      "lat": 37.7268274
+      "lat": 37.7268274,
+      "brand": "CVS Pharmacy"
     },
     {
       "name": "Franklin Pharmacy",
@@ -173,7 +196,8 @@
     {
       "name": "Walgreens",
       "lng": -122.4352978,
-      "lat": 37.7610306
+      "lat": 37.7610306,
+      "brand": "Walgreens"
     },
     {
       "name": "IndieBio",
@@ -193,52 +217,62 @@
     {
       "name": "Walgreens",
       "lng": -122.4985435,
-      "lat": 37.7418064
+      "lat": 37.7418064,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4215265,
-      "lat": 37.7963756
+      "lat": 37.7963756,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4221716,
-      "lat": 37.7425765
+      "lat": 37.7425765,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4430134,
-      "lat": 37.7992033
+      "lat": 37.7992033,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4684036,
-      "lat": 37.7389346
+      "lat": 37.7389346,
+      "brand": "Walgreens"
     },
     {
       "name": "CVS Pharmacy",
       "lng": -122.4532658,
-      "lat": 37.7441179
+      "lat": 37.7441179,
+      "brand": "CVS Pharmacy"
     },
     {
       "name": "Walgreens",
       "lng": -122.4523355,
-      "lat": 37.7644051
+      "lat": 37.7644051,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.4800076,
-      "lat": 37.7636901
+      "lat": 37.7636901,
+      "brand": "Walgreens"
     },
     {
       "name": "Walgreens",
       "lng": -122.3953983,
-      "lat": 37.7770792
+      "lat": 37.7770792,
+      "brand": "Walgreens"
     },
     {
       "name": "CVS Pharmacy",
       "lng": -122.4930444,
-      "lat": 37.7819363
+      "lat": 37.7819363,
+      "brand": "CVS Pharmacy"
     }
   ]
 }

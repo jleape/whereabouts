@@ -2,6 +2,7 @@ import maplibregl from 'maplibre-gl';
 import {
   ALL_MODES,
   MODE_LABEL,
+  DESTINATION_TYPES,
   type Destination,
   type PeakPeriod,
   type TravelMode,
@@ -16,8 +17,8 @@ interface PopupInit {
   onDelete?: () => void;
 }
 
-// Edit popup for a standalone (non-chain) destination. Chained destinations
-// are managed through the chain editor instead — their settings are chain-level.
+// Edit popup for a standalone (non-group) destination. Grouped destinations
+// are managed through the group editor instead — their settings are group-level.
 export function openDestinationPopup(
   map: maplibregl.Map,
   init: PopupInit,
@@ -26,11 +27,30 @@ export function openDestinationPopup(
   root.className = 'popup-form';
 
   const existing = init.existing;
+  // Preselect the type whose emoji matches the existing destination; default
+  // to "Other" for new destinations or an unrecognized emoji.
+  const initialType =
+    DESTINATION_TYPES.find((t) => t.emoji === existing?.emoji) ??
+    DESTINATION_TYPES[DESTINATION_TYPES.length - 1];
 
   root.innerHTML = `
     <div class="field">
       <label>Name</label>
       <input type="text" data-field="name" placeholder="e.g. Office, Yoga studio" value="${escapeHtml(existing?.name ?? '')}" />
+    </div>
+    <div class="field">
+      <label>Type</label>
+      <div class="modes">
+        ${DESTINATION_TYPES.map(
+          (t) => `
+          <label>
+            <input type="radio" name="dest-type" value="${t.id}" ${
+              t.id === initialType.id ? 'checked' : ''
+            } />
+            ${t.emoji} ${t.label}
+          </label>`,
+        ).join('')}
+      </div>
     </div>
     <div class="field">
       <label>Visits per week (fractions ok)</label>
@@ -103,6 +123,10 @@ export function openDestinationPopup(
     ) as TravelMode[];
     const peakInput = root.querySelector('input[name="peak"]:checked') as HTMLInputElement;
     const peak = (peakInput?.value ?? 'peak') as PeakPeriod;
+    const typeInput = root.querySelector('input[name="dest-type"]:checked') as HTMLInputElement;
+    const type =
+      DESTINATION_TYPES.find((t) => t.id === typeInput?.value) ??
+      DESTINATION_TYPES[DESTINATION_TYPES.length - 1];
 
     if (!name) {
       alert('Please enter a name for this destination.');
@@ -125,7 +149,8 @@ export function openDestinationPopup(
       visitsPerWeek: visits,
       modes,
       peak,
-      chainId: null,
+      groupId: null,
+      emoji: type.emoji,
       // snappedH3 / snappedLng / snappedLat are filled in by the caller (main.ts).
       snappedH3: existing?.snappedH3,
       snappedLng: existing?.snappedLng,

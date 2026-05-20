@@ -11,7 +11,8 @@
     "fetch-exclusions": "tsx pipeline/fetch-exclusions.ts",
     "fetch-buildings": "tsx pipeline/fetch-buildings.ts",
     "fetch-boundary": "tsx pipeline/fetch-boundary.ts",
-    "fetch-presets": "tsx pipeline/fetch-presets.ts"
+    "fetch-presets": "tsx pipeline/fetch-presets.ts",
+    "fetch-neighborhoods": "tsx pipeline/fetch-neighborhoods.ts"
   },
   "devDependencies": {
     "osmtogeojson": "^3.0.0-beta.5",

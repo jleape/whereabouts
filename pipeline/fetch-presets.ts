@@ -1,19 +1,32 @@
-// Fetch all preset chain location sets and regenerate the preset index.
-// Two data sources are supported per preset:
+// Fetch all preset group location sets and regenerate the preset index.
+// Three data sources are supported per preset:
 //   - 'overpass': OpenStreetMap features via the Overpass API
 //   - 'datasf-schools': the authoritative DataSF schools dataset (7e7j-59qk),
 //      filtered to public schools that serve a given grade band
+//   - 'polygon': a large area (park/beach) from sf-exclusions.geojson — the
+//      member locations become the grid cells ringing the polygon, so travel
+//      time is computed to the perimeter. Requires sf-exclusions.geojson
+//      (run `npm run fetch-exclusions`) and an existing public/data/sf/manifest.json.
 //
 // Output: public/data/sf/presets/<id>.json (one per preset) + index.json.
 // To add a preset: append to PRESETS and rerun `npm run fetch-presets`.
 
-import { mkdir, writeFile, access } from 'node:fs/promises';
+import { mkdir, writeFile, access, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import {
+  polygonToCellsExperimental,
+  gridDisk,
+  cellToLatLng,
+  POLYGON_TO_CELLS_FLAGS,
+} from 'h3-js';
+import { simplify } from '@turf/turf';
 
 const BBOX = '37.70,-122.52,37.84,-122.35';
 const PRESETS_DIR = resolve(process.cwd(), 'public/data/sf/presets');
 const DATASF_SCHOOLS_URL =
   'https://data.sfgov.org/resource/7e7j-59qk.json?$limit=2000';
+const EXCLUSIONS_PATH = resolve(process.cwd(), 'pipeline/data/sf-exclusions.geojson');
+const MANIFEST_PATH = resolve(process.cwd(), 'public/data/sf/manifest.json');
 
 type Mode = 'walk' | 'bike' | 'rail' | 'bus' | 'car';
 type Peak = 'peak' | 'offpeak';
@@ -31,12 +44,23 @@ interface DataSfSchoolSource {
   level: SchoolLevel;
 }
 
+interface PolygonSource {
+  kind: 'polygon';
+  // Exact OSM feature names (case-insensitive) to match in sf-exclusions.geojson.
+  names: string[];
+}
+
 interface PresetConfig {
   id: string;
   name: string;
   emoji: string;
   defaults: { modes: Mode[]; peak: Peak; visitsPerWeek: number };
-  source: OverpassSource | DataSfSchoolSource;
+  source: OverpassSource | DataSfSchoolSource | PolygonSource;
+}
+
+interface FetchResult {
+  locations: PresetLocation[];
+  polygon?: number[][][];
 }
 
 const PRESETS: PresetConfig[] = [
@@ -230,12 +254,42 @@ const PRESETS: PresetConfig[] = [
       requireName: true,
     },
   },
+  // Polygon destinations — large areas where travel time is to the perimeter.
+  {
+    id: 'golden-gate-park',
+    name: 'Golden Gate Park',
+    emoji: '🌳',
+    defaults: { modes: ['walk', 'bike'], peak: 'offpeak', visitsPerWeek: 2 },
+    source: { kind: 'polygon', names: ['Golden Gate Park'] },
+  },
+  {
+    id: 'presidio',
+    name: 'Presidio',
+    emoji: '🌲',
+    defaults: { modes: ['walk', 'bike'], peak: 'offpeak', visitsPerWeek: 1 },
+    source: { kind: 'polygon', names: ['Presidio', 'Presidio of San Francisco'] },
+  },
+  {
+    id: 'panhandle',
+    name: 'The Panhandle',
+    emoji: '🌿',
+    defaults: { modes: ['walk', 'bike'], peak: 'offpeak', visitsPerWeek: 2 },
+    source: { kind: 'polygon', names: ['Panhandle', 'The Panhandle'] },
+  },
+  {
+    id: 'ocean-beach',
+    name: 'Ocean Beach',
+    emoji: '🏖️',
+    defaults: { modes: ['walk', 'bike', 'car'], peak: 'offpeak', visitsPerWeek: 1 },
+    source: { kind: 'polygon', names: ['Ocean Beach'] },
+  },
 ];
 
 interface PresetLocation {
   name: string;
   lng: number;
   lat: number;
+  brand?: string; // OSM brand tag — used for the brand multiselect when adding
 }
 
 function sleep(ms: number) {
@@ -287,7 +341,8 @@ out center;
     const key = `${name}|${lng.toFixed(4)}|${lat.toFixed(4)}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    out.push({ name, lng, lat });
+    const brand: string | undefined = el.tags?.brand;
+    out.push(brand ? { name, lng, lat, brand } : { name, lng, lat });
   }
   return out;
 }
@@ -346,6 +401,72 @@ async function fetchDataSfSchools(src: DataSfSchoolSource): Promise<PresetLocati
   return out;
 }
 
+// --- Polygon source ----------------------------------------------------------
+
+// A polygon destination's member locations are the grid cells that ring the
+// polygon. The park interior was excluded from the grid, so the cells touching
+// the park footprint are the "you've reached the edge" access points.
+async function fetchPolygon(src: PolygonSource): Promise<FetchResult> {
+  const exclusions = JSON.parse(await readFile(EXCLUSIONS_PATH, 'utf-8'));
+  const manifest = JSON.parse(await readFile(MANIFEST_PATH, 'utf-8'));
+  const gridCells = new Set<string>(manifest.cells);
+  const res: number = manifest.resolution;
+
+  const wanted = new Set(src.names.map((n) => n.toLowerCase()));
+  const matches = (exclusions.features as any[]).filter((f) =>
+    wanted.has(String(f.properties?.name ?? '').toLowerCase()),
+  );
+  if (matches.length === 0) {
+    throw new Error(`no exclusion polygon named ${src.names.join(' / ')}`);
+  }
+
+  const rings: number[][][] = [];
+  const parkCells = new Set<string>();
+  for (const f of matches) {
+    const g = f.geometry;
+    if (!g) continue;
+    const polys: number[][][][] =
+      g.type === 'Polygon' ? [g.coordinates] : g.coordinates; // MultiPolygon
+    for (const poly of polys) {
+      const outer: number[][] = poly[0]; // [lng,lat][]
+      if (!outer || outer.length < 4) continue;
+      // Simplify (~20m tolerance) to keep the stored geometry light.
+      const simplified = simplify(
+        { type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: [outer] } } as any,
+        { tolerance: 0.0002, highQuality: false },
+      );
+      rings.push((simplified.geometry as any).coordinates[0]);
+      // h3 expects [lat,lng] rings. Use overlapping containment so every cell
+      // the polygon footprint TOUCHES is counted — not only cells whose
+      // centroid is inside (which misses thin polygons like the Panhandle).
+      const latLng = outer.map(([lng, lat]) => [lat, lng]);
+      const cells = polygonToCellsExperimental(
+        [latLng],
+        res,
+        POLYGON_TO_CELLS_FLAGS.containmentOverlapping,
+      );
+      for (const c of cells) parkCells.add(c);
+    }
+  }
+
+  // Rim = grid cells touching the park footprint, plus their immediate
+  // neighbors (the perimeter cells you'd be in on reaching the edge).
+  const rim = new Set<string>();
+  for (const c of parkCells) {
+    for (const n of gridDisk(c, 1)) {
+      if (gridCells.has(n)) rim.add(n);
+    }
+  }
+
+  const locations: PresetLocation[] = [];
+  let i = 0;
+  for (const c of rim) {
+    const [lat, lng] = cellToLatLng(c);
+    locations.push({ name: `Edge ${++i}`, lng, lat });
+  }
+  return { locations, polygon: rings };
+}
+
 // --- main --------------------------------------------------------------------
 
 async function fileExists(p: string): Promise<boolean> {
@@ -381,18 +502,25 @@ async function main() {
       }
     } else {
       process.stdout.write(`Fetching ${cfg.name}… `);
-      let locations: PresetLocation[] | null = null;
+      let result: FetchResult | null = null;
       try {
-        locations =
-          cfg.source.kind === 'overpass'
-            ? await fetchOverpass(cfg.source, cfg.name)
-            : await fetchDataSfSchools(cfg.source);
+        if (cfg.source.kind === 'overpass') {
+          result = { locations: await fetchOverpass(cfg.source, cfg.name) };
+        } else if (cfg.source.kind === 'datasf-schools') {
+          result = { locations: await fetchDataSfSchools(cfg.source) };
+        } else {
+          result = await fetchPolygon(cfg.source);
+        }
       } catch (err) {
         console.log(`FAILED: ${(err as Error).message}`);
       }
-      if (locations) {
-        console.log(`${locations.length} locations`);
-        await writeFile(dataPath, JSON.stringify({ locations }, null, 2));
+      if (result) {
+        console.log(
+          `${result.locations.length} locations${result.polygon ? ' + polygon' : ''}`,
+        );
+        const data: Record<string, unknown> = { locations: result.locations };
+        if (result.polygon) data.polygon = result.polygon;
+        await writeFile(dataPath, JSON.stringify(data, null, 2));
       } else if (cached) {
         console.log(`  → keeping cached ${cfg.id}.json`);
       } else {

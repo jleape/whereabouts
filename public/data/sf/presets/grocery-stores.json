@@ -3,7 +3,8 @@
     {
       "name": "Safeway",
       "lng": -122.3940709,
-      "lat": 37.7767776
+      "lat": 37.7767776,
+      "brand": "Safeway"
     },
     {
       "name": "Calmart",
@@ -13,7 +14,8 @@
     {
       "name": "Whole Foods Market",
       "lng": -122.3997789,
-      "lat": 37.7811499
+      "lat": 37.7811499,
+      "brand": "Whole Foods Market"
     },
     {
       "name": "Marina Supermarket",
@@ -33,7 +35,8 @@
     {
       "name": "Trader Joe's",
       "lng": -122.4762074,
-      "lat": 37.7265935
+      "lat": 37.7265935,
+      "brand": "Trader Joe's"
     },
     {
       "name": "Starco Mart",
@@ -43,7 +46,8 @@
     {
       "name": "Whole Foods Market",
       "lng": -122.4234142,
-      "lat": 37.7900899
+      "lat": 37.7900899,
+      "brand": "Whole Foods Market"
     },
     {
       "name": "Super Save",
@@ -53,7 +57,8 @@
     {
       "name": "Trader Joe's",
       "lng": -122.4077368,
-      "lat": 37.7709988
+      "lat": 37.7709988,
+      "brand": "Trader Joe's"
     },
     {
       "name": "Le Beau Market",
@@ -68,12 +73,14 @@
     {
       "name": "Lucky",
       "lng": -122.4459793,
-      "lat": 37.7761053
+      "lat": 37.7761053,
+      "brand": "Lucky"
     },
     {
       "name": "Whole Foods Market",
       "lng": -122.4546813,
-      "lat": 37.7237981
+      "lat": 37.7237981,
+      "brand": "Whole Foods Market"
     },
     {
       "name": "Casa Guadalupe",
@@ -103,7 +110,8 @@
     {
       "name": "Trader Joe's",
       "lng": -122.4137896,
-      "lat": 37.8054807
+      "lat": 37.8054807,
+      "brand": "Trader Joe's"
     },
     {
       "name": "Nijiya Market",
@@ -113,7 +121,8 @@
     {
       "name": "Trader Joe's",
       "lng": -122.4179305,
-      "lat": 37.7907686
+      "lat": 37.7907686,
+      "brand": "Trader Joe's"
     },
     {
       "name": "New Russian Hill Market",
@@ -128,12 +137,14 @@
     {
       "name": "Whole Foods Market",
       "lng": -122.4270651,
-      "lat": 37.7687435
+      "lat": 37.7687435,
+      "brand": "Whole Foods Market"
     },
     {
       "name": "Grocery Outlet",
       "lng": -122.405368,
-      "lat": 37.7415785
+      "lat": 37.7415785,
+      "brand": "Grocery Outlet"
     },
     {
       "name": "Five Markets",
@@ -198,7 +209,8 @@
     {
       "name": "Trader Joe's",
       "lng": -122.4822883,
-      "lat": 37.7001684
+      "lat": 37.7001684,
+      "brand": "Trader Joe's"
     },
     {
       "name": "J & L Vegi Supermarket",
@@ -233,7 +245,8 @@
     {
       "name": "Grocery Outlet",
       "lng": -122.487636,
-      "lat": 37.7797491
+      "lat": 37.7797491,
+      "brand": "Grocery Outlet"
     },
     {
       "name": "Jackson Market",
@@ -263,7 +276,8 @@
     {
       "name": "Whole Foods Market",
       "lng": -122.4027236,
-      "lat": 37.7643298
+      "lat": 37.7643298,
+      "brand": "Whole Foods Market"
     },
     {
       "name": "Gus's Community Market",
@@ -273,7 +287,8 @@
     {
       "name": "Trader Joe's",
       "lng": -122.4056288,
-      "lat": 37.785398
+      "lat": 37.785398,
+      "brand": "Trader Joe's"
     },
     {
       "name": "Falletti Foods",
@@ -298,7 +313,8 @@
     {
       "name": "H Mart",
       "lng": -122.46765,
-      "lat": 37.7103977
+      "lat": 37.7103977,
+      "brand": "H Mart"
     },
     {
       "name": "Gus's Community Market",
@@ -318,12 +334,14 @@
     {
       "name": "Safeway",
       "lng": -122.465134,
-      "lat": 37.7746125
+      "lat": 37.7746125,
+      "brand": "Safeway"
     },
     {
       "name": "Whole Foods Market",
       "lng": -122.4763228,
-      "lat": 37.7290661
+      "lat": 37.7290661,
+      "brand": "Whole Foods Market"
     },
     {
       "name": "Royal Market",
@@ -333,7 +351,8 @@
     {
       "name": "Safeway",
       "lng": -122.3985422,
-      "lat": 37.7969036
+      "lat": 37.7969036,
+      "brand": "Safeway"
     },
     {
       "name": "Fruit Barn",
@@ -358,7 +377,8 @@
     {
       "name": "Trader Joe's",
       "lng": -122.4264269,
-      "lat": 37.7781179
+      "lat": 37.7781179,
+      "brand": "Trader Joe's"
     },
     {
       "name": "Samiramis Imports",
@@ -403,17 +423,20 @@
     {
       "name": "Foods Co",
       "lng": -122.4161193,
-      "lat": 37.7676245
+      "lat": 37.7676245,
+      "brand": "Foods Co"
     },
     {
       "name": "Safeway",
       "lng": -122.4328308,
-      "lat": 37.8044499
+      "lat": 37.8044499,
+      "brand": "Safeway"
     },
     {
       "name": "Safeway",
       "lng": -122.4741162,
-      "lat": 37.7434345
+      "lat": 37.7434345,
+      "brand": "Safeway"
     },
     {
       "name": "Luke's Local Grocery",
@@ -423,7 +446,8 @@
     {
       "name": "Trader Joe's",
       "lng": -122.4478393,
-      "lat": 37.7833886
+      "lat": 37.7833886,
+      "brand": "Trader Joe's"
     },
     {
       "name": "Cash & Carry",
@@ -433,12 +457,14 @@
     {
       "name": "Safeway",
       "lng": -122.481658,
-      "lat": 37.6996207
+      "lat": 37.6996207,
+      "brand": "Safeway"
     },
     {
       "name": "Foods Co",
       "lng": -122.3988207,
-      "lat": 37.7297434
+      "lat": 37.7297434,
+      "brand": "Foods Co"
     },
     {
       "name": "Rainbow Grocery Coop",
@@ -448,37 +474,44 @@
     {
       "name": "Smart & Final",
       "lng": -122.465175,
-      "lat": 37.7822881
+      "lat": 37.7822881,
+      "brand": "Smart & Final"
     },
     {
       "name": "Whole Foods Market",
       "lng": -122.4309055,
-      "lat": 37.7520191
+      "lat": 37.7520191,
+      "brand": "Whole Foods Market"
     },
     {
       "name": "Safeway",
       "lng": -122.488855,
-      "lat": 37.754188
+      "lat": 37.754188,
+      "brand": "Safeway"
     },
     {
       "name": "Safeway",
       "lng": -122.5093538,
-      "lat": 37.7725365
+      "lat": 37.7725365,
+      "brand": "Safeway"
     },
     {
       "name": "Safeway",
       "lng": -122.4500508,
-      "lat": 37.7312406
+      "lat": 37.7312406,
+      "brand": "Safeway"
     },
     {
       "name": "Safeway",
       "lng": -122.4389462,
-      "lat": 37.7435687
+      "lat": 37.7435687,
+      "brand": "Safeway"
     },
     {
       "name": "Safeway",
       "lng": -122.4283215,
-      "lat": 37.7691101
+      "lat": 37.7691101,
+      "brand": "Safeway"
     },
     {
       "name": "Good Life Grocery",
@@ -488,12 +521,14 @@
     {
       "name": "Whole Foods Market",
       "lng": -122.4527946,
-      "lat": 37.7695531
+      "lat": 37.7695531,
+      "brand": "Whole Foods Market"
     },
     {
       "name": "Safeway",
       "lng": -122.4224516,
-      "lat": 37.7432508
+      "lat": 37.7432508,
+      "brand": "Safeway"
     },
     {
       "name": "Miraloma Market",
@@ -578,22 +613,26 @@
     {
       "name": "Grocery Outlet",
       "lng": -122.4060028,
-      "lat": 37.7084987
+      "lat": 37.7084987,
+      "brand": "Grocery Outlet"
     },
     {
       "name": "Grocery Outlet",
       "lng": -122.4090582,
-      "lat": 37.731046
+      "lat": 37.731046,
+      "brand": "Grocery Outlet"
     },
     {
       "name": "Safeway",
       "lng": -122.4389783,
-      "lat": 37.7199299
+      "lat": 37.7199299,
+      "brand": "Safeway"
     },
     {
       "name": "Safeway",
       "lng": -122.409297,
-      "lat": 37.7668779
+      "lat": 37.7668779,
+      "brand": "Safeway"
     },
     {
       "name": "Manila Oriental Market",
@@ -603,7 +642,8 @@
     {
       "name": "Grocery Outlet",
       "lng": -122.4158643,
-      "lat": 37.753123
+      "lat": 37.753123,
+      "brand": "Grocery Outlet"
     },
     {
       "name": "Richmond New May Wah Supermarket",
@@ -618,12 +658,14 @@
     {
       "name": "Andronico's",
       "lng": -122.4930603,
-      "lat": 37.7822204
+      "lat": 37.7822204,
+      "brand": "Andronico's"
     },
     {
       "name": "Lucky",
       "lng": -122.4894545,
-      "lat": 37.7330423
+      "lat": 37.7330423,
+      "brand": "Lucky"
     }
   ]
 }

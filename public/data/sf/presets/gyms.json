@@ -3,7 +3,8 @@
     {
       "name": "24 Hour Fitness",
       "lng": -122.40233,
-      "lat": 37.7898626
+      "lat": 37.7898626,
+      "brand": "24 Hour Fitness"
     },
     {
       "name": "Live Fit Gym",
@@ -13,7 +14,8 @@
     {
       "name": "24 Hour Fitness",
       "lng": -122.4212723,
-      "lat": 37.7867992
+      "lat": 37.7867992,
+      "brand": "24 Hour Fitness"
     },
     {
       "name": "Valencia Street Muscle",
@@ -23,7 +25,8 @@
     {
       "name": "CorePower Yoga",
       "lng": -122.429287,
-      "lat": 37.7693496
+      "lat": 37.7693496,
+      "brand": "CorePower Yoga"
     },
     {
       "name": "LiveFitGym Wellness Club",
@@ -38,7 +41,8 @@
     {
       "name": "Planet Fitness",
       "lng": -122.4030566,
-      "lat": 37.7933814
+      "lat": 37.7933814,
+      "brand": "Planet Fitness"
     },
     {
       "name": "VRV3 Studios",
@@ -58,17 +62,20 @@
     {
       "name": "Crunch Fitness",
       "lng": -122.422077,
-      "lat": 37.7983396
+      "lat": 37.7983396,
+      "brand": "Crunch Fitness"
     },
     {
       "name": "CorePower Yoga",
       "lng": -122.4340668,
-      "lat": 37.7975935
+      "lat": 37.7975935,
+      "brand": "CorePower Yoga"
     },
     {
       "name": "The Bar Method",
       "lng": -122.436288,
-      "lat": 37.800265
+      "lat": 37.800265,
+      "brand": "The Bar Method"
     },
     {
       "name": "Equinox Gym",
@@ -128,7 +135,8 @@
     {
       "name": "Alinea Crossfit",
       "lng": -122.417522,
-      "lat": 37.7623626
+      "lat": 37.7623626,
+      "brand": "Crossfit"
     },
     {
       "name": "Yubalance",
@@ -143,7 +151,8 @@
     {
       "name": "Pure Barre",
       "lng": -122.467846,
-      "lat": 37.7392516
+      "lat": 37.7392516,
+      "brand": "Pure Barre"
     },
     {
       "name": "Gym",
@@ -188,7 +197,8 @@
     {
       "name": "SoulCycle",
       "lng": -122.4353665,
-      "lat": 37.7622098
+      "lat": 37.7622098,
+      "brand": "SoulCycle"
     },
     {
       "name": "Parkside Pilates",
@@ -258,7 +268,8 @@
     {
       "name": "Crunch Fitness",
       "lng": -122.4277598,
-      "lat": 37.7979248
+      "lat": 37.7979248,
+      "brand": "Crunch Fitness"
     },
     {
       "name": "Ever Strong SF",
@@ -268,7 +279,8 @@
     {
       "name": "SoulCycle",
       "lng": -122.4336513,
-      "lat": 37.7972137
+      "lat": 37.7972137,
+      "brand": "SoulCycle"
     },
     {
       "name": "Invincible Barbell",
@@ -343,7 +355,8 @@
     {
       "name": "Barry's",
       "lng": -122.4327172,
-      "lat": 37.7648157
+      "lat": 37.7648157,
+      "brand": "Barry's"
     },
     {
       "name": "Empire Jiu Jitsu",
@@ -358,7 +371,8 @@
     {
       "name": "CorePower Yoga",
       "lng": -122.419391,
-      "lat": 37.777004
+      "lat": 37.777004,
+      "brand": "CorePower Yoga"
     },
     {
       "name": "YMCA",
@@ -388,7 +402,8 @@
     {
       "name": "Equinox",
       "lng": -122.404501,
-      "lat": 37.7865523
+      "lat": 37.7865523,
+      "brand": "Equinox"
     },
     {
       "name": "Rise Combat Sports",
@@ -398,7 +413,8 @@
     {
       "name": "24 Hour Fitness",
       "lng": -122.461745,
-      "lat": 37.7253132
+      "lat": 37.7253132,
+      "brand": "24 Hour Fitness"
     },
     {
       "name": "CrossFit Potrero Hill",
@@ -413,7 +429,8 @@
     {
       "name": "Equinox",
       "lng": -122.4013229,
-      "lat": 37.7919223
+      "lat": 37.7919223,
+      "brand": "Equinox"
     },
     {
       "name": "Stretch Lab",
@@ -428,12 +445,14 @@
     {
       "name": "Barry's",
       "lng": -122.402861,
-      "lat": 37.790492
+      "lat": 37.790492,
+      "brand": "Barry's"
     },
     {
       "name": "CorePower Yoga",
       "lng": -122.4226686,
-      "lat": 37.7932437
+      "lat": 37.7932437,
+      "brand": "CorePower Yoga"
     },
     {
       "name": "LiveFitGym",
@@ -448,7 +467,8 @@
     {
       "name": "F45 Training",
       "lng": -122.412397,
-      "lat": 37.8059286
+      "lat": 37.8059286,
+      "brand": "F45 Training"
     },
     {
       "name": "Asta Yoga",
@@ -463,17 +483,20 @@
     {
       "name": "Equinox",
       "lng": -122.418343,
-      "lat": 37.773598
+      "lat": 37.773598,
+      "brand": "Equinox"
     },
     {
       "name": "Barry's",
       "lng": -122.4387347,
-      "lat": 37.7996807
+      "lat": 37.7996807,
+      "brand": "Barry's"
     },
     {
       "name": "Orangetheory Fitness",
       "lng": -122.417714,
-      "lat": 37.7761003
+      "lat": 37.7761003,
+      "brand": "Orangetheory Fitness"
     },
     {
       "name": "MX3 Fitness",
@@ -493,7 +516,8 @@
     {
       "name": "Orangetheory Fitness",
       "lng": -122.4019303,
-      "lat": 37.7938086
+      "lat": 37.7938086,
+      "brand": "Orangetheory Fitness"
     },
     {
       "name": "Crossfit Golden Gate",
@@ -543,12 +567,14 @@
     {
       "name": "CorePower Yoga",
       "lng": -122.3915273,
-      "lat": 37.7723982
+      "lat": 37.7723982,
+      "brand": "CorePower Yoga"
     },
     {
       "name": "Crunch Fitness",
       "lng": -122.3986881,
-      "lat": 37.7833784
+      "lat": 37.7833784,
+      "brand": "Crunch Fitness"
     },
     {
       "name": "PerformForLife",
@@ -573,7 +599,8 @@
     {
       "name": "Orangetheory Fitness",
       "lng": -122.39214,
-      "lat": 37.7774743
+      "lat": 37.7774743,
+      "brand": "Orangetheory Fitness"
     },
     {
       "name": "Lagree Fit 415",
@@ -583,7 +610,8 @@
     {
       "name": "Club Pilates",
       "lng": -122.404875,
-      "lat": 37.7710571
+      "lat": 37.7710571,
+      "brand": "Club Pilates"
     },
     {
       "name": "Custom Fit",
@@ -618,7 +646,8 @@
     {
       "name": "Orangetheory Fitness",
       "lng": -122.418471,
-      "lat": 37.8057908
+      "lat": 37.8057908,
+      "brand": "Orangetheory Fitness"
     },
     {
       "name": "F45 Training",
@@ -728,7 +757,8 @@
     {
       "name": "Solidcore",
       "lng": -122.4302513,
-      "lat": 37.7662018
+      "lat": 37.7662018,
+      "brand": "[solidcore]"
     },
     {
       "name": "Fluxfit",
@@ -763,7 +793,8 @@
     {
       "name": "Fitness SF SOMA",
       "lng": -122.4069617,
-      "lat": 37.7696742
+      "lat": 37.7696742,
+      "brand": "Fitness SF"
     },
     {
       "name": "Live Fit Gym",
@@ -803,7 +834,8 @@
     {
       "name": "Crunch Fitness",
       "lng": -122.4417636,
-      "lat": 37.8003977
+      "lat": 37.8003977,
+      "brand": "Crunch Fitness"
     },
     {
       "name": "Richmond District YMCA",

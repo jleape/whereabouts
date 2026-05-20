@@ -11,8 +11,9 @@ import { initPanel } from './ui/panel';
 import { getLoadedMatrix, loadManifest } from './data/matrix';
 import { snapToGrid } from './data/snap';
 import { computeArcs, computeScores } from './compute/score';
-import { loadPresetData, type PresetMeta } from './presets/loader';
-import { openChainSettingsModal, openChainEditorModal } from './ui/chain-popup';
+import { loadPresetData, loadPresets, type PresetMeta } from './presets/loader';
+import { openGroupSettingsModal, openGroupEditorModal } from './ui/group-popup';
+import { loadNeighborhoods, neighborhoodAt } from './data/neighborhoods';
 
 // One-shot localStorage migration: rename from the original `loc3-state` key
 // to `whereabouts-state` if the new one is empty. Runs before the store loads
@@ -39,6 +40,7 @@ map.on('load', async () => {
   attachOverlay(map, {
     onDestinationClick: (id) => onMarkerClick(id),
   });
+  void loadNeighborhoods('/data/sf');
   try {
     const matrix = await loadManifest('/data/sf');
     const [w, s, e, n] = matrix.manifest.bbox;
@@ -71,6 +73,23 @@ map.on('load', async () => {
   } catch (err) {
     getState().setMatrixError((err as Error).message);
   }
+
+  // Self-heal: groups created before the group-emoji field existed were
+  // migrated with the default 📍. Backfill the real emoji by matching the
+  // group name against the preset list.
+  try {
+    const presets = await loadPresets();
+    for (const group of getState().groups) {
+      const preset = presets.find(
+        (p) => p.name.toLowerCase() === group.name.toLowerCase(),
+      );
+      if (preset && group.emoji !== preset.emoji) {
+        getState().updateGroup(group.id, { emoji: preset.emoji });
+      }
+    }
+  } catch {
+    // presets unavailable — markers fall back to 📍
+  }
 });
 
 initPanel({
@@ -91,32 +110,81 @@ initPanel({
     getState().removeDestination(id);
   },
   onCompute: runCompute,
-  onToggleHood: () => {
+  onToggleAbode: () => {
     const s = getState();
-    if (s.mode === 'choosing-hood') {
+    if (s.mode === 'choosing-abode') {
       s.setMode('idle');
       mapContainer.style.cursor = '';
     } else {
-      s.setMode('choosing-hood');
+      s.setMode('choosing-abode');
       mapContainer.style.cursor = 'crosshair';
     }
   },
   onResetResults: () => {
     getState().resetResults();
   },
-  onAddPresetChain: (preset) => {
-    void addPresetChain(preset);
+  onAddPresetGroup: (preset) => {
+    void addPresetGroup(preset);
   },
-  onOpenChain: (chainId) => {
-    openChainEditor(chainId);
+  onOpenGroup: (groupId) => {
+    openGroupEditor(groupId);
   },
-  onConfirmBatchDelete: () => {
-    confirmBatchDelete();
+  onRemoveGroup: (groupId) => {
+    getState().removeGroup(groupId);
   },
-  onCancelBatchDelete: () => {
-    cancelBatchDelete();
+  onSave: () => {
+    saveToFile();
+  },
+  onLoad: () => {
+    loadFromFile();
   },
 });
+
+// Download the user's destinations + groups as a JSON file.
+function saveToFile() {
+  const s = getState();
+  const data = {
+    app: 'whereabouts',
+    version: 1,
+    destinations: s.destinations,
+    groups: s.groups,
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], {
+    type: 'application/json',
+  });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'whereabouts-destinations.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Upload a previously-saved JSON file and replace the current destinations.
+function loadFromFile() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json,application/json';
+  input.addEventListener('change', async () => {
+    const file = input.files?.[0];
+    if (!file) return;
+    let parsed: any;
+    try {
+      parsed = JSON.parse(await file.text());
+    } catch {
+      alert('That file is not valid JSON.');
+      return;
+    }
+    if (!Array.isArray(parsed?.destinations) || !Array.isArray(parsed?.groups)) {
+      alert('That file does not look like a Whereabouts destinations export.');
+      return;
+    }
+    // Re-snap destinations in case the file came from a different grid.
+    const destinations = (parsed.destinations as Destination[]).map(snapDestination);
+    getState().importData(destinations, parsed.groups);
+  });
+  input.click();
+}
 
 map.on('click', (e) => {
   const s = getState();
@@ -137,8 +205,8 @@ map.on('click', (e) => {
         activePopup = null;
       },
     });
-  } else if (s.mode === 'choosing-hood') {
-    placeHood(e.lngLat.lng, e.lngLat.lat);
+  } else if (s.mode === 'choosing-abode') {
+    placeAbode(e.lngLat.lng, e.lngLat.lat);
   }
 });
 
@@ -155,13 +223,13 @@ function snapDestination(d: Destination): Destination {
   };
 }
 
-// Add a preset chain: confirm chain-level settings, then bulk-add all the
-// preset's locations as members of a new chain.
-async function addPresetChain(preset: PresetMeta) {
+// Add a preset group: confirm group-level settings, then bulk-add all the
+// preset's locations as members of a new group.
+async function addPresetGroup(preset: PresetMeta) {
   const matrix = getLoadedMatrix();
   if (!matrix) return;
   if (
-    getState().chains.some(
+    getState().groups.some(
       (c) => c.name.toLowerCase() === preset.name.toLowerCase(),
     )
   ) {
@@ -175,21 +243,43 @@ async function addPresetChain(preset: PresetMeta) {
     return;
   }
 
-  const settings = await openChainSettingsModal({
-    title: `Add ${data.locations.length} ${preset.name} as a chain`,
+  // Distinct brands, ordered by frequency (most common first, "Other" last).
+  const brandCounts = new Map<string, number>();
+  for (const loc of data.locations) {
+    const b = loc.brand ?? 'Other';
+    brandCounts.set(b, (brandCounts.get(b) ?? 0) + 1);
+  }
+  const brands = [...brandCounts.keys()].sort((a, b) => {
+    if (a === 'Other') return 1;
+    if (b === 'Other') return -1;
+    return brandCounts.get(b)! - brandCounts.get(a)!;
+  });
+
+  const settings = await openGroupSettingsModal({
+    title: `Add ${preset.name}`,
     defaults: preset.defaults,
-    submitLabel: `Add ${data.locations.length}`,
+    submitLabel: 'Add',
+    brands: brands.length > 1 ? brands : undefined,
   });
   if (!settings) return;
 
-  const chain = getState().addChain({
+  // Apply the brand filter, if the multiselect was shown.
+  let locations = data.locations;
+  if (settings.selectedBrands) {
+    const keep = new Set(settings.selectedBrands);
+    locations = locations.filter((l) => keep.has(l.brand ?? 'Other'));
+  }
+  if (locations.length === 0) return;
+
+  const group = getState().addGroup({
     name: preset.name,
     emoji: preset.emoji,
     modes: settings.modes,
     peak: settings.peak,
     visitsPerWeek: settings.visitsPerWeek,
+    polygon: data.polygon,
   });
-  for (const loc of data.locations) {
+  for (const loc of locations) {
     const snap = snapToGrid(matrix, loc.lng, loc.lat);
     if (!snap) continue;
     getState().addDestination({
@@ -197,12 +287,14 @@ async function addPresetChain(preset: PresetMeta) {
       name: loc.name,
       lng: loc.lng,
       lat: loc.lat,
-      // Per-destination settings are unused for chained destinations (scoring
-      // reads the chain) — stored only to keep the Destination shape valid.
+      // Per-destination settings are unused for grouped destinations (scoring
+      // and the marker emoji both read the group) — stored only to keep the
+      // Destination shape valid.
       visitsPerWeek: settings.visitsPerWeek,
       modes: settings.modes,
       peak: settings.peak,
-      chainId: chain.id,
+      emoji: preset.emoji,
+      groupId: group.id,
       snappedH3: snap.h3,
       snappedLng: snap.lng,
       snappedLat: snap.lat,
@@ -210,149 +302,45 @@ async function addPresetChain(preset: PresetMeta) {
   }
 }
 
-// Open the chain editor: settings apply to the whole chain; also exposes
-// batch-delete and full-chain delete.
-function openChainEditor(chainId: string) {
+// Open the group editor: settings apply to the whole group; also exposes
+// full-group delete and per-location removal.
+function openGroupEditor(groupId: string, highlightDestId?: string) {
   const s = getState();
-  const chain = s.chains.find((c) => c.id === chainId);
-  if (!chain) return;
-  const dests = s.destinations.filter((d) => d.chainId === chainId);
-  openChainEditorModal({
-    chain,
+  const group = s.groups.find((c) => c.id === groupId);
+  if (!group) return;
+  const dests = s.destinations.filter((d) => d.groupId === groupId);
+  openGroupEditorModal({
+    group,
     destinations: dests,
+    highlightDestId,
+    neighborhoodOf: (d) => neighborhoodAt(d.lng, d.lat),
     onSave: (settings) => {
-      getState().updateChain(chainId, {
+      getState().updateGroup(groupId, {
         modes: settings.modes,
         peak: settings.peak,
         visitsPerWeek: settings.visitsPerWeek,
       });
     },
-    onDeleteChain: () => {
-      getState().removeChain(chainId);
+    onDeleteGroup: () => {
+      getState().removeGroup(groupId);
     },
-    onBatchDelete: () => {
-      startBatchDelete(chainId);
+    onRemoveDestination: (id) => {
+      getState().removeDestination(id);
     },
   });
 }
 
-// Clicking a destination marker: chained → open the chain editor (settings are
-// chain-level); standalone → open that destination's edit popup.
+// Clicking a destination marker: grouped → open the group editor and scroll to
+// the clicked location; standalone → open that destination's edit popup.
 function onMarkerClick(id: string) {
   const d = getState().destinations.find((x) => x.id === id);
   if (!d) return;
-  if (d.chainId) {
-    openChainEditor(d.chainId);
+  if (d.groupId) {
+    openGroupEditor(d.groupId, id);
   } else {
     openEditPopupForDestination(id, false);
   }
 }
-
-// --- Batch delete ------------------------------------------------------------
-
-function startBatchDelete(chainId: string) {
-  if (activePopup) activePopup.remove();
-  activePopup = null;
-  getState().startBatchDelete(chainId);
-}
-
-function cancelBatchDelete() {
-  endBatchDrag();
-  getState().endBatchDelete();
-}
-
-function confirmBatchDelete() {
-  const b = getState().batchDelete;
-  if (!b) return;
-  for (const id of b.selectedIds) getState().removeDestination(id);
-  cancelBatchDelete();
-}
-
-// Custom drag-to-select rectangle. Only active while mode === 'batch-deleting'.
-// We disable map.dragPan in that mode so mousedown reaches us directly.
-let dragStart: { x: number; y: number } | null = null;
-let dragRectEl: HTMLDivElement | null = null;
-const DRAG_THRESHOLD_PX = 4;
-
-function endBatchDrag() {
-  if (dragRectEl) {
-    dragRectEl.remove();
-    dragRectEl = null;
-  }
-  dragStart = null;
-}
-
-function onCanvasMouseDown(e: MouseEvent) {
-  if (getState().mode !== 'batch-deleting') return;
-  if (e.button !== 0) return;
-  const rect = mapContainer.getBoundingClientRect();
-  dragStart = { x: e.clientX - rect.left, y: e.clientY - rect.top };
-}
-
-function onCanvasMouseMove(e: MouseEvent) {
-  if (!dragStart) return;
-  const rect = mapContainer.getBoundingClientRect();
-  const cur = { x: e.clientX - rect.left, y: e.clientY - rect.top };
-  const dx = cur.x - dragStart.x;
-  const dy = cur.y - dragStart.y;
-  if (!dragRectEl && Math.hypot(dx, dy) < DRAG_THRESHOLD_PX) return;
-  if (!dragRectEl) {
-    dragRectEl = document.createElement('div');
-    dragRectEl.className = 'batch-rect';
-    mapContainer.appendChild(dragRectEl);
-  }
-  const left = Math.min(dragStart.x, cur.x);
-  const top = Math.min(dragStart.y, cur.y);
-  dragRectEl.style.left = `${left}px`;
-  dragRectEl.style.top = `${top}px`;
-  dragRectEl.style.width = `${Math.abs(dx)}px`;
-  dragRectEl.style.height = `${Math.abs(dy)}px`;
-}
-
-function onCanvasMouseUp(e: MouseEvent) {
-  if (!dragStart) return;
-  const start = dragStart;
-  const drawn = !!dragRectEl;
-  const rect = mapContainer.getBoundingClientRect();
-  const end = { x: e.clientX - rect.left, y: e.clientY - rect.top };
-  endBatchDrag();
-  if (!drawn) return; // treat as a click — let deck.gl handle it via onClick
-
-  const s = getState();
-  if (s.mode !== 'batch-deleting' || !s.batchDelete) return;
-  const box = {
-    left: Math.min(start.x, end.x),
-    right: Math.max(start.x, end.x),
-    top: Math.min(start.y, end.y),
-    bottom: Math.max(start.y, end.y),
-  };
-  const hits: string[] = [];
-  for (const d of s.destinations) {
-    if (d.chainId !== s.batchDelete.chainId) continue;
-    const p = map.project([d.lng, d.lat]);
-    if (p.x >= box.left && p.x <= box.right && p.y >= box.top && p.y <= box.bottom) {
-      hits.push(d.id);
-    }
-  }
-  if (hits.length > 0) getState().addToBatchSelection(hits);
-}
-
-mapContainer.addEventListener('mousedown', onCanvasMouseDown);
-window.addEventListener('mousemove', onCanvasMouseMove);
-window.addEventListener('mouseup', onCanvasMouseUp);
-
-// Disable map drag-pan while in batch mode so our rect drag isn't fighting it.
-store.subscribe((s) => {
-  if (s.mode === 'batch-deleting') {
-    map.dragPan.disable();
-    map.boxZoom.disable();
-    mapContainer.style.cursor = 'crosshair';
-  } else {
-    map.dragPan.enable();
-    map.boxZoom.enable();
-    endBatchDrag();
-  }
-});
 
 // --- Edit popup --------------------------------------------------------------
 
@@ -381,23 +369,23 @@ function openEditPopupForDestination(id: string, flyTo: boolean) {
   });
 }
 
-async function placeHood(lng: number, lat: number) {
+async function placeAbode(lng: number, lat: number) {
   const matrix = getLoadedMatrix();
   if (!matrix) return;
   const snap = snapToGrid(matrix, lng, lat);
   if (!snap) return;
   // Marker + arc origin: exact click point. Matrix lookup: snapped cell.
-  getState().setHood({ lng, lat, h3: snap.h3, index: snap.index });
+  getState().setAbode({ lng, lat, h3: snap.h3, index: snap.index });
   await refreshArcs();
 }
 
 async function refreshArcs() {
   const s = getState();
-  if (!s.hood) {
+  if (!s.abode) {
     getState().setArcs([]);
     return;
   }
-  const arcs = await computeArcs(s.hood, s.destinations, s.chains);
+  const arcs = await computeArcs(s.abode, s.destinations, s.groups);
   getState().setArcs(arcs);
 }
 
@@ -406,23 +394,23 @@ async function runCompute() {
   if (s.destinations.length === 0) return;
   s.setComputing(true);
   try {
-    const scores = await computeScores(s.destinations, s.chains);
+    const scores = await computeScores(s.destinations, s.groups);
     if (scores) getState().setHexScores(scores);
-    if (s.hood) await refreshArcs();
+    if (s.abode) await refreshArcs();
   } finally {
     getState().setComputing(false);
   }
 }
 
-// Recompute arcs whenever destinations/chains change and a hood is placed.
-let prevDeps: { dests: unknown; chains: unknown } = {
+// Recompute arcs whenever destinations/groups change and an abode is placed.
+let prevDeps: { dests: unknown; groups: unknown } = {
   dests: getState().destinations,
-  chains: getState().chains,
+  groups: getState().groups,
 };
 store.subscribe((s) => {
-  if (!s.hood) return;
-  if (s.destinations !== prevDeps.dests || s.chains !== prevDeps.chains) {
-    prevDeps = { dests: s.destinations, chains: s.chains };
+  if (!s.abode) return;
+  if (s.destinations !== prevDeps.dests || s.groups !== prevDeps.groups) {
+    prevDeps = { dests: s.destinations, groups: s.groups };
     void refreshArcs();
   }
 });

@@ -1,6 +1,6 @@
 import { MapboxOverlay } from '@deck.gl/mapbox';
 import { H3HexagonLayer } from '@deck.gl/geo-layers';
-import { ArcLayer, TextLayer } from '@deck.gl/layers';
+import { ArcLayer, TextLayer, PolygonLayer } from '@deck.gl/layers';
 import { CollisionFilterExtension } from '@deck.gl/extensions';
 import type maplibregl from 'maplibre-gl';
 import { store } from '../state/store';
@@ -27,7 +27,7 @@ export function attachOverlay(m: maplibregl.Map, handlers: OverlayHandlers = {})
     layers: [],
     getCursor: ({ isDragging, isHovering }) => {
       const mode = store.getState().mode;
-      if (mode === 'adding-destination' || mode === 'choosing-hood' || mode === 'batch-deleting') {
+      if (mode === 'adding-destination' || mode === 'choosing-abode') {
         return 'crosshair';
       }
       if (isDragging) return 'grabbing';
@@ -91,82 +91,104 @@ function rebuildLayers() {
         extruded: false,
         filled: true,
         stroked: false,
+        // Dim the whole choropleth once an abode is placed so the arcs pop.
+        opacity: s.abode ? 0.4 : 1,
         getHexagon: (d) => d.h3,
         getFillColor: (d) => {
           const [r, g, b] = scale(d.weeklyMinutes);
-          return [r, g, b, 100];
+          return [r, g, b, 65];
         },
         updateTriggers: { getFillColor: [dataMin, cap] },
       }),
     );
   }
 
-  if (s.destinations.length > 0) {
-    const chainEmoji = new Map(s.chains.map((c) => [c.id, c.emoji]));
-    const selectedIds = new Set(s.batchDelete?.selectedIds ?? []);
+  // Polygon destinations (large parks/beaches) — draw the filled shape; their
+  // ring-of-cells member destinations are not shown as markers.
+  const polygonGroupIds = new Set(
+    s.groups.filter((g) => g.polygon && g.polygon.length).map((g) => g.id),
+  );
+  const polygonRings: number[][][] = [];
+  for (const g of s.groups) {
+    if (g.polygon) for (const ring of g.polygon) polygonRings.push(ring);
+  }
+  if (polygonRings.length > 0) {
     layers.push(
+      new PolygonLayer<number[][]>({
+        id: 'group-polygons',
+        data: polygonRings,
+        getPolygon: (ring) => ring,
+        filled: true,
+        stroked: true,
+        getFillColor: [104, 168, 120, 45],
+        getLineColor: [104, 168, 120, 150],
+        getLineWidth: 1.5,
+        lineWidthUnits: 'pixels',
+        pickable: false,
+      }),
+    );
+  }
+
+  const markerDests = s.destinations.filter(
+    (d) => !d.groupId || !polygonGroupIds.has(d.groupId),
+  );
+  if (markerDests.length > 0) {
+    const groupEmoji = new Map(s.groups.map((c) => [c.id, c.emoji]));
+    // Once an abode is placed, dim every destination that isn't the nearest
+    // of its group (i.e. has no arc) so the winners pop.
+    const nearestIds = new Set(s.arcs.map((a) => a.toId));
+    const dimNonNearest = !!s.abode;
+    const fullDests = markerDests.filter(
+      (d) => !dimNonNearest || nearestIds.has(d.id),
+    );
+    const dimDests = dimNonNearest
+      ? markerDests.filter((d) => !nearestIds.has(d.id))
+      : [];
+
+    const destLayer = (id: string, data: Destination[], opacity: number) =>
       new TextLayer<Destination>({
-        id: 'destinations',
-        data: s.destinations,
+        id,
+        data,
+        opacity,
         pickable: true,
         // Display at exact click point; the snapped centroid is only used for
-        // matrix lookups. Emoji = the chain's emoji (📍 for standalone).
+        // matrix lookups. Emoji = the group's emoji for grouped destinations,
+        // the destination's own type emoji for standalone ones.
         getPosition: (d) => [d.lng, d.lat],
-        getText: (d) => (d.chainId ? chainEmoji.get(d.chainId) ?? '📍' : '📍'),
-        getSize: (d) => (selectedIds.has(d.id) ? 26 : 20),
+        getText: (d) =>
+          d.groupId ? groupEmoji.get(d.groupId) ?? '📍' : d.emoji || '📍',
+        getSize: 20,
         sizeUnits: 'pixels',
         getColor: [0, 0, 0, 255],
-        background: true,
-        getBackgroundColor: (d) =>
-          selectedIds.has(d.id) ? [255, 107, 107, 230] : [0, 0, 0, 0],
-        backgroundPadding: [3, 3, 3, 4],
         fontFamily: EMOJI_FONT,
         characterSet: 'auto',
         getTextAnchor: 'middle',
         getAlignmentBaseline: 'center',
-        updateTriggers: {
-          getText: [s.chains],
-          getSize: [selectedIds],
-          getBackgroundColor: [selectedIds],
-        },
+        updateTriggers: { getText: [s.groups] },
         onClick: (info) => {
           const dest = info.object as Destination | undefined;
           if (!dest) return false;
           const state = store.getState();
-          if (state.mode === 'batch-deleting' && state.batchDelete) {
-            if (dest.chainId !== state.batchDelete.chainId) return false;
-            state.toggleBatchSelection(dest.id);
-            return true;
-          }
           if (state.mode !== 'idle') return false;
           if (!onDestinationClickHandler) return false;
           onDestinationClickHandler(dest.id);
           return true;
         },
-      }),
-    );
+      });
+
+    if (fullDests.length > 0) {
+      layers.push(destLayer('destinations', fullDests, 1));
+    }
+    if (dimDests.length > 0) {
+      layers.push(destLayer('destinations-dim', dimDests, 0.3));
+    }
   }
 
-  if (s.hood) {
-    layers.push(
-      new TextLayer<{ lng: number; lat: number }>({
-        id: 'hood',
-        data: [s.hood],
-        getPosition: (d) => [d.lng, d.lat],
-        getText: () => '🏠',
-        getSize: 36,
-        sizeUnits: 'pixels',
-        getColor: [0, 0, 0, 255],
-        fontFamily: EMOJI_FONT,
-        characterSet: 'auto',
-        getTextAnchor: 'middle',
-        getAlignmentBaseline: 'center',
-      }),
-    );
+  if (s.abode) {
     if (s.arcs.length > 0) {
       layers.push(
         new ArcLayer<ArcInfo>({
-          id: 'hood-arcs',
+          id: 'abode-arcs',
           data: s.arcs,
           getSourcePosition: (d) => [d.fromLng, d.fromLat],
           getTargetPosition: (d) => [d.toLng, d.toLat],
@@ -176,7 +198,7 @@ function rebuildLayers() {
           getHeight: 0.5,
         }),
         new TextLayer<ArcInfo>({
-          id: 'hood-arc-labels',
+          id: 'abode-arc-labels',
           data: s.arcs,
           getPosition: (d) => [(d.fromLng + d.toLng) / 2, (d.fromLat + d.toLat) / 2],
           getText: (d) => `${Math.round(d.minutes)}m ${MODE_EMOJI[d.mode]}`,
@@ -191,16 +213,34 @@ function rebuildLayers() {
           fontWeight: 600,
           characterSet: 'auto',
           // Hide labels that would overlap each other; shorter-trip labels win.
+          // collisionTestProps inflates the test box so labels keep clearance.
           // CollisionFilterExtension props aren't in TextLayer's prop types.
           extensions: [new CollisionFilterExtension()],
           ...({
             collisionEnabled: true,
             collisionGroup: 'arc-labels',
+            collisionTestProps: { sizeScale: 2 },
             getCollisionPriority: (d: ArcInfo) => -d.minutes,
           } as Record<string, unknown>),
         }),
       );
     }
+    // Abode marker pushed last so it renders on top of every other layer.
+    layers.push(
+      new TextLayer<{ lng: number; lat: number }>({
+        id: 'abode',
+        data: [s.abode],
+        getPosition: (d) => [d.lng, d.lat],
+        getText: () => '🏠',
+        getSize: 36,
+        sizeUnits: 'pixels',
+        getColor: [0, 0, 0, 255],
+        fontFamily: EMOJI_FONT,
+        characterSet: 'auto',
+        getTextAnchor: 'middle',
+        getAlignmentBaseline: 'center',
+      }),
+    );
   }
 
   overlay.setProps({ layers });
