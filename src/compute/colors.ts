@@ -16,7 +16,6 @@ export function quantileScale(values: number[]) {
   }
   const sorted = [...values].sort((a, b) => a - b);
   const bins = PALETTE.length;
-  // Compute quantile breakpoints
   const breaks: number[] = [];
   for (let i = 1; i < bins; i++) {
     const q = i / bins;
@@ -28,6 +27,24 @@ export function quantileScale(values: number[]) {
       if (v <= breaks[i]) return PALETTE[i];
     }
     return PALETTE[PALETTE.length - 1];
+  };
+}
+
+// Linear bins from `min` (best color) to `max` (worst color), inclusive.
+// Values outside the range peg to the appropriate end. Equal-width bins mean
+// each color represents the same slice of minutes — so when the user narrows
+// the cap, the visible variation within that band gets more color resolution.
+export function linearScale(min: number, max: number) {
+  const bins = PALETTE.length;
+  const span = max - min;
+  if (!Number.isFinite(span) || span <= 0) {
+    return (_v: number) => PALETTE[0];
+  }
+  return (v: number): [number, number, number] => {
+    if (v <= min) return PALETTE[0];
+    if (v >= max) return PALETTE[bins - 1];
+    const idx = Math.min(bins - 1, Math.floor(((v - min) / span) * bins));
+    return PALETTE[idx];
   };
 }
 

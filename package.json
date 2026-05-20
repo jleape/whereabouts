@@ -1,19 +1,27 @@
 {
-  "name": "loc3",
+  "name": "whereabouts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sample-data": "tsx pipeline/sample-data.ts",
+    "fetch-exclusions": "tsx pipeline/fetch-exclusions.ts",
+    "fetch-buildings": "tsx pipeline/fetch-buildings.ts",
+    "fetch-boundary": "tsx pipeline/fetch-boundary.ts",
+    "fetch-presets": "tsx pipeline/fetch-presets.ts"
   },
   "devDependencies": {
+    "osmtogeojson": "^3.0.0-beta.5",
+    "tsx": "^4.22.2",
     "typescript": "~6.0.2",
     "vite": "^8.0.12"
   },
   "dependencies": {
     "@deck.gl/core": "^9.3.2",
+    "@deck.gl/extensions": "^9.3.2",
     "@deck.gl/geo-layers": "^9.3.2",
     "@deck.gl/layers": "^9.3.2",
     "@deck.gl/mapbox": "^9.3.2",

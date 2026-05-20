@@ -1,18 +1,20 @@
-export type TravelMode = 'walk' | 'bike' | 'transit' | 'car';
+export type TravelMode = 'walk' | 'bike' | 'rail' | 'bus' | 'car';
 
-export const ALL_MODES: TravelMode[] = ['walk', 'bike', 'transit', 'car'];
+export const ALL_MODES: TravelMode[] = ['walk', 'bike', 'rail', 'bus', 'car'];
 
 export const MODE_LABEL: Record<TravelMode, string> = {
   walk: 'Walk',
   bike: 'Bike',
-  transit: 'Transit',
+  rail: 'Rail',
+  bus: 'Bus',
   car: 'Car',
 };
 
 export const MODE_EMOJI: Record<TravelMode, string> = {
   walk: '🚶',
   bike: '🚲',
-  transit: '🚌',
+  rail: '🚊',
+  bus: '🚌',
   car: '🚗',
 };
 
@@ -27,11 +29,23 @@ export interface Destination {
   modes: TravelMode[];
   peak: PeakPeriod;
   chainId: string | null;
+  // Filled in when the destination is saved — h3 cell + centroid coords
+  // of the precomputed grid this destination snapped to.
+  snappedH3?: string;
+  snappedLng?: number;
+  snappedLat?: number;
 }
 
+// A chain groups multiple locations the user treats as interchangeable
+// (they go to whichever is nearest). Travel settings live on the chain and
+// apply uniformly to every member — there is no per-destination override.
 export interface Chain {
   id: string;
   name: string;
+  emoji: string;
+  modes: TravelMode[];
+  peak: PeakPeriod;
+  visitsPerWeek: number;
 }
 
 export interface City {
