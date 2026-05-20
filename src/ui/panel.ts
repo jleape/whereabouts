@@ -2,6 +2,7 @@ import { store } from '../state/store';
 import { MODE_EMOJI } from '../state/types';
 import { paletteSwatches } from '../compute/colors';
 import { loadPresets, type PresetMeta } from '../presets/loader';
+import { initBottomSheet, collapseSheet } from './sheet';
 
 const $ = <T extends HTMLElement = HTMLElement>(sel: string) =>
   document.querySelector<T>(sel)!;
@@ -26,6 +27,9 @@ export function initPanel(handlers: {
   $<HTMLButtonElement>('#save-btn').addEventListener('click', handlers.onSave);
   $<HTMLButtonElement>('#load-btn').addEventListener('click', handlers.onLoad);
 
+  // On mobile the panel is a bottom sheet; this wires its drag handle.
+  initBottomSheet();
+
   const capSlider = $<HTMLInputElement>('#cap-slider');
   capSlider.addEventListener('input', () => {
     const v = parseFloat(capSlider.value);
@@ -34,6 +38,7 @@ export function initPanel(handlers: {
 
   const presetSelect = $<HTMLSelectElement>('#preset-select');
   let presets: PresetMeta[] = [];
+  let prevMode = store.getState().mode;
   presetSelect.addEventListener('change', () => {
     const preset = presets.find((p) => p.id === presetSelect.value);
     presetSelect.value = ''; // reset to placeholder
@@ -51,6 +56,15 @@ export function initPanel(handlers: {
 
   function render() {
     const s = store.getState();
+
+    // On mobile, collapse the bottom sheet when the user needs the map: both
+    // "adding a destination" and "choosing an abode" require a map click.
+    if (s.mode !== prevMode) {
+      if (s.mode === 'adding-destination' || s.mode === 'choosing-abode') {
+        collapseSheet();
+      }
+      prevMode = s.mode;
+    }
 
     // Progressive "next step" highlight — the most relevant control glows.
     //  1 add destinations · 2 do the sums · 3 choose an abode ·

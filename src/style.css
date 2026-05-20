@@ -228,3 +228,100 @@ button.toggle.active { background: #2a2f3d; }
 #cap-slider { width: 100%; accent-color: var(--accent); }
 .legend-row { display: flex; align-items: center; gap: 8px; font-size: 12px; }
 .legend-swatch { width: 18px; height: 12px; border-radius: 2px; }
+
+/* ===========================================================================
+   Mobile: turn the control panel into a draggable bottom sheet so it no longer
+   covers the map. A grab handle (#panel-handle) toggles & drags it; the gesture
+   logic lives in src/ui/sheet.ts. The desktop styles above are left intact.
+=========================================================================== */
+#panel-handle { display: none; }
+
+@media (max-width: 640px) {
+  #panel {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: 80vh;
+    max-height: 80dvh;
+    padding: 0 14px calc(16px + env(safe-area-inset-bottom));
+    border-radius: 16px 16px 0 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.5);
+    transform: translateY(0);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+    overscroll-behavior: contain;
+  }
+  /* Collapsed: slide down so only the handle + title peek above the screen
+     edge. The 76px must match PEEK_PX in src/ui/sheet.ts. */
+  #panel.collapsed {
+    transform: translateY(calc(100% - 76px));
+  }
+
+  /* Grab handle — stays pinned at the top of the sheet while content scrolls. */
+  #panel-handle {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    height: 24px;
+    margin: 0 -14px 2px;
+    background: var(--panel);
+    cursor: grab;
+    touch-action: none;
+  }
+  #panel-handle::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--border);
+  }
+  #panel-handle:active { cursor: grabbing; }
+
+  /* Let the destinations list flow into the panel's own scroll. */
+  #destinations-list { max-height: none; }
+
+  /* 16px form text stops iOS Safari from auto-zooming the page on focus. */
+  input[type="text"],
+  input[type="number"],
+  #preset-select,
+  .popup-form input,
+  .popup-form select {
+    font-size: 16px;
+  }
+
+  /* Roomier tap targets for touch. */
+  button { padding: 10px 14px; }
+  .dest-item .actions button { padding: 7px 10px; font-size: 12px; }
+
+  /* Popups & modals must fit a narrow screen and scroll if taller than it. */
+  .maplibregl-popup { max-width: calc(100vw - 24px) !important; }
+  .maplibregl-popup-content {
+    max-height: 60vh;
+    max-height: 60dvh;
+    overflow-y: auto;
+  }
+  .modal,
+  .modal.group-editor {
+    min-width: 0;
+    width: calc(100vw - 28px);
+    max-width: calc(100vw - 28px);
+    max-height: 88vh;
+    max-height: 88dvh;
+    overflow-y: auto;
+  }
+
+  /* Attribution would sit behind the bottom sheet — move it to the top edge. */
+  .maplibregl-ctrl-bottom-right {
+    top: 0;
+    bottom: auto;
+  }
+}

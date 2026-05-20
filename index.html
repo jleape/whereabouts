@@ -3,12 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Whereabouts? — find your neighborhood</title>
   </head>
   <body>
     <div id="map"></div>
     <aside id="panel">
+      <div
+        id="panel-handle"
+        role="button"
+        tabindex="0"
+        aria-controls="panel"
+        aria-label="Expand or collapse the panel"
+      ></div>
       <header>
         <h1>Whereabouts? · San Francisco</h1>
         <p class="tagline">Because 10,000 steps is overrated.</p>
