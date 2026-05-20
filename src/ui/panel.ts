@@ -39,6 +39,7 @@ export function initPanel(handlers: {
   const presetSelect = $<HTMLSelectElement>('#preset-select');
   let presets: PresetMeta[] = [];
   let prevMode = store.getState().mode;
+  let prevHadScores = store.getState().hexScores.length > 0;
   presetSelect.addEventListener('change', () => {
     const preset = presets.find((p) => p.id === presetSelect.value);
     presetSelect.value = ''; // reset to placeholder
@@ -57,14 +58,18 @@ export function initPanel(handlers: {
   function render() {
     const s = store.getState();
 
-    // On mobile, collapse the bottom sheet when the user needs the map: both
-    // "adding a destination" and "choosing an abode" require a map click.
+    // On mobile, collapse the bottom sheet whenever the user's attention turns
+    // to the map: entering a map-click mode (adding a destination / choosing an
+    // abode), or results landing on the map after "Do the sums".
     if (s.mode !== prevMode) {
       if (s.mode === 'adding-destination' || s.mode === 'choosing-abode') {
         collapseSheet();
       }
       prevMode = s.mode;
     }
+    const hasScores = s.hexScores.length > 0;
+    if (hasScores && !prevHadScores) collapseSheet();
+    prevHadScores = hasScores;
 
     // Progressive "next step" highlight — the most relevant control glows.
     //  1 add destinations · 2 do the sums · 3 choose an abode ·

@@ -8,6 +8,7 @@ import { store, getState } from './state/store';
 import type { Destination } from './state/types';
 import { openDestinationPopup } from './ui/popup';
 import { initPanel } from './ui/panel';
+import { collapseSheet } from './ui/sheet';
 import { getLoadedMatrix, loadManifest } from './data/matrix';
 import { snapToGrid } from './data/snap';
 import { computeArcs, computeScores } from './compute/score';
@@ -33,6 +34,10 @@ import { loadNeighborhoods, neighborhoodAt } from './data/neighborhoods';
 
 const mapContainer = document.getElementById('map')!;
 const map = createMap(mapContainer);
+
+// On mobile, slide the panel out of the way the moment the user pans the map.
+// (collapseSheet is a no-op on desktop and when the sheet is already down.)
+map.on('dragstart', () => collapseSheet());
 
 let activePopup: maplibregl.Popup | null = null;
 
