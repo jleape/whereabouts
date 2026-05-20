@@ -1,0 +1,29 @@
+{
+  "locations": [
+    {
+      "name": "Evolve Pilates",
+      "lng": -122.4227203,
+      "lat": 37.7518051
+    },
+    {
+      "name": "Beach Glass Hot Yoga & Pilates",
+      "lng": -122.4269028,
+      "lat": 37.7474593
+    },
+    {
+      "name": "Lagree Fit 415",
+      "lng": -122.3912895,
+      "lat": 37.7746636
+    },
+    {
+      "name": "Club Pilates",
+      "lng": -122.404875,
+      "lat": 37.7710571
+    },
+    {
+      "name": "EHS",
+      "lng": -122.4205996,
+      "lat": 37.7496267
+    }
+  ]
+}

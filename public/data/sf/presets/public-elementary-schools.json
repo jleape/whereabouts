@@ -1,0 +1,389 @@
+{
+  "locations": [
+    {
+      "name": "Alamo Elementary",
+      "lng": -122.482191,
+      "lat": 37.783124
+    },
+    {
+      "name": "Alvarado Elementary",
+      "lng": -122.438734,
+      "lat": 37.753675
+    },
+    {
+      "name": "Argonne Elementary",
+      "lng": -122.476799,
+      "lat": 37.77515
+    },
+    {
+      "name": "Bryant Elementary",
+      "lng": -122.404906,
+      "lat": 37.751628
+    },
+    {
+      "name": "Buena Vista/ Horace Mann K-8",
+      "lng": -122.419745,
+      "lat": 37.753715
+    },
+    {
+      "name": "Carmichael (Bessie)/FEC",
+      "lng": -122.406742,
+      "lat": 37.775856
+    },
+    {
+      "name": "Carver (George Washington) Elementary",
+      "lng": -122.386385,
+      "lat": 37.732403
+    },
+    {
+      "name": "Chavez (Cesar) Elementary",
+      "lng": -122.415419,
+      "lat": 37.75488
+    },
+    {
+      "name": "Chin (John Yehall) Elementary",
+      "lng": -122.403175,
+      "lat": 37.79831
+    },
+    {
+      "name": "Chinese Immersion School at DeAvila",
+      "lng": -122.444292,
+      "lat": 37.769464
+    },
+    {
+      "name": "Clarendon Alternative Elementary",
+      "lng": -122.456111,
+      "lat": 37.752989
+    },
+    {
+      "name": "Cleveland Elementary",
+      "lng": -122.429048,
+      "lat": 37.720733
+    },
+    {
+      "name": "Cobb (William L.) Elementary",
+      "lng": -122.439189,
+      "lat": 37.788174
+    },
+    {
+      "name": "Creative Arts Charter",
+      "lng": -122.435434,
+      "lat": 37.78003
+    },
+    {
+      "name": "Drew (Charles) College Preparatory Academy",
+      "lng": -122.39355,
+      "lat": 37.731779
+    },
+    {
+      "name": "El Dorado Elementary",
+      "lng": -122.406737,
+      "lat": 37.719265
+    },
+    {
+      "name": "Feinstein (Dianne) Elementary",
+      "lng": -122.481857,
+      "lat": 37.739964
+    },
+    {
+      "name": "Flynn (Leonard R.) Elementary",
+      "lng": -122.412037,
+      "lat": 37.74819
+    },
+    {
+      "name": "Garfield Elementary",
+      "lng": -122.406734,
+      "lat": 37.8018
+    },
+    {
+      "name": "Glen Park Elementary",
+      "lng": -122.436088,
+      "lat": 37.733107
+    },
+    {
+      "name": "Grattan Elementary",
+      "lng": -122.450526,
+      "lat": 37.763858
+    },
+    {
+      "name": "Guadalupe Elementary",
+      "lng": -122.434416,
+      "lat": 37.710438
+    },
+    {
+      "name": "Harte (Bret) Elementary",
+      "lng": -122.388897,
+      "lat": 37.71861
+    },
+    {
+      "name": "Hillcrest Elementary",
+      "lng": -122.419248,
+      "lat": 37.729026
+    },
+    {
+      "name": "Huerta (Dolores) Elementary",
+      "lng": -122.425596,
+      "lat": 37.740659
+    },
+    {
+      "name": "Jefferson Elementary",
+      "lng": -122.476359,
+      "lat": 37.763555
+    },
+    {
+      "name": "Key (Francis Scott) Elementary",
+      "lng": -122.502495,
+      "lat": 37.758154
+    },
+    {
+      "name": "King (Thomas Starr) Elementary",
+      "lng": -122.399351,
+      "lat": 37.752765
+    },
+    {
+      "name": "KIPP Bayview Academy",
+      "lng": -122.396374,
+      "lat": 37.71952
+    },
+    {
+      "name": "KIPP San Francisco Bay Academy",
+      "lng": -122.43759,
+      "lat": 37.783165
+    },
+    {
+      "name": "Lafayette Elementary",
+      "lng": -122.496889,
+      "lat": 37.777608
+    },
+    {
+      "name": "Lakeshore Alternative Elementary",
+      "lng": -122.486151,
+      "lat": 37.730603
+    },
+    {
+      "name": "Lau (Gordon J.) Elementary",
+      "lng": -122.408687,
+      "lat": 37.793981
+    },
+    {
+      "name": "Lawton Alternative",
+      "lng": -122.489587,
+      "lat": 37.757952
+    },
+    {
+      "name": "Lee (Edwin and Anita) Newcomer",
+      "lng": -122.404146,
+      "lat": 37.794905
+    },
+    {
+      "name": "Lilienthal (Claire) Elementary",
+      "lng": -122.443502,
+      "lat": 37.803192
+    },
+    {
+      "name": "Longfellow Elementary",
+      "lng": -122.447692,
+      "lat": 37.71046
+    },
+    {
+      "name": "Malcolm X Academy",
+      "lng": -122.380617,
+      "lat": 37.733734
+    },
+    {
+      "name": "Marshall Elementary",
+      "lng": -122.419099,
+      "lat": 37.766679
+    },
+    {
+      "name": "McCoppin (Frank) Elementary",
+      "lng": -122.464018,
+      "lat": 37.776283
+    },
+    {
+      "name": "McKinley Elementary",
+      "lng": -122.436594,
+      "lat": 37.767229
+    },
+    {
+      "name": "Milk (Harvey) Civil Rights Elementary",
+      "lng": -122.43634,
+      "lat": 37.759148
+    },
+    {
+      "name": "Miraloma Elementary",
+      "lng": -122.450214,
+      "lat": 37.739309
+    },
+    {
+      "name": "Mission Education Center",
+      "lng": -122.431061,
+      "lat": 37.742282
+    },
+    {
+      "name": "Mission Preparatory",
+      "lng": -122.408574,
+      "lat": 37.755441
+    },
+    {
+      "name": "Monroe Elementary",
+      "lng": -122.430121,
+      "lat": 37.725224
+    },
+    {
+      "name": "Moscone (George R.) Elementary",
+      "lng": -122.412303,
+      "lat": 37.756242
+    },
+    {
+      "name": "Muir (John) Elementary",
+      "lng": -122.429094,
+      "lat": 37.773688
+    },
+    {
+      "name": "New Traditions Elementary",
+      "lng": -122.450324,
+      "lat": 37.77431
+    },
+    {
+      "name": "Ortega (Jose) Elementary",
+      "lng": -122.466259,
+      "lat": 37.716168
+    },
+    {
+      "name": "Parker (Jean) Elementary",
+      "lng": -122.411105,
+      "lat": 37.797323
+    },
+    {
+      "name": "Parks (Rosa) Elementary",
+      "lng": -122.429454,
+      "lat": 37.783681
+    },
+    {
+      "name": "Peabody (George) Elementary",
+      "lng": -122.464567,
+      "lat": 37.783947
+    },
+    {
+      "name": "Redding Elementary",
+      "lng": -122.419215,
+      "lat": 37.789726
+    },
+    {
+      "name": "Revere (Paul) Elementary",
+      "lng": -122.413174,
+      "lat": 37.737142
+    },
+    {
+      "name": "Rooftop Elementary",
+      "lng": -122.443888,
+      "lat": 37.754418
+    },
+    {
+      "name": "San Francisco Community Alternative",
+      "lng": -122.432624,
+      "lat": 37.725815
+    },
+    {
+      "name": "San Francisco Public Montessori",
+      "lng": -122.433547,
+      "lat": 37.792616
+    },
+    {
+      "name": "Sanchez Elementary",
+      "lng": -122.430768,
+      "lat": 37.763967
+    },
+    {
+      "name": "Serra (Junipero) Elementary",
+      "lng": -122.421137,
+      "lat": 37.736733
+    },
+    {
+      "name": "Sheridan Elementary",
+      "lng": -122.459134,
+      "lat": 37.714331
+    },
+    {
+      "name": "Sherman Elementary",
+      "lng": -122.426203,
+      "lat": 37.798273
+    },
+    {
+      "name": "Sloat (Commodore) Elementary",
+      "lng": -122.470965,
+      "lat": 37.731881
+    },
+    {
+      "name": "Spring Valley Elementary",
+      "lng": -122.418992,
+      "lat": 37.794403
+    },
+    {
+      "name": "Stevenson (Robert Louis) Elementary",
+      "lng": -122.4923,
+      "lat": 37.748857
+    },
+    {
+      "name": "Sunnyside Elementary",
+      "lng": -122.448794,
+      "lat": 37.730307
+    },
+    {
+      "name": "Sunset Elementary",
+      "lng": -122.499799,
+      "lat": 37.750743
+    },
+    {
+      "name": "Sutro Elementary",
+      "lng": -122.471025,
+      "lat": 37.783932
+    },
+    {
+      "name": "Taylor (Edward R.) Elementary",
+      "lng": -122.407332,
+      "lat": 37.728
+    },
+    {
+      "name": "Tenderloin Community",
+      "lng": -122.419799,
+      "lat": 37.782061
+    },
+    {
+      "name": "Thomas Edison Charter Academy",
+      "lng": -122.426202,
+      "lat": 37.754937
+    },
+    {
+      "name": "Ulloa Elementary",
+      "lng": -122.499954,
+      "lat": 37.737302
+    },
+    {
+      "name": "Visitacion Valley Elementary",
+      "lng": -122.410365,
+      "lat": 37.71268
+    },
+    {
+      "name": "Webster (Daniel) Elementary",
+      "lng": -122.396236,
+      "lat": 37.760489
+    },
+    {
+      "name": "West Portal Elementary",
+      "lng": -122.464683,
+      "lat": 37.743572
+    },
+    {
+      "name": "Yick Wo Elementary",
+      "lng": -122.416304,
+      "lat": 37.801906
+    },
+    {
+      "name": "Yu (Alice Fong) Elementary",
+      "lng": -122.469314,
+      "lat": 37.759405
+    }
+  ]
+}

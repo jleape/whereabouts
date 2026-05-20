@@ -1,0 +1,359 @@
+{
+  "locations": [
+    {
+      "name": "Mary Lane Infant & Toddler Center",
+      "lng": -122.4284882,
+      "lat": 37.7699897
+    },
+    {
+      "name": "Abejita's Daycare",
+      "lng": -122.4265842,
+      "lat": 37.7439629
+    },
+    {
+      "name": "Teaching Tots Preschool",
+      "lng": -122.4681085,
+      "lat": 37.7638373
+    },
+    {
+      "name": "Telegraph Hill Cooperative Nursery School",
+      "lng": -122.4104144,
+      "lat": 37.7957601
+    },
+    {
+      "name": "Starlight 2 Christian Preschool",
+      "lng": -122.5009683,
+      "lat": 37.7380326
+    },
+    {
+      "name": "The Ark Christian Preschool",
+      "lng": -122.5008046,
+      "lat": 37.7380368
+    },
+    {
+      "name": "Building Kidz School",
+      "lng": -122.4781329,
+      "lat": 37.7649758
+    },
+    {
+      "name": "New Journey",
+      "lng": -122.4781044,
+      "lat": 37.763937
+    },
+    {
+      "name": "Moldovan Academy",
+      "lng": -122.420249,
+      "lat": 37.7460376
+    },
+    {
+      "name": "Little Angels Japanese Preschool",
+      "lng": -122.4895062,
+      "lat": 37.7610267
+    },
+    {
+      "name": "Petite Explorer",
+      "lng": -122.438438,
+      "lat": 37.7772774
+    },
+    {
+      "name": "Little Angels",
+      "lng": -122.4155501,
+      "lat": 37.7388708
+    },
+    {
+      "name": "Wind in the Willows",
+      "lng": -122.4514526,
+      "lat": 37.731372
+    },
+    {
+      "name": "Creative Montessori Preschool",
+      "lng": -122.5002212,
+      "lat": 37.7380496
+    },
+    {
+      "name": "Jamaroo Kids",
+      "lng": -122.4341134,
+      "lat": 37.7973658
+    },
+    {
+      "name": "FranDeljA Enrichment Center",
+      "lng": -122.3869899,
+      "lat": 37.7178127
+    },
+    {
+      "name": "Starlight Preschool",
+      "lng": -122.4853218,
+      "lat": 37.7752554
+    },
+    {
+      "name": "Kai Ming Head Start",
+      "lng": -122.486209,
+      "lat": 37.7798366
+    },
+    {
+      "name": "Nihonmachi Little Friends",
+      "lng": -122.4305448,
+      "lat": 37.786577
+    },
+    {
+      "name": "Sunshine Preschool",
+      "lng": -122.4713396,
+      "lat": 37.7805168
+    },
+    {
+      "name": "Kai Ming Head Start",
+      "lng": -122.496208,
+      "lat": 37.7422731
+    },
+    {
+      "name": "Little People Preschool and T K",
+      "lng": -122.5042135,
+      "lat": 37.741618
+    },
+    {
+      "name": "Help-U-Grow Preschool",
+      "lng": -122.5048768,
+      "lat": 37.7531417
+    },
+    {
+      "name": "Little Lady Bugs Playhouse",
+      "lng": -122.3838928,
+      "lat": 37.7298076
+    },
+    {
+      "name": "Delia’s Little Angels",
+      "lng": -122.3876846,
+      "lat": 37.7300406
+    },
+    {
+      "name": "L'Academy",
+      "lng": -122.4214973,
+      "lat": 37.7590308
+    },
+    {
+      "name": "Sunset Co-op Nursery School",
+      "lng": -122.5086643,
+      "lat": 37.756434
+    },
+    {
+      "name": "Lana's Dwarfs",
+      "lng": -122.5000408,
+      "lat": 37.7559767
+    },
+    {
+      "name": "St Thomas Apostle Pre-school and Pre-k Learning Center",
+      "lng": -122.500354,
+      "lat": 37.7751508
+    },
+    {
+      "name": "San Francisco Montesori Preschool",
+      "lng": -122.4805352,
+      "lat": 37.7637805
+    },
+    {
+      "name": "Project Commotion",
+      "lng": -122.4128527,
+      "lat": 37.7643788
+    },
+    {
+      "name": "Faces SF Hayes Valley Child Development Center Infant and Toddlers",
+      "lng": -122.4273547,
+      "lat": 37.7727142
+    },
+    {
+      "name": "SOMA Daycare & Preschool",
+      "lng": -122.3951063,
+      "lat": 37.7817323
+    },
+    {
+      "name": "Baby Prodigy Nursery",
+      "lng": -122.4746392,
+      "lat": 37.7803663
+    },
+    {
+      "name": "Bright Horizons",
+      "lng": -122.395,
+      "lat": 37.784879
+    },
+    {
+      "name": "Happy Trails",
+      "lng": -122.3930816,
+      "lat": 37.7730423
+    },
+    {
+      "name": "Bright Horizons",
+      "lng": -122.4462367,
+      "lat": 37.7820066
+    },
+    {
+      "name": "Bright Horizons",
+      "lng": -122.4042814,
+      "lat": 37.8051871
+    },
+    {
+      "name": "L’Academy",
+      "lng": -122.4095007,
+      "lat": 37.774285
+    },
+    {
+      "name": "Compass Children's Center",
+      "lng": -122.4138592,
+      "lat": 37.7824201
+    },
+    {
+      "name": "Chinatown Community Children's Center",
+      "lng": -122.4091599,
+      "lat": 37.7938065
+    },
+    {
+      "name": "Mio Preschool Too",
+      "lng": -122.4191459,
+      "lat": 37.761194
+    },
+    {
+      "name": "Creative Gardens",
+      "lng": -122.4202763,
+      "lat": 37.7499322
+    },
+    {
+      "name": "Nopa Montessori",
+      "lng": -122.4511178,
+      "lat": 37.7733939
+    },
+    {
+      "name": "Little Suns Preschool",
+      "lng": -122.4655858,
+      "lat": 37.7620752
+    },
+    {
+      "name": "Family Day Care",
+      "lng": -122.4754378,
+      "lat": 37.763517
+    },
+    {
+      "name": "Wu Yee",
+      "lng": -122.407676,
+      "lat": 37.7942128
+    },
+    {
+      "name": "Safe & Sound",
+      "lng": -122.4526218,
+      "lat": 37.768224
+    },
+    {
+      "name": "Messy Art Lab",
+      "lng": -122.4663847,
+      "lat": 37.7627085
+    },
+    {
+      "name": "Centro Las Olas",
+      "lng": -122.4240852,
+      "lat": 37.7485678
+    },
+    {
+      "name": "Sweet Peas Preschool",
+      "lng": -122.4200069,
+      "lat": 37.7468981
+    },
+    {
+      "name": "Little Tree Preschool",
+      "lng": -122.4191761,
+      "lat": 37.7464726
+    },
+    {
+      "name": "MNC Bernal Campus",
+      "lng": -122.4123128,
+      "lat": 37.7492916
+    },
+    {
+      "name": "MNC Bernal Campus",
+      "lng": -122.412179,
+      "lat": 37.7492868
+    },
+    {
+      "name": "Bright Horizons at One Letterman",
+      "lng": -122.4508245,
+      "lat": 37.7991037
+    },
+    {
+      "name": "Glenridge Cooperative Nursery",
+      "lng": -122.4424019,
+      "lat": 37.7406859
+    },
+    {
+      "name": "Cornerstone Academy",
+      "lng": -122.4836732,
+      "lat": 37.7574199
+    },
+    {
+      "name": "Cornerstone Academy",
+      "lng": -122.4839969,
+      "lat": 37.7574791
+    },
+    {
+      "name": "The Crayon Box Preschool",
+      "lng": -122.4383591,
+      "lat": 37.7232614
+    },
+    {
+      "name": "Golden Gate Kindergarten",
+      "lng": -122.4279076,
+      "lat": 37.7827306
+    },
+    {
+      "name": "Tinker Preschool Cole Valley",
+      "lng": -122.4525173,
+      "lat": 37.7680982
+    },
+    {
+      "name": "Montessori Children’s Center",
+      "lng": -122.4792491,
+      "lat": 37.7182982
+    },
+    {
+      "name": "Mission Montessori",
+      "lng": -122.4188288,
+      "lat": 37.7767238
+    },
+    {
+      "name": "Sunrise Christian Preschool",
+      "lng": -122.4861814,
+      "lat": 37.7611102
+    },
+    {
+      "name": "Sunny Infant and Preschool Center",
+      "lng": -122.4942975,
+      "lat": 37.7760529
+    },
+    {
+      "name": "Noe Valley Nursery School",
+      "lng": -122.4402468,
+      "lat": 37.7439968
+    },
+    {
+      "name": "Parkside Preschool And Kindergarten",
+      "lng": -122.4761089,
+      "lat": 37.7425674
+    },
+    {
+      "name": "Playmates Cooperative Nursery School",
+      "lng": -122.4998906,
+      "lat": 37.7431692
+    },
+    {
+      "name": "facessf",
+      "lng": -122.445869,
+      "lat": 37.7709171
+    },
+    {
+      "name": "Telegraph Hill Neighborhood Center (TEL HI)",
+      "lng": -122.4125807,
+      "lat": 37.803393
+    },
+    {
+      "name": "Las Americas Childcare Center",
+      "lng": -122.4131252,
+      "lat": 37.7571295
+    }
+  ]
+}

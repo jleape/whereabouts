@@ -1,0 +1,199 @@
+{
+  "locations": [
+    {
+      "name": "Dog Park 1",
+      "lng": -122.4848346,
+      "lat": 37.7361936
+    },
+    {
+      "name": "Dog Park 2",
+      "lng": -122.3917161,
+      "lat": 37.7872677
+    },
+    {
+      "name": "McLaren Park Dog Play Area",
+      "lng": -122.4187836,
+      "lat": 37.7194526
+    },
+    {
+      "name": "Corona Heights Dog Play Area",
+      "lng": -122.4398144,
+      "lat": 37.7655424
+    },
+    {
+      "name": "Mission Bay Dog Park",
+      "lng": -122.3991458,
+      "lat": 37.770686
+    },
+    {
+      "name": "Dog Park 3",
+      "lng": -122.413677,
+      "lat": 37.7805666
+    },
+    {
+      "name": "Rincon Hill Dog Park",
+      "lng": -122.3904146,
+      "lat": 37.7859383
+    },
+    {
+      "name": "Dog Park 4",
+      "lng": -122.4364863,
+      "lat": 37.7597544
+    },
+    {
+      "name": "Dog Play Area",
+      "lng": -122.432351,
+      "lat": 37.7696327
+    },
+    {
+      "name": "Dog Park 5",
+      "lng": -122.3759672,
+      "lat": 37.7403686
+    },
+    {
+      "name": "Walter Haas Dog Park",
+      "lng": -122.435395,
+      "lat": 37.7404294
+    },
+    {
+      "name": "Progress Park",
+      "lng": -122.3910735,
+      "lat": 37.7531898
+    },
+    {
+      "name": "Golden Gate Park Dog Training Area",
+      "lng": -122.4995275,
+      "lat": 37.7710198
+    },
+    {
+      "name": "Dog Park 6",
+      "lng": -122.4411533,
+      "lat": 37.70776
+    },
+    {
+      "name": "Dog Park 7",
+      "lng": -122.4208916,
+      "lat": 37.7327469
+    },
+    {
+      "name": "Joby's Dog Run",
+      "lng": -122.4273908,
+      "lat": 37.7424666
+    },
+    {
+      "name": "Dog Park 8",
+      "lng": -122.4061212,
+      "lat": 37.777249
+    },
+    {
+      "name": "Off-leash Dog Area",
+      "lng": -122.4275938,
+      "lat": 37.7149751
+    },
+    {
+      "name": "Buena Vista Dog Run",
+      "lng": -122.442784,
+      "lat": 37.7687283
+    },
+    {
+      "name": "Dog Park 9",
+      "lng": -122.4353469,
+      "lat": 37.7762441
+    },
+    {
+      "name": "Dog Park 10",
+      "lng": -122.4263609,
+      "lat": 37.7816627
+    },
+    {
+      "name": "Dog Park 11",
+      "lng": -122.4323486,
+      "lat": 37.8014687
+    },
+    {
+      "name": "Dog Park 12",
+      "lng": -122.3935246,
+      "lat": 37.7723632
+    },
+    {
+      "name": "Dog Park 13",
+      "lng": -122.3929564,
+      "lat": 37.7518902
+    },
+    {
+      "name": "Dog Park 14",
+      "lng": -122.4812917,
+      "lat": 37.7182896
+    },
+    {
+      "name": "Dog Park 15",
+      "lng": -122.4764955,
+      "lat": 37.7147146
+    },
+    {
+      "name": "Avalon Dogpatch Dog Park",
+      "lng": -122.3918374,
+      "lat": 37.7603216
+    },
+    {
+      "name": "SoMa West Dog Park",
+      "lng": -122.4219889,
+      "lat": 37.7702913
+    },
+    {
+      "name": "Daggett Plaza Dog Run",
+      "lng": -122.3960562,
+      "lat": 37.7670603
+    },
+    {
+      "name": "50 Jones Dog Jog",
+      "lng": -122.4119056,
+      "lat": 37.7816245
+    },
+    {
+      "name": "Pepi's Dog Park",
+      "lng": -122.4211186,
+      "lat": 37.8044894
+    },
+    {
+      "name": "Dog Park 16",
+      "lng": -122.4668934,
+      "lat": 37.7874567
+    },
+    {
+      "name": "Dog Park 17",
+      "lng": -122.4268829,
+      "lat": 37.7910988
+    },
+    {
+      "name": "Dog Park 18",
+      "lng": -122.4650445,
+      "lat": 37.7120695
+    },
+    {
+      "name": "Upper Douglass Dog Play Area",
+      "lng": -122.439075,
+      "lat": 37.7467953
+    },
+    {
+      "name": "Dog Park 19",
+      "lng": -122.4660803,
+      "lat": 37.7882705
+    },
+    {
+      "name": "The Rocks Dog Park",
+      "lng": -122.3680329,
+      "lat": 37.8107735
+    },
+    {
+      "name": "Dog Park 20",
+      "lng": -122.3880762,
+      "lat": 37.7760705
+    },
+    {
+      "name": "Dog Park 21",
+      "lng": -122.4012086,
+      "lat": 37.7792252
+    }
+  ]
+}

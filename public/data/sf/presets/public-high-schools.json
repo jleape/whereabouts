@@ -1,0 +1,119 @@
+{
+  "locations": [
+    {
+      "name": "Academy (The)- SF @McAteer",
+      "lng": -122.449984,
+      "lat": 37.745874
+    },
+    {
+      "name": "Asawa (Ruth) SF Sch of the Arts, A Public School",
+      "lng": -122.449984,
+      "lat": 37.745874
+    },
+    {
+      "name": "Balboa High",
+      "lng": -122.439853,
+      "lat": 37.722073
+    },
+    {
+      "name": "Burton (Phillip and Sala) Academic High",
+      "lng": -122.405071,
+      "lat": 37.720698
+    },
+    {
+      "name": "City Arts & Leadership Academy",
+      "lng": -122.444866,
+      "lat": 37.721751
+    },
+    {
+      "name": "Downtown High",
+      "lng": -122.404072,
+      "lat": 37.760939
+    },
+    {
+      "name": "Five Keys Charter (SF Sheriff's)",
+      "lng": -122.402165,
+      "lat": 37.777211
+    },
+    {
+      "name": "Five Keys Independence HS (SF Sheriff's)",
+      "lng": -122.40214,
+      "lat": 37.77717
+    },
+    {
+      "name": "Galileo High",
+      "lng": -122.424082,
+      "lat": 37.803401
+    },
+    {
+      "name": "Gateway High",
+      "lng": -122.437739,
+      "lat": 37.783129
+    },
+    {
+      "name": "Independence High",
+      "lng": -122.463826,
+      "lat": 37.763243
+    },
+    {
+      "name": "Jordan (June) School for Equity",
+      "lng": -122.425502,
+      "lat": 37.719997
+    },
+    {
+      "name": "KIPP San Francisco College Preparatory",
+      "lng": -122.382356,
+      "lat": 37.732378
+    },
+    {
+      "name": "Life Learning Academy Charter",
+      "lng": -122.404797,
+      "lat": 37.77091
+    },
+    {
+      "name": "Lincoln (Abraham) High",
+      "lng": -122.481322,
+      "lat": 37.747259
+    },
+    {
+      "name": "Lowell High",
+      "lng": -122.483559,
+      "lat": 37.731044
+    },
+    {
+      "name": "Marshall (Thurgood) High",
+      "lng": -122.401881,
+      "lat": 37.735717
+    },
+    {
+      "name": "Mission High",
+      "lng": -122.427287,
+      "lat": 37.761403
+    },
+    {
+      "name": "O'Connell (John) High",
+      "lng": -122.414687,
+      "lat": 37.759631
+    },
+    {
+      "name": "S.F. International High",
+      "lng": -122.400623,
+      "lat": 37.76172
+    },
+    {
+      "name": "Wallenberg (Raoul) Traditional High",
+      "lng": -122.445755,
+      "lat": 37.780171
+    },
+    {
+      "name": "Washington (George) High",
+      "lng": -122.492032,
+      "lat": 37.777781
+    },
+    {
+      "name": "Wells (Ida B.) High",
+      "lng": -122.434461,
+      "lat": 37.775392
+    }
+  ]
+}

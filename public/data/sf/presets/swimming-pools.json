@@ -1,0 +1,64 @@
+{
+  "locations": [
+    {
+      "name": "Rossi Pool",
+      "lng": -122.458299,
+      "lat": 37.7790487
+    },
+    {
+      "name": "SFSU Pool",
+      "lng": -122.478292,
+      "lat": 37.7237517
+    },
+    {
+      "name": "Martin Luther King Jr. Swimming Pool",
+      "lng": -122.393722,
+      "lat": 37.7255448
+    },
+    {
+      "name": "Hamilton Pool",
+      "lng": -122.435086,
+      "lat": 37.7845657
+    },
+    {
+      "name": "Bay Club Gateway",
+      "lng": -122.3967097,
+      "lat": 37.7974988
+    },
+    {
+      "name": "Mission Pool",
+      "lng": -122.4226551,
+      "lat": 37.7594621
+    },
+    {
+      "name": "Garfield Pool",
+      "lng": -122.4121287,
+      "lat": 37.7501006
+    },
+    {
+      "name": "Balboa Pool",
+      "lng": -122.4433015,
+      "lat": 37.7262126
+    },
+    {
+      "name": "North Beach Swimming Pool",
+      "lng": -122.4124369,
+      "lat": 37.8027052
+    },
+    {
+      "name": "Charlie Sava Pool",
+      "lng": -122.4758971,
+      "lat": 37.7377812
+    },
+    {
+      "name": "La Petite Baleen",
+      "lng": -122.4691344,
+      "lat": 37.805392
+    },
+    {
+      "name": "Coffman Pool",
+      "lng": -122.4158172,
+      "lat": 37.7132292
+    }
+  ]
+}

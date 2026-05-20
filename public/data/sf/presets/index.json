@@ -1,0 +1,227 @@
+[
+  {
+    "id": "dog-parks",
+    "name": "Dog Parks",
+    "emoji": "🐕",
+    "dataFile": "dog-parks.json",
+    "defaults": {
+      "modes": [
+        "walk"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 3
+    }
+  },
+  {
+    "id": "yoga-studios",
+    "name": "Yoga Studios",
+    "emoji": "🧘",
+    "dataFile": "yoga-studios.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 2
+    }
+  },
+  {
+    "id": "pilates-studios",
+    "name": "Pilates Studios",
+    "emoji": "🤸",
+    "dataFile": "pilates-studios.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 2
+    }
+  },
+  {
+    "id": "gyms",
+    "name": "Gyms",
+    "emoji": "🏋️",
+    "dataFile": "gyms.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 3
+    }
+  },
+  {
+    "id": "swimming-pools",
+    "name": "Swimming Pools",
+    "emoji": "🏊",
+    "dataFile": "swimming-pools.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "rail",
+        "bus"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 2
+    }
+  },
+  {
+    "id": "grocery-stores",
+    "name": "Grocery Stores",
+    "emoji": "🛒",
+    "dataFile": "grocery-stores.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "car"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 2
+    }
+  },
+  {
+    "id": "pharmacies",
+    "name": "Pharmacies",
+    "emoji": "💊",
+    "dataFile": "pharmacies.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "car"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 1
+    }
+  },
+  {
+    "id": "libraries",
+    "name": "Public Libraries",
+    "emoji": "📚",
+    "dataFile": "libraries.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "rail",
+        "bus"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 1
+    }
+  },
+  {
+    "id": "playgrounds",
+    "name": "Playgrounds",
+    "emoji": "🛝",
+    "dataFile": "playgrounds.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 3
+    }
+  },
+  {
+    "id": "farmers-markets",
+    "name": "Farmers Markets",
+    "emoji": "🧺",
+    "dataFile": "farmers-markets.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "car"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 1
+    }
+  },
+  {
+    "id": "beaches",
+    "name": "Beaches",
+    "emoji": "🏖️",
+    "dataFile": "beaches.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "car"
+      ],
+      "peak": "offpeak",
+      "visitsPerWeek": 1
+    }
+  },
+  {
+    "id": "public-high-schools",
+    "name": "Public High Schools",
+    "emoji": "🎓",
+    "dataFile": "public-high-schools.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "rail",
+        "bus",
+        "car"
+      ],
+      "peak": "peak",
+      "visitsPerWeek": 5
+    }
+  },
+  {
+    "id": "public-middle-schools",
+    "name": "Public Middle Schools",
+    "emoji": "🏫",
+    "dataFile": "public-middle-schools.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "rail",
+        "bus",
+        "car"
+      ],
+      "peak": "peak",
+      "visitsPerWeek": 5
+    }
+  },
+  {
+    "id": "public-elementary-schools",
+    "name": "Public Elementary Schools",
+    "emoji": "✏️",
+    "dataFile": "public-elementary-schools.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "car"
+      ],
+      "peak": "peak",
+      "visitsPerWeek": 5
+    }
+  },
+  {
+    "id": "daycare",
+    "name": "Daycare",
+    "emoji": "🧸",
+    "dataFile": "daycare.json",
+    "defaults": {
+      "modes": [
+        "walk",
+        "bike",
+        "car"
+      ],
+      "peak": "peak",
+      "visitsPerWeek": 5
+    }
+  }
+]

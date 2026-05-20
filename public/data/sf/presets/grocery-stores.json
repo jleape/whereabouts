@@ -1,0 +1,629 @@
+{
+  "locations": [
+    {
+      "name": "Safeway",
+      "lng": -122.3940709,
+      "lat": 37.7767776
+    },
+    {
+      "name": "Calmart",
+      "lng": -122.4528047,
+      "lat": 37.786265
+    },
+    {
+      "name": "Whole Foods Market",
+      "lng": -122.3997789,
+      "lat": 37.7811499
+    },
+    {
+      "name": "Marina Supermarket",
+      "lng": -122.4416127,
+      "lat": 37.8000223
+    },
+    {
+      "name": "Mollie Stone's",
+      "lng": -122.436559,
+      "lat": 37.7606657
+    },
+    {
+      "name": "JW & L Market",
+      "lng": -122.4090015,
+      "lat": 37.7986741
+    },
+    {
+      "name": "Trader Joe's",
+      "lng": -122.4762074,
+      "lat": 37.7265935
+    },
+    {
+      "name": "Starco Mart",
+      "lng": -122.4088465,
+      "lat": 37.7786169
+    },
+    {
+      "name": "Whole Foods Market",
+      "lng": -122.4234142,
+      "lat": 37.7900899
+    },
+    {
+      "name": "Super Save",
+      "lng": -122.3897193,
+      "lat": 37.7367631
+    },
+    {
+      "name": "Trader Joe's",
+      "lng": -122.4077368,
+      "lat": 37.7709988
+    },
+    {
+      "name": "Le Beau Market",
+      "lng": -122.416234,
+      "lat": 37.7928844
+    },
+    {
+      "name": "Bi-Rite Market",
+      "lng": -122.4217072,
+      "lat": 37.7965466
+    },
+    {
+      "name": "Lucky",
+      "lng": -122.4459793,
+      "lat": 37.7761053
+    },
+    {
+      "name": "Whole Foods Market",
+      "lng": -122.4546813,
+      "lat": 37.7237981
+    },
+    {
+      "name": "Casa Guadalupe",
+      "lng": -122.4180336,
+      "lat": 37.7492129
+    },
+    {
+      "name": "Valencia Farmers Market",
+      "lng": -122.4205268,
+      "lat": 37.7522376
+    },
+    {
+      "name": "San Bruno Supermarket",
+      "lng": -122.4051055,
+      "lat": 37.7303902
+    },
+    {
+      "name": "Valencia Whole Foods",
+      "lng": -122.4208606,
+      "lat": 37.7570209
+    },
+    {
+      "name": "Buddies Market",
+      "lng": -122.4337115,
+      "lat": 37.7346227
+    },
+    {
+      "name": "Trader Joe's",
+      "lng": -122.4137896,
+      "lat": 37.8054807
+    },
+    {
+      "name": "Nijiya Market",
+      "lng": -122.4310324,
+      "lat": 37.7852546
+    },
+    {
+      "name": "Trader Joe's",
+      "lng": -122.4179305,
+      "lat": 37.7907686
+    },
+    {
+      "name": "New Russian Hill Market",
+      "lng": -122.4149018,
+      "lat": 37.7959769
+    },
+    {
+      "name": "Green Earth",
+      "lng": -122.43816,
+      "lat": 37.777716
+    },
+    {
+      "name": "Whole Foods Market",
+      "lng": -122.4270651,
+      "lat": 37.7687435
+    },
+    {
+      "name": "Grocery Outlet",
+      "lng": -122.405368,
+      "lat": 37.7415785
+    },
+    {
+      "name": "Five Markets",
+      "lng": -122.408716,
+      "lat": 37.7529431
+    },
+    {
+      "name": "Frank's Liquors",
+      "lng": -122.4505453,
+      "lat": 37.7694214
+    },
+    {
+      "name": "Golden Farmer Market",
+      "lng": -122.420782,
+      "lat": 37.7902045
+    },
+    {
+      "name": "Pang Kee Bargain Market",
+      "lng": -122.4085421,
+      "lat": 37.7979062
+    },
+    {
+      "name": "Sun Kau Shing Co., Inc.",
+      "lng": -122.4086385,
+      "lat": 37.798411
+    },
+    {
+      "name": "Sutter Fine Foods",
+      "lng": -122.4165679,
+      "lat": 37.7884234
+    },
+    {
+      "name": "6001 California Market (Appel & Dietrich)",
+      "lng": -122.4819672,
+      "lat": 37.7839057
+    },
+    {
+      "name": "Good Luck Market",
+      "lng": -122.479296,
+      "lat": 37.7427662
+    },
+    {
+      "name": "Harvest Urban Market",
+      "lng": -122.4116366,
+      "lat": 37.7764867
+    },
+    {
+      "name": "Gus's Community Market",
+      "lng": -122.4128227,
+      "lat": 37.763978
+    },
+    {
+      "name": "Rubin's Market",
+      "lng": -122.413623,
+      "lat": 37.749437
+    },
+    {
+      "name": "Kiki Supermarket",
+      "lng": -122.4100247,
+      "lat": 37.795529
+    },
+    {
+      "name": "Trader Joe's",
+      "lng": -122.4822883,
+      "lat": 37.7001684
+    },
+    {
+      "name": "J & L Vegi Supermarket",
+      "lng": -122.4086681,
+      "lat": 37.7970928
+    },
+    {
+      "name": "New Asia Market",
+      "lng": -122.407988,
+      "lat": 37.7968665
+    },
+    {
+      "name": "Casa Guadalupe",
+      "lng": -122.4183309,
+      "lat": 37.7483339
+    },
+    {
+      "name": "Casa Maria",
+      "lng": -122.416268,
+      "lat": 37.753871
+    },
+    {
+      "name": "City Discount Meat & Grocery Market",
+      "lng": -122.41941,
+      "lat": 37.7603364
+    },
+    {
+      "name": "Mi Pueblito Market",
+      "lng": -122.4183448,
+      "lat": 37.7528358
+    },
+    {
+      "name": "Grocery Outlet",
+      "lng": -122.487636,
+      "lat": 37.7797491
+    },
+    {
+      "name": "Jackson Market",
+      "lng": -122.4149473,
+      "lat": 37.7948993
+    },
+    {
+      "name": "VJ Grocery",
+      "lng": -122.412688,
+      "lat": 37.7933763
+    },
+    {
+      "name": "New California Market",
+      "lng": -122.4788199,
+      "lat": 37.7840258
+    },
+    {
+      "name": "Mi Reyna Market",
+      "lng": -122.414517,
+      "lat": 37.7857309
+    },
+    {
+      "name": "J H Grocery and Liquor",
+      "lng": -122.4182553,
+      "lat": 37.7944737
+    },
+    {
+      "name": "Whole Foods Market",
+      "lng": -122.4027236,
+      "lat": 37.7643298
+    },
+    {
+      "name": "Gus's Community Market",
+      "lng": -122.391412,
+      "lat": 37.7742721
+    },
+    {
+      "name": "Trader Joe's",
+      "lng": -122.4056288,
+      "lat": 37.785398
+    },
+    {
+      "name": "Falletti Foods",
+      "lng": -122.4389402,
+      "lat": 37.7733138
+    },
+    {
+      "name": "Woodlands Market",
+      "lng": -122.3919796,
+      "lat": 37.7890338
+    },
+    {
+      "name": "Olive",
+      "lng": -122.462431,
+      "lat": 37.783158
+    },
+    {
+      "name": "Luke's Local",
+      "lng": -122.4352703,
+      "lat": 37.7972287
+    },
+    {
+      "name": "H Mart",
+      "lng": -122.46765,
+      "lat": 37.7103977
+    },
+    {
+      "name": "Gus's Community Market",
+      "lng": -122.5034368,
+      "lat": 37.7528697
+    },
+    {
+      "name": "Boss Supermarket",
+      "lng": -122.4912857,
+      "lat": 37.7534462
+    },
+    {
+      "name": "Island Cove Market",
+      "lng": -122.3704466,
+      "lat": 37.8263913
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.465134,
+      "lat": 37.7746125
+    },
+    {
+      "name": "Whole Foods Market",
+      "lng": -122.4763228,
+      "lat": 37.7290661
+    },
+    {
+      "name": "Royal Market",
+      "lng": -122.4767481,
+      "lat": 37.7802753
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.3985422,
+      "lat": 37.7969036
+    },
+    {
+      "name": "Fruit Barn",
+      "lng": -122.459482,
+      "lat": 37.7247268
+    },
+    {
+      "name": "All Fresh Market",
+      "lng": -122.4587607,
+      "lat": 37.724573
+    },
+    {
+      "name": "Golden Gate Market & Produce",
+      "lng": -122.4142799,
+      "lat": 37.783209
+    },
+    {
+      "name": "Chaat Corner Indian Grocery",
+      "lng": -122.3989177,
+      "lat": 37.7835778
+    },
+    {
+      "name": "Trader Joe's",
+      "lng": -122.4264269,
+      "lat": 37.7781179
+    },
+    {
+      "name": "Samiramis Imports",
+      "lng": -122.4183513,
+      "lat": 37.7492175
+    },
+    {
+      "name": "Mission Food Center",
+      "lng": -122.4192758,
+      "lat": 37.7592127
+    },
+    {
+      "name": "Luke's Local",
+      "lng": -122.4662511,
+      "lat": 37.7646119
+    },
+    {
+      "name": "Ha Mini Mart",
+      "lng": -122.4064339,
+      "lat": 37.7943706
+    },
+    {
+      "name": "Mi Rancho Supermarket",
+      "lng": -122.3948104,
+      "lat": 37.7249323
+    },
+    {
+      "name": "Mike's Market",
+      "lng": -122.398396,
+      "lat": 37.7363873
+    },
+    {
+      "name": "Cordova Market - Grocery, Meat, Produce, Liquor & Craft Beer",
+      "lng": -122.4364836,
+      "lat": 37.7135728
+    },
+    {
+      "name": "Indian Spices and Grocery",
+      "lng": -122.4202736,
+      "lat": 37.7552568
+    },
+    {
+      "name": "Foods Co",
+      "lng": -122.4161193,
+      "lat": 37.7676245
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.4328308,
+      "lat": 37.8044499
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.4741162,
+      "lat": 37.7434345
+    },
+    {
+      "name": "Luke's Local Grocery",
+      "lng": -122.4087833,
+      "lat": 37.7996691
+    },
+    {
+      "name": "Trader Joe's",
+      "lng": -122.4478393,
+      "lat": 37.7833886
+    },
+    {
+      "name": "Cash & Carry",
+      "lng": -122.4184388,
+      "lat": 37.7705244
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.481658,
+      "lat": 37.6996207
+    },
+    {
+      "name": "Foods Co",
+      "lng": -122.3988207,
+      "lat": 37.7297434
+    },
+    {
+      "name": "Rainbow Grocery Coop",
+      "lng": -122.4150738,
+      "lat": 37.7690607
+    },
+    {
+      "name": "Smart & Final",
+      "lng": -122.465175,
+      "lat": 37.7822881
+    },
+    {
+      "name": "Whole Foods Market",
+      "lng": -122.4309055,
+      "lat": 37.7520191
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.488855,
+      "lat": 37.754188
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.5093538,
+      "lat": 37.7725365
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.4500508,
+      "lat": 37.7312406
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.4389462,
+      "lat": 37.7435687
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.4283215,
+      "lat": 37.7691101
+    },
+    {
+      "name": "Good Life Grocery",
+      "lng": -122.4166679,
+      "lat": 37.7388952
+    },
+    {
+      "name": "Whole Foods Market",
+      "lng": -122.4527946,
+      "lat": 37.7695531
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.4224516,
+      "lat": 37.7432508
+    },
+    {
+      "name": "Miraloma Market",
+      "lng": -122.4536954,
+      "lat": 37.7437795
+    },
+    {
+      "name": "Arguello Market",
+      "lng": -122.4581435,
+      "lat": 37.7756528
+    },
+    {
+      "name": "Chef Bowl, Inc.",
+      "lng": -122.4099485,
+      "lat": 37.7982889
+    },
+    {
+      "name": "Bi-Rite Market",
+      "lng": -122.4374873,
+      "lat": 37.7748031
+    },
+    {
+      "name": "Mollie Stone's",
+      "lng": -122.4345222,
+      "lat": 37.7885533
+    },
+    {
+      "name": "Roxie’s Market & Deli",
+      "lng": -122.4663802,
+      "lat": 37.7604783
+    },
+    {
+      "name": "Haight Street Market",
+      "lng": -122.4476308,
+      "lat": 37.7702039
+    },
+    {
+      "name": "Luke's Local",
+      "lng": -122.4495368,
+      "lat": 37.7650528
+    },
+    {
+      "name": "Bryan's Grocery",
+      "lng": -122.4508481,
+      "lat": 37.7864539
+    },
+    {
+      "name": "Mollie Stone's",
+      "lng": -122.452308,
+      "lat": 37.744743
+    },
+    {
+      "name": "22nd & Irving Market",
+      "lng": -122.4805503,
+      "lat": 37.7631811
+    },
+    {
+      "name": "25th Irving Market",
+      "lng": -122.4840885,
+      "lat": 37.763014
+    },
+    {
+      "name": "Canyon Market",
+      "lng": -122.4338202,
+      "lat": 37.7340694
+    },
+    {
+      "name": "Other Avenues Grocery Co-op",
+      "lng": -122.5043529,
+      "lat": 37.760676
+    },
+    {
+      "name": "Parkside Farmers Market",
+      "lng": -122.4722613,
+      "lat": 37.7429808
+    },
+    {
+      "name": "Sunset Super",
+      "lng": -122.4973752,
+      "lat": 37.7380924
+    },
+    {
+      "name": "Grocery Outlet",
+      "lng": -122.4060028,
+      "lat": 37.7084987
+    },
+    {
+      "name": "Grocery Outlet",
+      "lng": -122.4090582,
+      "lat": 37.731046
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.4389783,
+      "lat": 37.7199299
+    },
+    {
+      "name": "Safeway",
+      "lng": -122.409297,
+      "lat": 37.7668779
+    },
+    {
+      "name": "Manila Oriental Market",
+      "lng": -122.4289844,
+      "lat": 37.7303235
+    },
+    {
+      "name": "Grocery Outlet",
+      "lng": -122.4158643,
+      "lat": 37.753123
+    },
+    {
+      "name": "Richmond New May Wah Supermarket",
+      "lng": -122.466956,
+      "lat": 37.7825989
+    },
+    {
+      "name": "The Market",
+      "lng": -122.4168067,
+      "lat": 37.7765395
+    },
+    {
+      "name": "Andronico's",
+      "lng": -122.4930603,
+      "lat": 37.7822204
+    },
+    {
+      "name": "Lucky",
+      "lng": -122.4894545,
+      "lat": 37.7330423
+    }
+  ]
+}

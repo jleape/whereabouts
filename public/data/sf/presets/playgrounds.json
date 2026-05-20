@@ -1,0 +1,1554 @@
+{
+  "locations": [
+    {
+      "name": "Imagination Playhouse",
+      "lng": -122.4799941,
+      "lat": 37.780511
+    },
+    {
+      "name": "Playground 1",
+      "lng": -122.475982,
+      "lat": 37.793174
+    },
+    {
+      "name": "Playground 2",
+      "lng": -122.4719879,
+      "lat": 37.805736
+    },
+    {
+      "name": "Esmeralda Slide Park",
+      "lng": -122.4181306,
+      "lat": 37.7435157
+    },
+    {
+      "name": "Auditorium",
+      "lng": -122.428496,
+      "lat": 37.742547
+    },
+    {
+      "name": "Edgewood Playground",
+      "lng": -122.4601985,
+      "lat": 37.7005243
+    },
+    {
+      "name": "Porpoise, Turtle, and Abstract",
+      "lng": -122.412445,
+      "lat": 37.719555
+    },
+    {
+      "name": "Playground 3",
+      "lng": -122.381528,
+      "lat": 37.7300076
+    },
+    {
+      "name": "Playground 4",
+      "lng": -122.3734834,
+      "lat": 37.7301049
+    },
+    {
+      "name": "Playground 5",
+      "lng": -122.4207565,
+      "lat": 37.7705955
+    },
+    {
+      "name": "Little Oceanauts",
+      "lng": -122.462706,
+      "lat": 37.7252573
+    },
+    {
+      "name": "Playground 6",
+      "lng": -122.4125194,
+      "lat": 37.8036599
+    },
+    {
+      "name": "Playground 7",
+      "lng": -122.3801538,
+      "lat": 37.7348698
+    },
+    {
+      "name": "Playground 8",
+      "lng": -122.3805885,
+      "lat": 37.7349892
+    },
+    {
+      "name": "Playground 9",
+      "lng": -122.3814963,
+      "lat": 37.7352169
+    },
+    {
+      "name": "Playground 10",
+      "lng": -122.4078019,
+      "lat": 37.7971932
+    },
+    {
+      "name": "Playground 11",
+      "lng": -122.4455867,
+      "lat": 37.7840246
+    },
+    {
+      "name": "Playground 12",
+      "lng": -122.4130175,
+      "lat": 37.757024
+    },
+    {
+      "name": "Precita Park Playground",
+      "lng": -122.4109965,
+      "lat": 37.7471356
+    },
+    {
+      "name": "South Park Playground",
+      "lng": -122.3943016,
+      "lat": 37.7813765
+    },
+    {
+      "name": "South Beach Playground",
+      "lng": -122.3879929,
+      "lat": 37.7804378
+    },
+    {
+      "name": "Elinor Friend Playground",
+      "lng": -122.5029287,
+      "lat": 37.7341086
+    },
+    {
+      "name": "Upper Noe Children's Play Area",
+      "lng": -122.42821,
+      "lat": 37.7425586
+    },
+    {
+      "name": "Playground 13",
+      "lng": -122.4195928,
+      "lat": 37.7799477
+    },
+    {
+      "name": "Playground 14",
+      "lng": -122.4191722,
+      "lat": 37.7799957
+    },
+    {
+      "name": "States Playground",
+      "lng": -122.4385707,
+      "lat": 37.7636212
+    },
+    {
+      "name": "Peixotto Playground",
+      "lng": -122.4374352,
+      "lat": 37.7655285
+    },
+    {
+      "name": "Huntington Children’s Play Area",
+      "lng": -122.4122171,
+      "lat": 37.7924202
+    },
+    {
+      "name": "Patricia's Green Playground",
+      "lng": -122.4243672,
+      "lat": 37.7759561
+    },
+    {
+      "name": "Willie “Woo Woo” Wong Playground",
+      "lng": -122.4070995,
+      "lat": 37.793543
+    },
+    {
+      "name": "Crocker Amazon Purple Playground",
+      "lng": -122.4327857,
+      "lat": 37.7134664
+    },
+    {
+      "name": "Alta Plaza Park Playground",
+      "lng": -122.4380841,
+      "lat": 37.7909965
+    },
+    {
+      "name": "Alamo Square Playground",
+      "lng": -122.4338006,
+      "lat": 37.7764668
+    },
+    {
+      "name": "Balboa Park Playground",
+      "lng": -122.4437375,
+      "lat": 37.7252099
+    },
+    {
+      "name": "Cayuga Children’s Play Area",
+      "lng": -122.4501207,
+      "lat": 37.7140332
+    },
+    {
+      "name": "Adam Rogers Park Playground",
+      "lng": -122.3837072,
+      "lat": 37.7306909
+    },
+    {
+      "name": "Alice Chalmers Children’s Play Area",
+      "lng": -122.4468299,
+      "lat": 37.7095923
+    },
+    {
+      "name": "Alioto Mini Park Playground",
+      "lng": -122.4182818,
+      "lat": 37.7590039
+    },
+    {
+      "name": "Rossi Children’s Play Area",
+      "lng": -122.4582228,
+      "lat": 37.7783639
+    },
+    {
+      "name": "Helen Wills Playground",
+      "lng": -122.4207287,
+      "lat": 37.7958332
+    },
+    {
+      "name": "Presidio Wall Playground",
+      "lng": -122.454015,
+      "lat": 37.791077
+    },
+    {
+      "name": "Tenderloin Children's Playground",
+      "lng": -122.4152495,
+      "lat": 37.7846975
+    },
+    {
+      "name": "Sergeant John Macaulay Playground",
+      "lng": -122.418241,
+      "lat": 37.7854108
+    },
+    {
+      "name": "Turk-Hyde Mini Park Playground",
+      "lng": -122.4159863,
+      "lat": 37.7827366
+    },
+    {
+      "name": "Victoria Manalo Draves Park Playground",
+      "lng": -122.406267,
+      "lat": 37.7771255
+    },
+    {
+      "name": "Noe Valley Courts Playground",
+      "lng": -122.4387654,
+      "lat": 37.7512453
+    },
+    {
+      "name": "Playground 15",
+      "lng": -122.4181978,
+      "lat": 37.7100813
+    },
+    {
+      "name": "Kelloch Velasco Children’s Play Area",
+      "lng": -122.4135704,
+      "lat": 37.7086554
+    },
+    {
+      "name": "Playground 16",
+      "lng": -122.4263931,
+      "lat": 37.7084287
+    },
+    {
+      "name": "Buena Vista Playground",
+      "lng": -122.4422115,
+      "lat": 37.7698993
+    },
+    {
+      "name": "Playground 17",
+      "lng": -122.4259344,
+      "lat": 37.7543938
+    },
+    {
+      "name": "Washington Square Playground",
+      "lng": -122.4107192,
+      "lat": 37.8009772
+    },
+    {
+      "name": "Blue Playground",
+      "lng": -122.4672044,
+      "lat": 37.7730647
+    },
+    {
+      "name": "Mother's Meadow Playground",
+      "lng": -122.4761257,
+      "lat": 37.7669824
+    },
+    {
+      "name": "45th & Lincoln Blue Boat Playground",
+      "lng": -122.5050231,
+      "lat": 37.7647924
+    },
+    {
+      "name": "Playground 18",
+      "lng": -122.409426,
+      "lat": 37.772254
+    },
+    {
+      "name": "Lafayette Park Playground",
+      "lng": -122.4284697,
+      "lat": 37.7915277
+    },
+    {
+      "name": "Waterfront Playground at Sue Bierman Park",
+      "lng": -122.395972,
+      "lat": 37.7963317
+    },
+    {
+      "name": "Sunnyside Playground Play Area",
+      "lng": -122.4479184,
+      "lat": 37.7336514
+    },
+    {
+      "name": "Playground 19",
+      "lng": -122.4760718,
+      "lat": 37.7425138
+    },
+    {
+      "name": "Saint Paul's Catholic School",
+      "lng": -122.4277238,
+      "lat": 37.7438833
+    },
+    {
+      "name": "John McLaren Park Playground",
+      "lng": -122.4231216,
+      "lat": 37.7235805
+    },
+    {
+      "name": "Head & Brotherhood Children’s Play Area",
+      "lng": -122.4644335,
+      "lat": 37.7127195
+    },
+    {
+      "name": "Playground 20",
+      "lng": -122.4468442,
+      "lat": 37.7799845
+    },
+    {
+      "name": "Helen Diller Playground",
+      "lng": -122.4268745,
+      "lat": 37.7587318
+    },
+    {
+      "name": "Jose Coronado Playground",
+      "lng": -122.4148828,
+      "lat": 37.7577586
+    },
+    {
+      "name": "Playground 21",
+      "lng": -122.3743536,
+      "lat": 37.7299908
+    },
+    {
+      "name": "Playground 22",
+      "lng": -122.4765177,
+      "lat": 37.7626382
+    },
+    {
+      "name": "Notre Dame Des Victoires School Yard",
+      "lng": -122.406571,
+      "lat": 37.7910325
+    },
+    {
+      "name": "Playground 23",
+      "lng": -122.4793978,
+      "lat": 37.7042213
+    },
+    {
+      "name": "Playground 24",
+      "lng": -122.479239,
+      "lat": 37.7045065
+    },
+    {
+      "name": "Playground 25",
+      "lng": -122.4794038,
+      "lat": 37.7047254
+    },
+    {
+      "name": "Westlake Playground",
+      "lng": -122.4842227,
+      "lat": 37.7043784
+    },
+    {
+      "name": "J.P. Murphy Playground Children's Play Area",
+      "lng": -122.4649872,
+      "lat": 37.7515153
+    },
+    {
+      "name": "Playground 26",
+      "lng": -122.4698585,
+      "lat": 37.7591245
+    },
+    {
+      "name": "Playground 27",
+      "lng": -122.4699641,
+      "lat": 37.7588691
+    },
+    {
+      "name": "Walter Haas Playground",
+      "lng": -122.4347822,
+      "lat": 37.7407174
+    },
+    {
+      "name": "Glen Canyon Park Playground",
+      "lng": -122.4405108,
+      "lat": 37.7366839
+    },
+    {
+      "name": "Bernal Heights Recreation Center Playground",
+      "lng": -122.416172,
+      "lat": 37.738675
+    },
+    {
+      "name": "Boeddeker Park Playground",
+      "lng": -122.4121075,
+      "lat": 37.7843728
+    },
+    {
+      "name": "Douglass Playground",
+      "lng": -122.4385348,
+      "lat": 37.7480664
+    },
+    {
+      "name": "Lincoln Park Children's Play Area",
+      "lng": -122.4936258,
+      "lat": 37.7820444
+    },
+    {
+      "name": "Rochambeau Children's Play Area",
+      "lng": -122.4842591,
+      "lat": 37.7848585
+    },
+    {
+      "name": "Richmond Children’s Play Area",
+      "lng": -122.478189,
+      "lat": 37.7852825
+    },
+    {
+      "name": "Mountain Lake Playground",
+      "lng": -122.4714493,
+      "lat": 37.7870067
+    },
+    {
+      "name": "Presidio Heights Children’s Play Area",
+      "lng": -122.4497573,
+      "lat": 37.7883499
+    },
+    {
+      "name": "Laurel Hill Children’s Play Area",
+      "lng": -122.4511074,
+      "lat": 37.7837919
+    },
+    {
+      "name": "Muriel Leff Children’s Play Area",
+      "lng": -122.4650006,
+      "lat": 37.7801597
+    },
+    {
+      "name": "10th Ave & Clement Children’s Play Area",
+      "lng": -122.4684019,
+      "lat": 37.7819193
+    },
+    {
+      "name": "Argonne Children’s Play Area",
+      "lng": -122.4776985,
+      "lat": 37.7793723
+    },
+    {
+      "name": "Cabrillo Children’s Play Area",
+      "lng": -122.4985046,
+      "lat": 37.7728633
+    },
+    {
+      "name": "Sunset Children’s Play Area",
+      "lng": -122.4870945,
+      "lat": 37.7572679
+    },
+    {
+      "name": "West Sunset Children’s Play Area",
+      "lng": -122.4980752,
+      "lat": 37.7506595
+    },
+    {
+      "name": "South Sunset Children’s Play Area",
+      "lng": -122.4985893,
+      "lat": 37.7380866
+    },
+    {
+      "name": "Stern Grove Playground",
+      "lng": -122.4770907,
+      "lat": 37.7349211
+    },
+    {
+      "name": "Parkside Square Playground",
+      "lng": -122.4844906,
+      "lat": 37.7378437
+    },
+    {
+      "name": "Rolph Nicol Children’s Play Area",
+      "lng": -122.4797834,
+      "lat": 37.730756
+    },
+    {
+      "name": "Aptos Playground Children's Play Area",
+      "lng": -122.4660867,
+      "lat": 37.7289072
+    },
+    {
+      "name": "Playground 28",
+      "lng": -122.4740092,
+      "lat": 37.7250669
+    },
+    {
+      "name": "Merced Heights Playground",
+      "lng": -122.4700639,
+      "lat": 37.7175746
+    },
+    {
+      "name": "Brooks Park Playground",
+      "lng": -122.466388,
+      "lat": 37.7170108
+    },
+    {
+      "name": "Randolph & Bright Children’s Play Area",
+      "lng": -122.4637403,
+      "lat": 37.7145769
+    },
+    {
+      "name": "Minnie & Lovie Ward Children’s Play Area",
+      "lng": -122.4585008,
+      "lat": 37.7164213
+    },
+    {
+      "name": "Lessing & Sears Children’s Play Area",
+      "lng": -122.4553459,
+      "lat": 37.7085651
+    },
+    {
+      "name": "Excelsior Playground",
+      "lng": -122.4336515,
+      "lat": 37.7200633
+    },
+    {
+      "name": "McLaren Park Redwood Grove Playground",
+      "lng": -122.420526,
+      "lat": 37.7216333
+    },
+    {
+      "name": "Louis Sutter PG Childrens Play Area",
+      "lng": -122.4138791,
+      "lat": 37.7216625
+    },
+    {
+      "name": "Herz PG Childrens Play Areas;Herz Playground",
+      "lng": -122.416001,
+      "lat": 37.7136084
+    },
+    {
+      "name": "Playground 29",
+      "lng": -122.4090231,
+      "lat": 37.7128036
+    },
+    {
+      "name": "Visitacion Valley Greenway Children’s Play Area",
+      "lng": -122.4057917,
+      "lat": 37.7144826
+    },
+    {
+      "name": "Little Hollywood Children’s Play Area",
+      "lng": -122.3981586,
+      "lat": 37.710149
+    },
+    {
+      "name": "Juri Commons Children’s Play Area",
+      "lng": -122.4222521,
+      "lat": 37.7492791
+    },
+    {
+      "name": "Playground 30",
+      "lng": -122.4237764,
+      "lat": 37.7511237
+    },
+    {
+      "name": "Frankfort Playground",
+      "lng": -122.4500048,
+      "lat": 37.7047711
+    },
+    {
+      "name": "Christopher Playground",
+      "lng": -122.4402317,
+      "lat": 37.7435615
+    },
+    {
+      "name": "Playground 31",
+      "lng": -122.4802545,
+      "lat": 37.7897358
+    },
+    {
+      "name": "Saint Mary's Playground",
+      "lng": -122.4214747,
+      "lat": 37.7334476
+    },
+    {
+      "name": "Holly Park Playground",
+      "lng": -122.4196998,
+      "lat": 37.7368259
+    },
+    {
+      "name": "Potrero Hill Playground",
+      "lng": -122.3967341,
+      "lat": 37.756204
+    },
+    {
+      "name": "McKinley Square Playground",
+      "lng": -122.4044894,
+      "lat": 37.7593497
+    },
+    {
+      "name": "Jackson Playground",
+      "lng": -122.3993394,
+      "lat": 37.7638879
+    },
+    {
+      "name": "Franklin Square Playground",
+      "lng": -122.4097464,
+      "lat": 37.7646518
+    },
+    {
+      "name": "Mission Rec Playground",
+      "lng": -122.4130583,
+      "lat": 37.7580325
+    },
+    {
+      "name": "Polaris Playground",
+      "lng": -122.4371942,
+      "lat": 37.7074818
+    },
+    {
+      "name": "Mission Hills Playground",
+      "lng": -122.4415413,
+      "lat": 37.7075685
+    },
+    {
+      "name": "Marchbank Playground",
+      "lng": -122.4675257,
+      "lat": 37.7013202
+    },
+    {
+      "name": "Lincoln Playground",
+      "lng": -122.452745,
+      "lat": 37.7069028
+    },
+    {
+      "name": "John Daly Tot Lot Playground",
+      "lng": -122.4647176,
+      "lat": 37.7065813
+    },
+    {
+      "name": "Playground 32",
+      "lng": -122.4223565,
+      "lat": 37.77575
+    },
+    {
+      "name": "Sandy Park",
+      "lng": -122.4494625,
+      "lat": 37.7390132
+    },
+    {
+      "name": "Upper Yard",
+      "lng": -122.4499499,
+      "lat": 37.7386336
+    },
+    {
+      "name": "Lower Yard",
+      "lng": -122.4502309,
+      "lat": 37.7382225
+    },
+    {
+      "name": "Playground 33",
+      "lng": -122.4998192,
+      "lat": 37.7750125
+    },
+    {
+      "name": "Playground 34",
+      "lng": -122.4962264,
+      "lat": 37.75479
+    },
+    {
+      "name": "Crocker Amazon Clubhouse Playground",
+      "lng": -122.4318668,
+      "lat": 37.7153933
+    },
+    {
+      "name": "La Grande Playground",
+      "lng": -122.4275447,
+      "lat": 37.71543
+    },
+    {
+      "name": "Playground 35",
+      "lng": -122.4129114,
+      "lat": 37.7224485
+    },
+    {
+      "name": "Sunset Reservoir Playground",
+      "lng": -122.4817191,
+      "lat": 37.7486088
+    },
+    {
+      "name": "Eureka Valley Playground",
+      "lng": -122.4362438,
+      "lat": 37.7600798
+    },
+    {
+      "name": "Playset",
+      "lng": -122.4888882,
+      "lat": 37.7577225
+    },
+    {
+      "name": "Playset",
+      "lng": -122.4888178,
+      "lat": 37.7578392
+    },
+    {
+      "name": "Cow Hollow Playground",
+      "lng": -122.4448494,
+      "lat": 37.7973414
+    },
+    {
+      "name": "Potrero Del Sol Playground",
+      "lng": -122.4047122,
+      "lat": 37.7508422
+    },
+    {
+      "name": "Palega Recreation Center Playground",
+      "lng": -122.4100653,
+      "lat": 37.7290357
+    },
+    {
+      "name": "Francis Scott Key Elementry School Yard",
+      "lng": -122.5018736,
+      "lat": 37.7581206
+    },
+    {
+      "name": "Midtown Terrace Playground",
+      "lng": -122.4557322,
+      "lat": 37.7518065
+    },
+    {
+      "name": "Raymond Kimbell Playground",
+      "lng": -122.4349567,
+      "lat": 37.7835493
+    },
+    {
+      "name": "Hamilton Receation Center Playground",
+      "lng": -122.4355522,
+      "lat": 37.7843152
+    },
+    {
+      "name": "Treasure Island Playground",
+      "lng": -122.3735503,
+      "lat": 37.8274459
+    },
+    {
+      "name": "Buchanan Mall Playground",
+      "lng": -122.4287803,
+      "lat": 37.7804078
+    },
+    {
+      "name": "Buchanan Mall Turk St Playground",
+      "lng": -122.4289252,
+      "lat": 37.781142
+    },
+    {
+      "name": "Playground 36",
+      "lng": -122.4275993,
+      "lat": 37.7806162
+    },
+    {
+      "name": "Buchanan Mall Fulton St Playground",
+      "lng": -122.4282532,
+      "lat": 37.7777978
+    },
+    {
+      "name": "Playground 37",
+      "lng": -122.4239683,
+      "lat": 37.7852347
+    },
+    {
+      "name": "Playground 38",
+      "lng": -122.4237331,
+      "lat": 37.785186
+    },
+    {
+      "name": "Mariposa Park Playground",
+      "lng": -122.3912161,
+      "lat": 37.76463
+    },
+    {
+      "name": "Panhandle Playground",
+      "lng": -122.4480009,
+      "lat": 37.7721176
+    },
+    {
+      "name": "Mission Bay Kids Park Playground",
+      "lng": -122.3925458,
+      "lat": 37.7721948
+    },
+    {
+      "name": "Playground 39",
+      "lng": -122.4800276,
+      "lat": 37.7180397
+    },
+    {
+      "name": "Playground 40",
+      "lng": -122.4434365,
+      "lat": 37.7551728
+    },
+    {
+      "name": "Unity Plaza Playground",
+      "lng": -122.4534602,
+      "lat": 37.7239598
+    },
+    {
+      "name": "In Chan Kaajal Playground",
+      "lng": -122.4154931,
+      "lat": 37.7640306
+    },
+    {
+      "name": "Playground 41",
+      "lng": -122.3887895,
+      "lat": 37.7179948
+    },
+    {
+      "name": "Playground 42",
+      "lng": -122.3889896,
+      "lat": 37.7180856
+    },
+    {
+      "name": "Gilman Children's Play Area",
+      "lng": -122.3880467,
+      "lat": 37.7167137
+    },
+    {
+      "name": "Playground 43",
+      "lng": -122.3891462,
+      "lat": 37.7175098
+    },
+    {
+      "name": "Terrace Green Park Playground",
+      "lng": -122.4646478,
+      "lat": 37.7366263
+    },
+    {
+      "name": "Playground 44",
+      "lng": -122.3921947,
+      "lat": 37.7771542
+    },
+    {
+      "name": "Joe DiMaggio Playground",
+      "lng": -122.4123995,
+      "lat": 37.8023719
+    },
+    {
+      "name": "Potrero Hill Playground",
+      "lng": -122.3975538,
+      "lat": 37.7569196
+    },
+    {
+      "name": "Brotherhood-Head Mini Park Tot Lot",
+      "lng": -122.4752666,
+      "lat": 37.7143799
+    },
+    {
+      "name": "Hilltop Park Playground",
+      "lng": -122.3842656,
+      "lat": 37.7330104
+    },
+    {
+      "name": "Hunters Point East West Playground",
+      "lng": -122.3799857,
+      "lat": 37.7281595
+    },
+    {
+      "name": "Youngblood-Coleman Playground",
+      "lng": -122.3840838,
+      "lat": 37.7382202
+    },
+    {
+      "name": "Playground 45",
+      "lng": -122.3956007,
+      "lat": 37.760379
+    },
+    {
+      "name": "Playground 46",
+      "lng": -122.4643536,
+      "lat": 37.7426644
+    },
+    {
+      "name": "Playground 47",
+      "lng": -122.4292207,
+      "lat": 37.777462
+    },
+    {
+      "name": "Helen Diller Civic Center North Playground",
+      "lng": -122.4173361,
+      "lat": 37.7799499
+    },
+    {
+      "name": "Helen Diller Civic Center South Playground",
+      "lng": -122.4171684,
+      "lat": 37.7791209
+    },
+    {
+      "name": "24th & York Mini Park Playground",
+      "lng": -122.4085712,
+      "lat": 37.7530678
+    },
+    {
+      "name": "Playground 48",
+      "lng": -122.4704159,
+      "lat": 37.7311495
+    },
+    {
+      "name": "Playground 49",
+      "lng": -122.3989671,
+      "lat": 37.753305
+    },
+    {
+      "name": "St. Mary's Square Playground",
+      "lng": -122.4052612,
+      "lat": 37.7922725
+    },
+    {
+      "name": "Playground 50",
+      "lng": -122.4749585,
+      "lat": 37.8354976
+    },
+    {
+      "name": "Playground 51",
+      "lng": -122.4645279,
+      "lat": 37.7041724
+    },
+    {
+      "name": "Woods Yard Park Playground",
+      "lng": -122.390733,
+      "lat": 37.757638
+    },
+    {
+      "name": "Playground 52",
+      "lng": -122.420304,
+      "lat": 37.7431461
+    },
+    {
+      "name": "Bayview K.C. Jones Children's Play Area",
+      "lng": -122.3934476,
+      "lat": 37.7258701
+    },
+    {
+      "name": "Woh Hei Yuen Playground",
+      "lng": -122.4105395,
+      "lat": 37.795878
+    },
+    {
+      "name": "Margaret Hayward Playground",
+      "lng": -122.4256343,
+      "lat": 37.7810193
+    },
+    {
+      "name": "Playground 53",
+      "lng": -122.3896185,
+      "lat": 37.7183155
+    },
+    {
+      "name": "Francisco Park Playground",
+      "lng": -122.4203864,
+      "lat": 37.8038536
+    },
+    {
+      "name": "The Outpost",
+      "lng": -122.4567703,
+      "lat": 37.8036265
+    },
+    {
+      "name": "West Portal Playground",
+      "lng": -122.4651064,
+      "lat": 37.7416562
+    },
+    {
+      "name": "Bayshore Heights Park Playground",
+      "lng": -122.4198058,
+      "lat": 37.7016599
+    },
+    {
+      "name": "Playground 54",
+      "lng": -122.4500995,
+      "lat": 37.7632642
+    },
+    {
+      "name": "Playground 55",
+      "lng": -122.4063608,
+      "lat": 37.7765705
+    },
+    {
+      "name": "Playground 56",
+      "lng": -122.4192147,
+      "lat": 37.789453
+    },
+    {
+      "name": "Playground 57",
+      "lng": -122.4859999,
+      "lat": 37.7377113
+    },
+    {
+      "name": "Playground 58",
+      "lng": -122.4993618,
+      "lat": 37.7365899
+    },
+    {
+      "name": "Playground 59",
+      "lng": -122.4989668,
+      "lat": 37.7371601
+    },
+    {
+      "name": "Playground 60",
+      "lng": -122.4381881,
+      "lat": 37.7534321
+    },
+    {
+      "name": "Beach Chalet Athletic Fields Playground",
+      "lng": -122.5080269,
+      "lat": 37.7669589
+    },
+    {
+      "name": "Playground 61",
+      "lng": -122.4044379,
+      "lat": 37.7514058
+    },
+    {
+      "name": "Playground 62",
+      "lng": -122.3811802,
+      "lat": 37.7347752
+    },
+    {
+      "name": "Playground 63",
+      "lng": -122.4457354,
+      "lat": 37.7078638
+    },
+    {
+      "name": "Playground 64",
+      "lng": -122.4470582,
+      "lat": 37.7679269
+    },
+    {
+      "name": "Playground 65",
+      "lng": -122.4068193,
+      "lat": 37.7269637
+    },
+    {
+      "name": "Playground 66",
+      "lng": -122.492611,
+      "lat": 37.748482
+    },
+    {
+      "name": "Playground 67",
+      "lng": -122.4117031,
+      "lat": 37.7474278
+    },
+    {
+      "name": "Playground 68",
+      "lng": -122.4122173,
+      "lat": 37.7475108
+    },
+    {
+      "name": "Playground 69",
+      "lng": -122.4846404,
+      "lat": 37.7303649
+    },
+    {
+      "name": "Playground 70",
+      "lng": -122.4855869,
+      "lat": 37.7301636
+    },
+    {
+      "name": "Playground 71",
+      "lng": -122.4646707,
+      "lat": 37.7764675
+    },
+    {
+      "name": "Playground 72",
+      "lng": -122.4645404,
+      "lat": 37.7761582
+    },
+    {
+      "name": "Playground 73",
+      "lng": -122.4291979,
+      "lat": 37.7831011
+    },
+    {
+      "name": "Playground 74",
+      "lng": -122.4293532,
+      "lat": 37.783389
+    },
+    {
+      "name": "Playground 75",
+      "lng": -122.4221787,
+      "lat": 37.7752658
+    },
+    {
+      "name": "Playground 76",
+      "lng": -122.4394068,
+      "lat": 37.7876031
+    },
+    {
+      "name": "Playground 77",
+      "lng": -122.4392147,
+      "lat": 37.7879892
+    },
+    {
+      "name": "Playground 78",
+      "lng": -122.4418542,
+      "lat": 37.7847272
+    },
+    {
+      "name": "Playground 79",
+      "lng": -122.4473961,
+      "lat": 37.7877285
+    },
+    {
+      "name": "Playground 80",
+      "lng": -122.4300951,
+      "lat": 37.7746895
+    },
+    {
+      "name": "Playground 81",
+      "lng": -122.4741536,
+      "lat": 37.773858
+    },
+    {
+      "name": "Playground 82",
+      "lng": -122.4580007,
+      "lat": 37.787491
+    },
+    {
+      "name": "Playground 83",
+      "lng": -122.4445328,
+      "lat": 37.7696856
+    },
+    {
+      "name": "Playground 84",
+      "lng": -122.4441398,
+      "lat": 37.7699535
+    },
+    {
+      "name": "Playground 85",
+      "lng": -122.3938661,
+      "lat": 37.7323294
+    },
+    {
+      "name": "Playground 86",
+      "lng": -122.4202735,
+      "lat": 37.7545693
+    },
+    {
+      "name": "Playground 87",
+      "lng": -122.4257595,
+      "lat": 37.7651631
+    },
+    {
+      "name": "Playground 88",
+      "lng": -122.4256334,
+      "lat": 37.7651609
+    },
+    {
+      "name": "Playground 89",
+      "lng": -122.4256814,
+      "lat": 37.7650376
+    },
+    {
+      "name": "Playground 90",
+      "lng": -122.4149044,
+      "lat": 37.7550131
+    },
+    {
+      "name": "Playground 91",
+      "lng": -122.4201856,
+      "lat": 37.7533484
+    },
+    {
+      "name": "Playground 92",
+      "lng": -122.4367599,
+      "lat": 37.7602984
+    },
+    {
+      "name": "Playground 93",
+      "lng": -122.4678742,
+      "lat": 37.7793735
+    },
+    {
+      "name": "Playground 94",
+      "lng": -122.4356745,
+      "lat": 37.7796871
+    },
+    {
+      "name": "Playground 95",
+      "lng": -122.4356241,
+      "lat": 37.7798881
+    },
+    {
+      "name": "Michelangelo Playground",
+      "lng": -122.4169512,
+      "lat": 37.8012377
+    },
+    {
+      "name": "Playground 96",
+      "lng": -122.4164991,
+      "lat": 37.8022336
+    },
+    {
+      "name": "Playground 97",
+      "lng": -122.4499857,
+      "lat": 37.7383992
+    },
+    {
+      "name": "Playground 98",
+      "lng": -122.4503669,
+      "lat": 37.738119
+    },
+    {
+      "name": "Playground 99",
+      "lng": -122.4701064,
+      "lat": 37.7590618
+    },
+    {
+      "name": "Playground 100",
+      "lng": -122.4422297,
+      "lat": 37.7842043
+    },
+    {
+      "name": "Playground 101",
+      "lng": -122.4365715,
+      "lat": 37.7588131
+    },
+    {
+      "name": "Playground 102",
+      "lng": -122.4186537,
+      "lat": 37.7939903
+    },
+    {
+      "name": "Washington Hyde Mini Park Playground",
+      "lng": -122.4174441,
+      "lat": 37.7941233
+    },
+    {
+      "name": "Playground 103",
+      "lng": -122.4362909,
+      "lat": 37.7804634
+    },
+    {
+      "name": "Playground 104",
+      "lng": -122.4316377,
+      "lat": 37.7420168
+    },
+    {
+      "name": "Playground 105",
+      "lng": -122.4717785,
+      "lat": 37.7837759
+    },
+    {
+      "name": "Playground 106",
+      "lng": -122.4285313,
+      "lat": 37.7739215
+    },
+    {
+      "name": "Playground 107",
+      "lng": -122.4286173,
+      "lat": 37.7740783
+    },
+    {
+      "name": "Playground 108",
+      "lng": -122.4760487,
+      "lat": 37.7752797
+    },
+    {
+      "name": "Playground 109",
+      "lng": -122.4711627,
+      "lat": 37.7630296
+    },
+    {
+      "name": "Playground 110",
+      "lng": -122.450155,
+      "lat": 37.7737851
+    },
+    {
+      "name": "Playground 111",
+      "lng": -122.4467087,
+      "lat": 37.7781562
+    },
+    {
+      "name": "Playground 112",
+      "lng": -122.4991361,
+      "lat": 37.7504126
+    },
+    {
+      "name": "Playground 113",
+      "lng": -122.421311,
+      "lat": 37.7367519
+    },
+    {
+      "name": "Washington Hyde Mini Park",
+      "lng": -122.4174202,
+      "lat": 37.7940155
+    },
+    {
+      "name": "Playground 114",
+      "lng": -122.4187397,
+      "lat": 37.7286464
+    },
+    {
+      "name": "Playground 115",
+      "lng": -122.4180506,
+      "lat": 37.7296028
+    },
+    {
+      "name": "Playground 116",
+      "lng": -122.4096833,
+      "lat": 37.7962378
+    },
+    {
+      "name": "Playground 117",
+      "lng": -122.388896,
+      "lat": 37.7339824
+    },
+    {
+      "name": "Playground 118",
+      "lng": -122.389049,
+      "lat": 37.7343456
+    },
+    {
+      "name": "Playground 119",
+      "lng": -122.3882988,
+      "lat": 37.7341162
+    },
+    {
+      "name": "Playground 120",
+      "lng": -122.434066,
+      "lat": 37.7929412
+    },
+    {
+      "name": "Playground 121",
+      "lng": -122.4338678,
+      "lat": 37.7927102
+    },
+    {
+      "name": "Playground 122",
+      "lng": -122.4034792,
+      "lat": 37.7987076
+    },
+    {
+      "name": "Playground 123",
+      "lng": -122.4029742,
+      "lat": 37.7987674
+    },
+    {
+      "name": "Playground 124",
+      "lng": -122.499856,
+      "lat": 37.7431335
+    },
+    {
+      "name": "Playground 125",
+      "lng": -122.4073827,
+      "lat": 37.718041
+    },
+    {
+      "name": "Playground 126",
+      "lng": -122.4075699,
+      "lat": 37.7181951
+    },
+    {
+      "name": "Playground 127",
+      "lng": -122.4796092,
+      "lat": 37.7043106
+    },
+    {
+      "name": "Playground 128",
+      "lng": -122.4797451,
+      "lat": 37.7054221
+    },
+    {
+      "name": "Playground 129",
+      "lng": -122.5035522,
+      "lat": 37.7539419
+    },
+    {
+      "name": "Playground 130",
+      "lng": -122.5034777,
+      "lat": 37.753416
+    },
+    {
+      "name": "Playground 131",
+      "lng": -122.496817,
+      "lat": 37.7772665
+    },
+    {
+      "name": "Playground 132",
+      "lng": -122.4792591,
+      "lat": 37.7181942
+    },
+    {
+      "name": "Playground 133",
+      "lng": -122.4653962,
+      "lat": 37.7839333
+    },
+    {
+      "name": "Playground 134",
+      "lng": -122.4253068,
+      "lat": 37.7407861
+    },
+    {
+      "name": "Playground 135",
+      "lng": -122.424591,
+      "lat": 37.7400288
+    },
+    {
+      "name": "Salesforce Park Playground",
+      "lng": -122.3968055,
+      "lat": 37.7889703
+    },
+    {
+      "name": "Playground 136",
+      "lng": -122.4189822,
+      "lat": 37.7662458
+    },
+    {
+      "name": "Playground 137",
+      "lng": -122.4608358,
+      "lat": 37.797504
+    },
+    {
+      "name": "Playground 138",
+      "lng": -122.461029,
+      "lat": 37.7973231
+    },
+    {
+      "name": "Playground 139",
+      "lng": -122.4482562,
+      "lat": 37.7305425
+    },
+    {
+      "name": "Playground 140",
+      "lng": -122.4090633,
+      "lat": 37.7796508
+    },
+    {
+      "name": "Playground 141",
+      "lng": -122.4121402,
+      "lat": 37.7792115
+    },
+    {
+      "name": "Playground 142",
+      "lng": -122.456004,
+      "lat": 37.7886443
+    },
+    {
+      "name": "Compton Playground",
+      "lng": -122.4750054,
+      "lat": 37.7947286
+    },
+    {
+      "name": "Amatury Park Playground",
+      "lng": -122.4687565,
+      "lat": 37.7959568
+    },
+    {
+      "name": "Shoreview Park Playground",
+      "lng": -122.3811557,
+      "lat": 37.731943
+    },
+    {
+      "name": "Grattan Playground Children's Play Area",
+      "lng": -122.4516957,
+      "lat": 37.7627464
+    },
+    {
+      "name": "Golden Gate Heights Playground",
+      "lng": -122.4688202,
+      "lat": 37.7501703
+    },
+    {
+      "name": "Pier 39 Playground",
+      "lng": -122.4088912,
+      "lat": 37.8084279
+    },
+    {
+      "name": "James Rolph Jr. Playground",
+      "lng": -122.4062987,
+      "lat": 37.7504841
+    },
+    {
+      "name": "Garfield Square Playground",
+      "lng": -122.4123375,
+      "lat": 37.7496314
+    },
+    {
+      "name": "Shipyard Playground",
+      "lng": -122.3679896,
+      "lat": 37.727604
+    },
+    {
+      "name": "Koshland Park Playground",
+      "lng": -122.4267805,
+      "lat": 37.7732658
+    },
+    {
+      "name": "Playground 143",
+      "lng": -122.4100422,
+      "lat": 37.7123686
+    },
+    {
+      "name": "Playground 144",
+      "lng": -122.5025904,
+      "lat": 37.7612787
+    },
+    {
+      "name": "Playground 145",
+      "lng": -122.4061153,
+      "lat": 37.7966661
+    },
+    {
+      "name": "Seward Street Slides",
+      "lng": -122.4399101,
+      "lat": 37.7577828
+    },
+    {
+      "name": "Playground 146",
+      "lng": -122.4124754,
+      "lat": 37.7366195
+    },
+    {
+      "name": "Playground 147",
+      "lng": -122.4298286,
+      "lat": 37.7791576
+    },
+    {
+      "name": "Playground 148",
+      "lng": -122.4298481,
+      "lat": 37.7793948
+    },
+    {
+      "name": "Playground 149",
+      "lng": -122.4729491,
+      "lat": 37.7145491
+    },
+    {
+      "name": "Playground 150",
+      "lng": -122.4833522,
+      "lat": 37.7209502
+    },
+    {
+      "name": "Playground 151",
+      "lng": -122.4084474,
+      "lat": 37.7941786
+    },
+    {
+      "name": "Playground 152",
+      "lng": -122.3875024,
+      "lat": 37.7632582
+    }
+  ]
+}

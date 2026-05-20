@@ -1,0 +1,104 @@
+{
+  "locations": [
+    {
+      "name": "Fort Mason Farmer's Market",
+      "lng": -122.4315658,
+      "lat": 37.8061667
+    },
+    {
+      "name": "Associated Students Farmer's Market",
+      "lng": -122.4805093,
+      "lat": 37.7226102
+    },
+    {
+      "name": "The Village Market",
+      "lng": -122.4823518,
+      "lat": 37.7233534
+    },
+    {
+      "name": "Lehr's German Specialties",
+      "lng": -122.426721,
+      "lat": 37.7455169
+    },
+    {
+      "name": "Simple",
+      "lng": -122.450054,
+      "lat": 37.7655385
+    },
+    {
+      "name": "Amal's Deli",
+      "lng": -122.4457035,
+      "lat": 37.7702885
+    },
+    {
+      "name": "Tuong Phong",
+      "lng": -122.4166314,
+      "lat": 37.7844939
+    },
+    {
+      "name": "Amigos",
+      "lng": -122.4146073,
+      "lat": 37.7847633
+    },
+    {
+      "name": "Fida Market",
+      "lng": -122.4196272,
+      "lat": 37.7660549
+    },
+    {
+      "name": "The SF Market",
+      "lng": -122.3949507,
+      "lat": 37.7411787
+    },
+    {
+      "name": "Stonestown Farmers Market",
+      "lng": -122.4790236,
+      "lat": 37.7302007
+    },
+    {
+      "name": "Stonestown Farmers Market",
+      "lng": -122.4799993,
+      "lat": 37.7301174
+    },
+    {
+      "name": "Ferry Plaza Farmers Market",
+      "lng": -122.3923704,
+      "lat": 37.7952753
+    },
+    {
+      "name": "Mellow Mercado",
+      "lng": -122.4015253,
+      "lat": 37.7921582
+    },
+    {
+      "name": "Anjotitos Patry",
+      "lng": -122.4182021,
+      "lat": 37.7514061
+    },
+    {
+      "name": "Win Yen Co.",
+      "lng": -122.4184041,
+      "lat": 37.7531218
+    },
+    {
+      "name": "Mega Trading Co.",
+      "lng": -122.4184131,
+      "lat": 37.753193
+    },
+    {
+      "name": "Clement St. Farmers Market",
+      "lng": -122.4612258,
+      "lat": 37.7830983
+    },
+    {
+      "name": "Alemany Farmers Market",
+      "lng": -122.4100436,
+      "lat": 37.7359725
+    },
+    {
+      "name": "SoMa StrEat Food Park",
+      "lng": -122.4119088,
+      "lat": 37.769836
+    }
+  ]
+}

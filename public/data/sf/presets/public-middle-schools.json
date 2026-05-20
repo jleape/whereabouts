@@ -1,0 +1,149 @@
+{
+  "locations": [
+    {
+      "name": "Aptos Middle",
+      "lng": -122.466233,
+      "lat": 37.730234
+    },
+    {
+      "name": "Brown Jr. (Willie L) Middle",
+      "lng": -122.399692,
+      "lat": 37.735911
+    },
+    {
+      "name": "Buena Vista/ Horace Mann K-8",
+      "lng": -122.419745,
+      "lat": 37.753715
+    },
+    {
+      "name": "Carmichael (Bessie)/FEC",
+      "lng": -122.406742,
+      "lat": 37.775856
+    },
+    {
+      "name": "Creative Arts Charter",
+      "lng": -122.435434,
+      "lat": 37.78003
+    },
+    {
+      "name": "Denman (James) Middle",
+      "lng": -122.443314,
+      "lat": 37.721993
+    },
+    {
+      "name": "Everett Middle",
+      "lng": -122.428581,
+      "lat": 37.763667
+    },
+    {
+      "name": "Francisco Middle",
+      "lng": -122.411689,
+      "lat": 37.804816
+    },
+    {
+      "name": "Gateway Middle",
+      "lng": -122.436008,
+      "lat": 37.779439
+    },
+    {
+      "name": "Giannini (A.P.) Middle",
+      "lng": -122.497022,
+      "lat": 37.751425
+    },
+    {
+      "name": "Hoover (Herbert) Middle",
+      "lng": -122.47031,
+      "lat": 37.74535
+    },
+    {
+      "name": "King Jr. (Martin Luther) Academic Middle",
+      "lng": -122.404917,
+      "lat": 37.727948
+    },
+    {
+      "name": "KIPP Bayview Academy",
+      "lng": -122.396374,
+      "lat": 37.71952
+    },
+    {
+      "name": "KIPP San Francisco Bay Academy",
+      "lng": -122.43759,
+      "lat": 37.783165
+    },
+    {
+      "name": "Lawton Alternative",
+      "lng": -122.489587,
+      "lat": 37.757952
+    },
+    {
+      "name": "Lick (James) Middle",
+      "lng": -122.431754,
+      "lat": 37.749543
+    },
+    {
+      "name": "Lilienthal (Claire) Elementary",
+      "lng": -122.443502,
+      "lat": 37.803192
+    },
+    {
+      "name": "Marina Middle",
+      "lng": -122.43636,
+      "lat": 37.801671
+    },
+    {
+      "name": "Marshall (Thurgood) High",
+      "lng": -122.401881,
+      "lat": 37.735717
+    },
+    {
+      "name": "Mission Preparatory",
+      "lng": -122.408574,
+      "lat": 37.755441
+    },
+    {
+      "name": "Presidio Middle",
+      "lng": -122.490102,
+      "lat": 37.780831
+    },
+    {
+      "name": "Revere (Paul) Elementary",
+      "lng": -122.413174,
+      "lat": 37.737142
+    },
+    {
+      "name": "Rooftop Elementary",
+      "lng": -122.443888,
+      "lat": 37.754418
+    },
+    {
+      "name": "Roosevelt Middle",
+      "lng": -122.458952,
+      "lat": 37.782249
+    },
+    {
+      "name": "S.F. International High",
+      "lng": -122.400623,
+      "lat": 37.76172
+    },
+    {
+      "name": "San Francisco Community Alternative",
+      "lng": -122.432624,
+      "lat": 37.725815
+    },
+    {
+      "name": "Thomas Edison Charter Academy",
+      "lng": -122.426202,
+      "lat": 37.754937
+    },
+    {
+      "name": "Visitacion Valley Middle",
+      "lng": -122.412417,
+      "lat": 37.715632
+    },
+    {
+      "name": "Yu (Alice Fong) Elementary",
+      "lng": -122.469314,
+      "lat": 37.759405
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "locations": [
+    {
+      "name": "Mission Bay Branch Library",
+      "lng": -122.3932,
+      "lat": 37.7753882
+    },
+    {
+      "name": "Helen Crocker Russell Horticultural Library",
+      "lng": -122.467438,
+      "lat": 37.766948
+    },
+    {
+      "name": "Mission Temporary Branch, San Francisco Public Library",
+      "lng": -122.420946,
+      "lat": 37.7531416
+    },
+    {
+      "name": "San Francisco Public Library - Main Library",
+      "lng": -122.4157709,
+      "lat": 37.7791272
+    },
+    {
+      "name": "Noe Valley / Sally Brunn Branch Library",
+      "lng": -122.4351168,
+      "lat": 37.7501884
+    },
+    {
+      "name": "North Beach Branch Library",
+      "lng": -122.4132332,
+      "lat": 37.8025679
+    },
+    {
+      "name": "Richmond / Senator Milton Marks Branch Library",
+      "lng": -122.4681394,
+      "lat": 37.7818476
+    },
+    {
+      "name": "Ingleside Branch Library",
+      "lng": -122.4562484,
+      "lat": 37.7241348
+    },
+    {
+      "name": "Presidio Branch Library",
+      "lng": -122.4448527,
+      "lat": 37.7888849
+    },
+    {
+      "name": "Western Addition Branch Library",
+      "lng": -122.4375667,
+      "lat": 37.7841234
+    },
+    {
+      "name": "Chinatown / Him Mark Lai Branch Library",
+      "lng": -122.4102156,
+      "lat": 37.7952262
+    },
+    {
+      "name": "Ortega Branch Library",
+      "lng": -122.4981069,
+      "lat": 37.7511581
+    },
+    {
+      "name": "Anza Branch Library",
+      "lng": -122.4972077,
+      "lat": 37.7785244
+    },
+    {
+      "name": "Glen Park Branch Library",
+      "lng": -122.4336409,
+      "lat": 37.7339779
+    },
+    {
+      "name": "Portola Branch Library",
+      "lng": -122.4063713,
+      "lat": 37.7271063
+    },
+    {
+      "name": "Parkside Branch Library",
+      "lng": -122.4793107,
+      "lat": 37.7431361
+    },
+    {
+      "name": "Park Branch Library",
+      "lng": -122.4510145,
+      "lat": 37.7701504
+    },
+    {
+      "name": "Bernal Heights Branch Library",
+      "lng": -122.4161532,
+      "lat": 37.738855
+    },
+    {
+      "name": "Eureka Valley / Harvey Milk Memorial Branch Library",
+      "lng": -122.4319056,
+      "lat": 37.7640473
+    },
+    {
+      "name": "Golden Gate Valley Branch Library",
+      "lng": -122.4290331,
+      "lat": 37.7967874
+    },
+    {
+      "name": "Potrero Branch Library",
+      "lng": -122.3976619,
+      "lat": 37.7601232
+    },
+    {
+      "name": "Sunset Branch Library",
+      "lng": -122.4763171,
+      "lat": 37.7633717
+    },
+    {
+      "name": "Ocean View Branch Library",
+      "lng": -122.4659961,
+      "lat": 37.714143
+    },
+    {
+      "name": "Visitacion Valley Branch Library",
+      "lng": -122.4078973,
+      "lat": 37.7124704
+    },
+    {
+      "name": "Bayview Branch Library",
+      "lng": -122.391148,
+      "lat": 37.7325508
+    },
+    {
+      "name": "Marina Branch Library",
+      "lng": -122.4341246,
+      "lat": 37.8014042
+    },
+    {
+      "name": "Merced Branch Library",
+      "lng": -122.4744888,
+      "lat": 37.7266248
+    },
+    {
+      "name": "Excelsior Branch Library",
+      "lng": -122.4333058,
+      "lat": 37.7271266
+    },
+    {
+      "name": "West Portal Branch Library",
+      "lng": -122.466169,
+      "lat": 37.7414019
+    }
+  ]
+}

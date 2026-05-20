@@ -1,0 +1,824 @@
+{
+  "locations": [
+    {
+      "name": "24 Hour Fitness",
+      "lng": -122.40233,
+      "lat": 37.7898626
+    },
+    {
+      "name": "Live Fit Gym",
+      "lng": -122.42085,
+      "lat": 37.7920227
+    },
+    {
+      "name": "24 Hour Fitness",
+      "lng": -122.4212723,
+      "lat": 37.7867992
+    },
+    {
+      "name": "Valencia Street Muscle",
+      "lng": -122.4219843,
+      "lat": 37.7675553
+    },
+    {
+      "name": "CorePower Yoga",
+      "lng": -122.429287,
+      "lat": 37.7693496
+    },
+    {
+      "name": "LiveFitGym Wellness Club",
+      "lng": -122.4216455,
+      "lat": 37.7605228
+    },
+    {
+      "name": "Bakar Fitness Center",
+      "lng": -122.393368,
+      "lat": 37.767814
+    },
+    {
+      "name": "Planet Fitness",
+      "lng": -122.4030566,
+      "lat": 37.7933814
+    },
+    {
+      "name": "VRV3 Studios",
+      "lng": -122.4309073,
+      "lat": 37.7721463
+    },
+    {
+      "name": "US Dept of Labor Job Corps Gym",
+      "lng": -122.369634,
+      "lat": 37.8205648
+    },
+    {
+      "name": "Infinity Training Center",
+      "lng": -122.4299091,
+      "lat": 37.7677839
+    },
+    {
+      "name": "Crunch Fitness",
+      "lng": -122.422077,
+      "lat": 37.7983396
+    },
+    {
+      "name": "CorePower Yoga",
+      "lng": -122.4340668,
+      "lat": 37.7975935
+    },
+    {
+      "name": "The Bar Method",
+      "lng": -122.436288,
+      "lat": 37.800265
+    },
+    {
+      "name": "Equinox Gym",
+      "lng": -122.4331198,
+      "lat": 37.7972838
+    },
+    {
+      "name": "MX3 Fitness",
+      "lng": -122.4322021,
+      "lat": 37.7710356
+    },
+    {
+      "name": "Bay Area Strength and Nutrition",
+      "lng": -122.404128,
+      "lat": 37.804055
+    },
+    {
+      "name": "Evolve Pilates",
+      "lng": -122.4227203,
+      "lat": 37.7518051
+    },
+    {
+      "name": "Lotusland",
+      "lng": -122.4207656,
+      "lat": 37.7511093
+    },
+    {
+      "name": "Powerplay",
+      "lng": -122.3912026,
+      "lat": 37.7724751
+    },
+    {
+      "name": "Iron + Mettle",
+      "lng": -122.4267621,
+      "lat": 37.7516463
+    },
+    {
+      "name": "fit lite by 24hr fitness",
+      "lng": -122.4277279,
+      "lat": 37.751785
+    },
+    {
+      "name": "Beach Glass Hot Yoga & Pilates",
+      "lng": -122.4269028,
+      "lat": 37.7474593
+    },
+    {
+      "name": "Church Fitness",
+      "lng": -122.4268283,
+      "lat": 37.7433709
+    },
+    {
+      "name": "SF Iron",
+      "lng": -122.395218,
+      "lat": 37.7865545
+    },
+    {
+      "name": "Alinea Crossfit",
+      "lng": -122.417522,
+      "lat": 37.7623626
+    },
+    {
+      "name": "Yubalance",
+      "lng": -122.4629655,
+      "lat": 37.7640802
+    },
+    {
+      "name": "Pilates Story",
+      "lng": -122.4677409,
+      "lat": 37.738891
+    },
+    {
+      "name": "Pure Barre",
+      "lng": -122.467846,
+      "lat": 37.7392516
+    },
+    {
+      "name": "Gym",
+      "lng": -122.428295,
+      "lat": 37.742256
+    },
+    {
+      "name": "Core40",
+      "lng": -122.466897,
+      "lat": 37.7638942
+    },
+    {
+      "name": "Moon and Stars Studio",
+      "lng": -122.466235,
+      "lat": 37.7648022
+    },
+    {
+      "name": "Glow Yoga & Wellness",
+      "lng": -122.408999,
+      "lat": 37.8000761
+    },
+    {
+      "name": "LiveFitGym",
+      "lng": -122.449965,
+      "lat": 37.7650143
+    },
+    {
+      "name": "Haum",
+      "lng": -122.4530621,
+      "lat": 37.7677295
+    },
+    {
+      "name": "Fitness 19",
+      "lng": -122.483429,
+      "lat": 37.7001523
+    },
+    {
+      "name": "Fitness SF",
+      "lng": -122.433826,
+      "lat": 37.7829647
+    },
+    {
+      "name": "SoulCycle",
+      "lng": -122.4353665,
+      "lat": 37.7622098
+    },
+    {
+      "name": "Parkside Pilates",
+      "lng": -122.4721071,
+      "lat": 37.7430813
+    },
+    {
+      "name": "Muscle Beach",
+      "lng": -122.5100339,
+      "lat": 37.7749894
+    },
+    {
+      "name": "Raise the Bar Fitness",
+      "lng": -122.4840921,
+      "lat": 37.7425579
+    },
+    {
+      "name": "Classical Pilates Studio",
+      "lng": -122.473774,
+      "lat": 37.7320741
+    },
+    {
+      "name": "Purusha YogaStudio",
+      "lng": -122.4989205,
+      "lat": 37.7755099
+    },
+    {
+      "name": "CorePower Yoga",
+      "lng": -122.4380366,
+      "lat": 37.7753105
+    },
+    {
+      "name": "Park Gym",
+      "lng": -122.440291,
+      "lat": 37.7864309
+    },
+    {
+      "name": "Lalanne Fitness",
+      "lng": -122.4062004,
+      "lat": 37.7806919
+    },
+    {
+      "name": "24 hours fitness active",
+      "lng": -122.4121344,
+      "lat": 37.8059854
+    },
+    {
+      "name": "Live Fit Gym",
+      "lng": -122.4152712,
+      "lat": 37.7894482
+    },
+    {
+      "name": "Bernal Yoga",
+      "lng": -122.4135568,
+      "lat": 37.7388822
+    },
+    {
+      "name": "Moxie",
+      "lng": -122.4644643,
+      "lat": 37.7853439
+    },
+    {
+      "name": "Pacific Wushu",
+      "lng": -122.4667478,
+      "lat": 37.7394486
+    },
+    {
+      "name": "Crunch Fitness",
+      "lng": -122.4277598,
+      "lat": 37.7979248
+    },
+    {
+      "name": "Ever Strong SF",
+      "lng": -122.4302066,
+      "lat": 37.7715105
+    },
+    {
+      "name": "SoulCycle",
+      "lng": -122.4336513,
+      "lat": 37.7972137
+    },
+    {
+      "name": "Invincible Barbell",
+      "lng": -122.41937,
+      "lat": 37.7599931
+    },
+    {
+      "name": "World Class Boxing",
+      "lng": -122.4196186,
+      "lat": 37.7659847
+    },
+    {
+      "name": "Pilates Heights",
+      "lng": -122.41798,
+      "lat": 37.7392829
+    },
+    {
+      "name": "Lama's Kenpo Karate",
+      "lng": -122.4167211,
+      "lat": 37.7391743
+    },
+    {
+      "name": "Mighty Pilates",
+      "lng": -122.4528762,
+      "lat": 37.7875496
+    },
+    {
+      "name": "Active Pilates",
+      "lng": -122.4594025,
+      "lat": 37.7830588
+    },
+    {
+      "name": "LiveFitGym",
+      "lng": -122.4592159,
+      "lat": 37.7829806
+    },
+    {
+      "name": "Pilates on Page",
+      "lng": -122.4209975,
+      "lat": 37.7743877
+    },
+    {
+      "name": "Telegraph Crossfit",
+      "lng": -122.4569855,
+      "lat": 37.7811367
+    },
+    {
+      "name": "Regular Exercise",
+      "lng": -122.4742415,
+      "lat": 37.7823924
+    },
+    {
+      "name": "The Lotus Method",
+      "lng": -122.4314974,
+      "lat": 37.7513541
+    },
+    {
+      "name": "Yoga Flow",
+      "lng": -122.4330082,
+      "lat": 37.7512719
+    },
+    {
+      "name": "Folk",
+      "lng": -122.4353671,
+      "lat": 37.7511179
+    },
+    {
+      "name": "Live Fit Gym Elite Training",
+      "lng": -122.4214571,
+      "lat": 37.7620449
+    },
+    {
+      "name": "Barry's",
+      "lng": -122.4327172,
+      "lat": 37.7648157
+    },
+    {
+      "name": "Empire Jiu Jitsu",
+      "lng": -122.419307,
+      "lat": 37.7593836
+    },
+    {
+      "name": "Local's Fitness",
+      "lng": -122.4508378,
+      "lat": 37.7822797
+    },
+    {
+      "name": "CorePower Yoga",
+      "lng": -122.419391,
+      "lat": 37.777004
+    },
+    {
+      "name": "YMCA",
+      "lng": -122.4767843,
+      "lat": 37.7308076
+    },
+    {
+      "name": "City Sports Club",
+      "lng": -122.4761865,
+      "lat": 37.7297769
+    },
+    {
+      "name": "Bay Jiu-jitsu",
+      "lng": -122.4286513,
+      "lat": 37.7858423
+    },
+    {
+      "name": "Bodyrok",
+      "lng": -122.4474543,
+      "lat": 37.7698338
+    },
+    {
+      "name": "Bikram Hot Yoga",
+      "lng": -122.4801862,
+      "lat": 37.7804862
+    },
+    {
+      "name": "Equinox",
+      "lng": -122.404501,
+      "lat": 37.7865523
+    },
+    {
+      "name": "Rise Combat Sports",
+      "lng": -122.4179168,
+      "lat": 37.7715856
+    },
+    {
+      "name": "24 Hour Fitness",
+      "lng": -122.461745,
+      "lat": 37.7253132
+    },
+    {
+      "name": "CrossFit Potrero Hill",
+      "lng": -122.401741,
+      "lat": 37.7680274
+    },
+    {
+      "name": "Fitness Urbano",
+      "lng": -122.39701,
+      "lat": 37.7656784
+    },
+    {
+      "name": "Equinox",
+      "lng": -122.4013229,
+      "lat": 37.7919223
+    },
+    {
+      "name": "Stretch Lab",
+      "lng": -122.4049126,
+      "lat": 37.7714848
+    },
+    {
+      "name": "Hit Fit SF",
+      "lng": -122.4194144,
+      "lat": 37.7879675
+    },
+    {
+      "name": "Barry's",
+      "lng": -122.402861,
+      "lat": 37.790492
+    },
+    {
+      "name": "CorePower Yoga",
+      "lng": -122.4226686,
+      "lat": 37.7932437
+    },
+    {
+      "name": "LiveFitGym",
+      "lng": -122.422934,
+      "lat": 37.775777
+    },
+    {
+      "name": "Custom Fit",
+      "lng": -122.4242615,
+      "lat": 37.7715262
+    },
+    {
+      "name": "F45 Training",
+      "lng": -122.412397,
+      "lat": 37.8059286
+    },
+    {
+      "name": "Asta Yoga",
+      "lng": -122.422745,
+      "lat": 37.7679986
+    },
+    {
+      "name": "MX3 Fitness",
+      "lng": -122.423411,
+      "lat": 37.7649486
+    },
+    {
+      "name": "Equinox",
+      "lng": -122.418343,
+      "lat": 37.773598
+    },
+    {
+      "name": "Barry's",
+      "lng": -122.4387347,
+      "lat": 37.7996807
+    },
+    {
+      "name": "Orangetheory Fitness",
+      "lng": -122.417714,
+      "lat": 37.7761003
+    },
+    {
+      "name": "MX3 Fitness",
+      "lng": -122.43426,
+      "lat": 37.7635885
+    },
+    {
+      "name": "Core40",
+      "lng": -122.4188857,
+      "lat": 37.790612
+    },
+    {
+      "name": "Wheel House",
+      "lng": -122.3999146,
+      "lat": 37.7944117
+    },
+    {
+      "name": "Orangetheory Fitness",
+      "lng": -122.4019303,
+      "lat": 37.7938086
+    },
+    {
+      "name": "Crossfit Golden Gate",
+      "lng": -122.4227549,
+      "lat": 37.7938033
+    },
+    {
+      "name": "California Martial Arts",
+      "lng": -122.4203302,
+      "lat": 37.7880274
+    },
+    {
+      "name": "Polk st. Gym",
+      "lng": -122.420474,
+      "lat": 37.7901349
+    },
+    {
+      "name": "United Barbell",
+      "lng": -122.3953645,
+      "lat": 37.7776143
+    },
+    {
+      "name": "Hit Fit SF",
+      "lng": -122.412434,
+      "lat": 37.7598185
+    },
+    {
+      "name": "Eden Fitness Studio",
+      "lng": -122.4244304,
+      "lat": 37.7882855
+    },
+    {
+      "name": "Sessions Training Center",
+      "lng": -122.4247205,
+      "lat": 37.7711015
+    },
+    {
+      "name": "Gracie Jiu-Jitsu",
+      "lng": -122.4851848,
+      "lat": 37.784003
+    },
+    {
+      "name": "Row House",
+      "lng": -122.3910839,
+      "lat": 37.7713323
+    },
+    {
+      "name": "CorePower Yoga",
+      "lng": -122.3915273,
+      "lat": 37.7723982
+    },
+    {
+      "name": "Crunch Fitness",
+      "lng": -122.3986881,
+      "lat": 37.7833784
+    },
+    {
+      "name": "PerformForLife",
+      "lng": -122.4010885,
+      "lat": 37.7872219
+    },
+    {
+      "name": "J Body Works",
+      "lng": -122.3946831,
+      "lat": 37.7799986
+    },
+    {
+      "name": "Divine Yoga Studio",
+      "lng": -122.3946534,
+      "lat": 37.7800307
+    },
+    {
+      "name": "Flagship Athletic Performance",
+      "lng": -122.3917425,
+      "lat": 37.7777137
+    },
+    {
+      "name": "Orangetheory Fitness",
+      "lng": -122.39214,
+      "lat": 37.7774743
+    },
+    {
+      "name": "Lagree Fit 415",
+      "lng": -122.3912895,
+      "lat": 37.7746636
+    },
+    {
+      "name": "Club Pilates",
+      "lng": -122.404875,
+      "lat": 37.7710571
+    },
+    {
+      "name": "Custom Fit",
+      "lng": -122.4244815,
+      "lat": 37.7749811
+    },
+    {
+      "name": "The Firm Fitness",
+      "lng": -122.4468131,
+      "lat": 37.7670502
+    },
+    {
+      "name": "Motus",
+      "lng": -122.3957005,
+      "lat": 37.7853748
+    },
+    {
+      "name": "Body Tonic SF",
+      "lng": -122.423318,
+      "lat": 37.7884063
+    },
+    {
+      "name": "Jolt",
+      "lng": -122.4034907,
+      "lat": 37.7751383
+    },
+    {
+      "name": "Gymworx",
+      "lng": -122.4014286,
+      "lat": 37.7647359
+    },
+    {
+      "name": "Orangetheory Fitness",
+      "lng": -122.418471,
+      "lat": 37.8057908
+    },
+    {
+      "name": "F45 Training",
+      "lng": -122.4452838,
+      "lat": 37.7815574
+    },
+    {
+      "name": "Nice Pilates",
+      "lng": -122.4738295,
+      "lat": 37.7804022
+    },
+    {
+      "name": "Ethan Rich Performance",
+      "lng": -122.4082188,
+      "lat": 37.7695236
+    },
+    {
+      "name": "CORE MVMT",
+      "lng": -122.4340076,
+      "lat": 37.7632431
+    },
+    {
+      "name": "Skyefit Personal Training",
+      "lng": -122.4027458,
+      "lat": 37.7809934
+    },
+    {
+      "name": "Mukunda",
+      "lng": -122.4110314,
+      "lat": 37.7744693
+    },
+    {
+      "name": "Bhakti SF",
+      "lng": -122.4104775,
+      "lat": 37.774512
+    },
+    {
+      "name": "Hot Yoga",
+      "lng": -122.404812,
+      "lat": 37.7898127
+    },
+    {
+      "name": "Perform for Golf",
+      "lng": -122.4223791,
+      "lat": 37.7729922
+    },
+    {
+      "name": "Luxfit",
+      "lng": -122.389427,
+      "lat": 37.7747722
+    },
+    {
+      "name": "Bodyrok",
+      "lng": -122.4013153,
+      "lat": 37.7921753
+    },
+    {
+      "name": "Bija Yoga",
+      "lng": -122.466145,
+      "lat": 37.7631464
+    },
+    {
+      "name": "Tiny Haven Yoga",
+      "lng": -122.4603044,
+      "lat": 37.7651466
+    },
+    {
+      "name": "Anthony Silva Fitness",
+      "lng": -122.4528379,
+      "lat": 37.7665072
+    },
+    {
+      "name": "H3 Fitness",
+      "lng": -122.3975117,
+      "lat": 37.7846442
+    },
+    {
+      "name": "Synergy Fitness",
+      "lng": -122.4203444,
+      "lat": 37.7880824
+    },
+    {
+      "name": "EHS",
+      "lng": -122.4205996,
+      "lat": 37.7496267
+    },
+    {
+      "name": "Love Story Yoga",
+      "lng": -122.4217694,
+      "lat": 37.7654039
+    },
+    {
+      "name": "Advanced Wellness",
+      "lng": -122.4649699,
+      "lat": 37.7828093
+    },
+    {
+      "name": "Bright Star Pilates",
+      "lng": -122.4304516,
+      "lat": 37.7612632
+    },
+    {
+      "name": "'N Motion Fitness",
+      "lng": -122.4506634,
+      "lat": 37.7732592
+    },
+    {
+      "name": "Solidcore",
+      "lng": -122.4302513,
+      "lat": 37.7662018
+    },
+    {
+      "name": "Fluxfit",
+      "lng": -122.4240178,
+      "lat": 37.7765272
+    },
+    {
+      "name": "Blik Yoga Shala",
+      "lng": -122.4487673,
+      "lat": 37.7687271
+    },
+    {
+      "name": "Orange Theory",
+      "lng": -122.4331453,
+      "lat": 37.7846695
+    },
+    {
+      "name": "Fog City Community Fitness",
+      "lng": -122.4197299,
+      "lat": 37.7468481
+    },
+    {
+      "name": "DeSisto Strength Training",
+      "lng": -122.404145,
+      "lat": 37.804132
+    },
+    {
+      "name": "Muscle Beach",
+      "lng": -122.5070537,
+      "lat": 37.7527473
+    },
+    {
+      "name": "Fitness SF SOMA",
+      "lng": -122.4069617,
+      "lat": 37.7696742
+    },
+    {
+      "name": "Live Fit Gym",
+      "lng": -122.4295202,
+      "lat": 37.7666446
+    },
+    {
+      "name": "fit Bernal fit",
+      "lng": -122.415125,
+      "lat": 37.7390792
+    },
+    {
+      "name": "Flagship",
+      "lng": -122.4293729,
+      "lat": 37.7683734
+    },
+    {
+      "name": "Fitlife",
+      "lng": -122.4131876,
+      "lat": 37.8055017
+    },
+    {
+      "name": "Rumble",
+      "lng": -122.4358092,
+      "lat": 37.8003414
+    },
+    {
+      "name": "Folk",
+      "lng": -122.4368863,
+      "lat": 37.7719843
+    },
+    {
+      "name": "Sabrofit",
+      "lng": -122.4529141,
+      "lat": 37.7676776
+    },
+    {
+      "name": "Crunch Fitness",
+      "lng": -122.4417636,
+      "lat": 37.8003977
+    },
+    {
+      "name": "Richmond District YMCA",
+      "lng": -122.4770282,
+      "lat": 37.7812706
+    },
+    {
+      "name": "American Gymnastics Club",
+      "lng": -122.4069743,
+      "lat": 37.7412943
+    },
+    {
+      "name": "Krav Maga Institute",
+      "lng": -122.4235832,
+      "lat": 37.7784275
+    }
+  ]
+}
