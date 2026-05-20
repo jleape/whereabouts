@@ -234,7 +234,7 @@ button.toggle.active { background: #2a2f3d; }
    covers the map. A grab handle (#panel-handle) toggles & drags it; the gesture
    logic lives in src/ui/sheet.ts. The desktop styles above are left intact.
 =========================================================================== */
-#panel-handle { display: none; }
+#panel-top { display: none; }
 
 @media (max-width: 640px) {
   #panel {
@@ -261,15 +261,21 @@ button.toggle.active { background: #2a2f3d; }
     transform: translateY(calc(100% - 76px));
   }
 
-  /* Grab handle — stays pinned at the top of the sheet while content scrolls. */
-  #panel-handle {
+  /* Sticky top bar: a full-width drag strip plus an explicit collapse button,
+     so the sheet can be dismissed by dragging, tapping, or pressing the button.
+     It stays pinned at the top of the sheet while the content scrolls. */
+  #panel-top {
     display: block;
     position: sticky;
     top: 0;
     z-index: 2;
-    height: 24px;
+    height: 32px;
     margin: 0 -14px 2px;
     background: var(--panel);
+  }
+  #panel-handle {
+    position: absolute;
+    inset: 0;
     cursor: grab;
     touch-action: none;
   }
@@ -277,7 +283,7 @@ button.toggle.active { background: #2a2f3d; }
     content: '';
     position: absolute;
     left: 50%;
-    top: 10px;
+    top: 12px;
     transform: translateX(-50%);
     width: 40px;
     height: 4px;
@@ -285,6 +291,18 @@ button.toggle.active { background: #2a2f3d; }
     background: var(--border);
   }
   #panel-handle:active { cursor: grabbing; }
+  #panel-collapse-btn {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 26px;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1;
+    color: var(--muted);
+  }
 
   /* Let the destinations list flow into the panel's own scroll. */
   #destinations-list { max-height: none; }

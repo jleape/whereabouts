@@ -13,13 +13,16 @@ const isMobile = () => mql.matches;
 
 let panel: HTMLElement;
 let handle: HTMLElement;
+let collapseBtn: HTMLElement;
 let collapsed = false;
 
 function applyCollapsed() {
   panel.style.transition = '';
   panel.style.transform = '';
   panel.classList.toggle('collapsed', collapsed);
-  handle.setAttribute('aria-expanded', String(!collapsed));
+  collapseBtn.textContent = collapsed ? '▴' : '▾';
+  collapseBtn.setAttribute('aria-label', collapsed ? 'Expand panel' : 'Collapse panel');
+  collapseBtn.setAttribute('aria-expanded', String(!collapsed));
   // Reset scroll so the peek strip always shows the title, not mid-content.
   if (collapsed) panel.scrollTop = 0;
 }
@@ -39,7 +42,12 @@ function toggle() {
 export function initBottomSheet() {
   panel = document.getElementById('panel')!;
   handle = document.getElementById('panel-handle')!;
-  handle.setAttribute('aria-expanded', 'true');
+  collapseBtn = document.getElementById('panel-collapse-btn')!;
+  applyCollapsed(); // set the button's initial icon / labels
+
+  // Explicit collapse / expand button — the obvious, keyboard-accessible way
+  // (the drag strip below is a pointer-only shortcut).
+  collapseBtn.addEventListener('click', () => toggle());
 
   let dragging = false;
   let startY = 0;
@@ -78,18 +86,11 @@ export function initBottomSheet() {
       collapsed = curT > maxT / 2; // snap to the nearer state
       applyCollapsed();
     } else {
-      toggle(); // a tap on the handle flips the sheet
+      toggle(); // a tap on the strip flips the sheet
     }
   };
   handle.addEventListener('pointerup', endDrag);
   handle.addEventListener('pointercancel', endDrag);
-
-  handle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggle();
-    }
-  });
 
   // Returning to the desktop layout: drop all sheet state so the card is clean.
   mql.addEventListener('change', () => {

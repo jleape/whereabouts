@@ -12,13 +12,15 @@
   <body>
     <div id="map"></div>
     <aside id="panel">
-      <div
-        id="panel-handle"
-        role="button"
-        tabindex="0"
-        aria-controls="panel"
-        aria-label="Expand or collapse the panel"
-      ></div>
+      <div id="panel-top">
+        <div id="panel-handle" aria-hidden="true"></div>
+        <button
+          id="panel-collapse-btn"
+          type="button"
+          aria-controls="panel"
+          aria-label="Collapse panel"
+        >▾</button>
+      </div>
       <header>
         <h1>Whereabouts? · San Francisco</h1>
         <p class="tagline">Because 10,000 steps is overrated.</p>
