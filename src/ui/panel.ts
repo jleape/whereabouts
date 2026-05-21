@@ -2,7 +2,7 @@ import { store } from '../state/store';
 import { MODE_EMOJI } from '../state/types';
 import { paletteSwatches } from '../compute/colors';
 import { loadPresets, type PresetMeta } from '../presets/loader';
-import { initBottomSheet, collapseSheet } from './sheet';
+import { initBottomSheet, collapseSheet, expandSheet } from './sheet';
 
 const $ = <T extends HTMLElement = HTMLElement>(sel: string) =>
   document.querySelector<T>(sel)!;
@@ -59,11 +59,14 @@ export function initPanel(handlers: {
     const s = store.getState();
 
     // On mobile, collapse the bottom sheet whenever the user's attention turns
-    // to the map: entering a map-click mode (adding a destination / choosing an
-    // abode), or results landing on the map after "Do the sums".
+    // to the map (a map-click mode, or results landing on it after "Do the
+    // sums"), and expand it again on return to idle so the next-step controls
+    // are back in view.
     if (s.mode !== prevMode) {
       if (s.mode === 'adding-destination' || s.mode === 'choosing-abode') {
         collapseSheet();
+      } else {
+        expandSheet();
       }
       prevMode = s.mode;
     }

@@ -9,6 +9,7 @@ import type { Destination } from './state/types';
 import { openDestinationPopup } from './ui/popup';
 import { initPanel } from './ui/panel';
 import { collapseSheet } from './ui/sheet';
+import { initBubbles } from './ui/bubbles';
 import { getLoadedMatrix, loadManifest } from './data/matrix';
 import { snapToGrid } from './data/snap';
 import { computeArcs, computeScores } from './compute/score';
@@ -145,6 +146,10 @@ initPanel({
   },
 });
 
+// Mobile onboarding hints — must be wired before the matrix finishes loading
+// so the first-load bubble catches the matrixReady transition.
+initBubbles();
+
 // Download the user's destinations + groups as a JSON file.
 function saveToFile() {
   const s = getState();
@@ -198,8 +203,9 @@ map.on('click', (e) => {
     activePopup = openDestinationPopup(map, {
       lng: e.lngLat.lng,
       lat: e.lngLat.lat,
-      onSave: (d: Destination) => {
-        s.addDestination(snapDestination(d));
+      groups: s.groups,
+      onSave: (d: Destination, newGroupName?: string) => {
+        s.addDestination(snapDestination(withGroup(d, newGroupName)));
         s.setMode('idle');
         mapContainer.style.cursor = '';
         activePopup = null;
@@ -226,6 +232,22 @@ function snapDestination(d: Destination): Destination {
     snappedLng: snap.lng,
     snappedLat: snap.lat,
   };
+}
+
+// If the popup asked for a brand-new group, create it — its travel settings and
+// emoji are taken from the destination — and return the destination assigned to
+// it. addGroup dedupes by name, so typing an existing group's name just joins
+// that group.
+function withGroup(d: Destination, newGroupName?: string): Destination {
+  if (!newGroupName) return d;
+  const group = getState().addGroup({
+    name: newGroupName,
+    emoji: d.emoji,
+    modes: d.modes,
+    peak: d.peak,
+    visitsPerWeek: d.visitsPerWeek,
+  });
+  return { ...d, groupId: group.id, emoji: group.emoji };
 }
 
 // Add a preset group: confirm group-level settings, then bulk-add all the
@@ -360,8 +382,12 @@ function openEditPopupForDestination(id: string, flyTo: boolean) {
     lng: d.lng,
     lat: d.lat,
     existing: d,
-    onSave: (updated) => {
-      getState().updateDestination(d.id, snapDestination(updated));
+    groups: getState().groups,
+    onSave: (updated, newGroupName) => {
+      getState().updateDestination(
+        d.id,
+        snapDestination(withGroup(updated, newGroupName)),
+      );
       activePopup = null;
     },
     onCancel: () => {

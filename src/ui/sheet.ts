@@ -23,14 +23,38 @@ function applyCollapsed() {
   collapseBtn.textContent = collapsed ? '▴' : '▾';
   collapseBtn.setAttribute('aria-label', collapsed ? 'Expand panel' : 'Collapse panel');
   collapseBtn.setAttribute('aria-expanded', String(!collapsed));
-  // Reset scroll so the peek strip always shows the title, not mid-content.
-  if (collapsed) panel.scrollTop = 0;
+  if (collapsed) {
+    // Reset scroll so the peek strip always shows the title, not mid-content.
+    panel.scrollTop = 0;
+  } else {
+    // Expanding: surface the highlighted "next step" control so it isn't
+    // stranded below the fold (e.g. "Whereabouts will you live?" after results).
+    bringNudgeIntoView();
+  }
+}
+
+// Scroll the panel so the amber "next step" control is visible, if it isn't.
+function bringNudgeIntoView() {
+  const nudge = panel.querySelector<HTMLElement>('.nudge');
+  if (!nudge) return;
+  const n = nudge.getBoundingClientRect();
+  const p = panel.getBoundingClientRect();
+  if (n.top < p.top || n.bottom > p.bottom) {
+    nudge.scrollIntoView({ block: 'center' });
+  }
 }
 
 /** Collapse the sheet to its peek height. No-op on desktop or if already collapsed. */
 export function collapseSheet() {
   if (!isMobile() || collapsed) return;
   collapsed = true;
+  applyCollapsed();
+}
+
+/** Expand the sheet to full height. No-op on desktop or if already expanded. */
+export function expandSheet() {
+  if (!isMobile() || !collapsed) return;
+  collapsed = false;
   applyCollapsed();
 }
 
